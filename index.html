@@ -100,20 +100,14 @@
                         <h2 id="impacts_title"></h2>
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group mr-2">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                                <select id="cbo_impact_crop" class="form-control form-control-lg">
+                                </select>
+                                <select id="cbo_impact_hazard" class="form-control form-control-lg">
+                                </select>
+                                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
                                 <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                            </div>
-                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-calendar">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                This week
-                            </button>
+                                -->
+                            </div>                            
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -225,6 +219,19 @@
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
                         cp = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                         $("#impacts_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+
+                        var crops_livestock = d3.map(cp, function(d){return d.crop_livestock;}).keys();
+                        var cbo_impact_crop = $("#cbo_impact_crop");
+                        $.each(crops_livestock, function() {
+                            cbo_impact_crop.append($("<option />").val(this).text(this));
+                        });
+
+                        var hazard = d3.map(cp, function(d){return d.hazard;}).keys();
+                        console.log(hazard);
+                        var cbo_impact_hazard = $("#cbo_impact_hazard");
+                        $.each(hazard, function() {
+                            cbo_impact_hazard.append($("<option />").val(this).text(this));
+                        });
                         /*var crops_livestock = d3.map(cp, function(d){return d.crop_livestock;}).keys();
                         var hazard = d3.map(cp, function(d){return d.hazard;}).keys();
                         if(crops_livestock.length > 0){
