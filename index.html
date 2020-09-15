@@ -73,9 +73,9 @@
                         <h2 class="text-center">Map</h2>
                         <div class="card-body">
                             <p>
-                                Ethiopia
+                                Pakistan
                             </p>
-                            <div id="map" style="height: 250px; width: 100%;">
+                            <div id="map" style="height: 500px; width: 100%;">
 
                             </div>
                         </div>
@@ -133,7 +133,7 @@
         /*
         Function
         */
-        function plot(data) {
+        /*function plot(data) {
             nv.addGraph(function () {
                 var chart = nv.models.lineChart()
                     .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
@@ -216,15 +216,15 @@
             }
             
         }
-
-        var map = L.map('map').setView([8.9661428, 38.6950282], 6);        
+        */
+        var map = L.map('map').setView([27.5117878,63.5581046], 6);        
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         var layer_url = "https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/maps/pakistan.json";
-
+        console.log(layer_url);
         $.getJSON(layer_url, function(data) {
             L.geoJSON(data,{onEachFeature: onEachFeature}).addTo(map);
         });
