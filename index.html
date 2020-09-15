@@ -13,7 +13,8 @@
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
     <link rel="stylesheet" href="https://cdn.rawgit.com/novus/nvd3/master/build/nv.d3.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style>
         #plot svg {
             height: 500px;
@@ -45,30 +46,30 @@
                 <div class="sidebar-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">                                
+                            <a class="nav-link active" href="#">
                                 <i class="fab fa-envira"></i>
                                 Cropping system <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item">                            
+                        <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-cloud-sun-rain"></i>
                                 Climate
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">                                
+                            <a class="nav-link" href="#" onclick="click_tab('impacts')">
                                 <i class="fas fa-biohazard"></i>
                                 CC Impacts
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">                                
+                            <a class="nav-link" href="#">
                                 <i class="fas fa-child"></i>
                                 Practices
                             </a>
                         </li>
-                        <li class="nav-item">                            
+                        <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-code-branch"></i>
                                 Enablers
@@ -79,113 +80,77 @@
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                <div class="chartjs-size-monitor"
-                    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
-                    <div class="chartjs-size-monitor-expand"
-                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
-                    </div>
-                    <div class="chartjs-size-monitor-shrink"
-                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
-                    </div>
+                <div>
+                    <h1 id="title"></h1>
+                    <p id="description" class="text-justify"></p>
                 </div>
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Map</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group mr-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-calendar">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                            </svg>
-                            This week
-                        </button>
-                    </div>
+                    <h2>Map</h2>
                 </div>
-
+                <p class="text-justify">
+                    Select a district into the map
+                </p>
                 <div id="map" style="height: 500px; width: 100%;"></div>
 
+                <!-- Start CC Impacts -->
+                <div id="impacts" class="tab_layout">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h2>Section title</h2>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group mr-2">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-calendar">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                This week
+                            </button>
+                        </div>
+                    </div>
 
-                <h2>Section title</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                            </tr>
-                        </thead>
-                        <tbody>
 
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Header</th>
+                                    <th>Header</th>
+                                    <th>Header</th>
+                                    <th>Header</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- End CC Impacts -->
+                <p>
+                    <span id="rate_optimal"></span>
+                </p>
+                <div id="plot">
+                    <svg></svg>
                 </div>
             </main>
         </div>
     </div>
 
-    <main role="main">
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">Pakistan</h1>
-                <p class="lead text-muted">
-                    Pakistan
-                </p>
-            </div>
-        </section>
 
-        <div class="container_content">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="card mb-4 shadow-sm">
-                        <h2 class="text-center">Map</h2>
-                        <div class="card-body">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="card mb-4 shadow-sm">
-                        <h2 class="text-center">Yield fertilize response Cluster #<span id="cluster"></span></h2>
-                        <div class="card-body">
-                            <p>
-                                <span id="rate_optimal"></span>
-                            </p>
-                            <div id="plot">
-                                <svg></svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="card mb-4 shadow-sm">
-                        <h2 class="text-center">Enviromentals variables</h2>
-                        <div class="card-body">
-                            <div id="cp">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 
     <footer class="text-muted">
         <div class="container">
-            <p>© 2020 CIAT</p>
+            <p>© 2020 Alliance Bioversity International - CIAT</p>
         </div>
     </footer>
 
@@ -205,6 +170,21 @@
     <script src="https://cdn.rawgit.com/novus/nvd3/master/build/nv.d3.min.js"></script>
 
     <script type="text/javascript">
+        var tab = 'impacts';
+        /**
+        * This function change the type of information and functionalities of the web page depending of the value
+        */
+        function click_tab(tab_selected) {
+            tab = tab_selected;
+            if (tab === 'impacts') {
+                $("#title").html("CC Impacts");
+                $("#description").html("Description");
+                $(".tab_layout").css("invisible");
+                $("#impacts").css("visible");
+            }
+        }
+
+
         /*
         Function
         */
@@ -239,9 +219,26 @@
         var myColor = d3.scale.linear().domain([1,40])
                                 .interpolate(d3.interpolateHcl)
                                 .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
+        */
+        function onEachFeature(feature, layer) {
+            console.log(feature.properties);
+            layer.on('click', function (e) {
+                if (tab === 'impacts') {
+                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
+                        cp = data.filter(function (item) { return item.id == layer.feature.id; });
+                        if (cp.length > 0) {
+                            var table = '<table class="table">';
+                            for (var key in cp[0]) {
+                                table = table + '<tr><th>' + key + '</th><td>' + cp[0][key] + '</td></tr>';
+                            }
+                            table = table + '</table>';
+                            $("#cp").html(table);
+                        }
 
-        */function onEachFeature(feature, layer) {
+                    });
+                }
 
+            });
             /*if (layer.feature && layer.feature.id) {
                 layer.setStyle({
                     fillColor :myColor(layer.feature.id),
@@ -299,7 +296,6 @@
         }).addTo(map);
 
         var layer_url = "https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/maps/pakistan_map.json";
-        console.log(layer_url);
         $.getJSON(layer_url, function (data) {
             L.geoJSON(data, { onEachFeature: onEachFeature }).addTo(map);
         });
