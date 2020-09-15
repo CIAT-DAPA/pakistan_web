@@ -46,13 +46,13 @@
                 <div class="sidebar-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link active" href="#" onclick="click_tab('cropping')">
                                 <i class="fab fa-envira"></i>
-                                Cropping system <span class="sr-only">(current)</span>
+                                Cropping system 
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="#" onclick="click_tab('climate')">
                                 <i class="fas fa-cloud-sun-rain"></i>
                                 Climate
                             </a>
@@ -64,13 +64,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="#" onclick="click_tab('practices')">
                                 <i class="fas fa-child"></i>
                                 Practices
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="#" onclick="click_tab('enablers')">
                                 <i class="fas fa-code-branch"></i>
                                 Enablers
                             </a>
@@ -107,7 +107,7 @@
                                 <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
                                 <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
                                 -->
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -161,17 +161,42 @@
     <script src="https://cdn.rawgit.com/novus/nvd3/master/build/nv.d3.min.js"></script>
 
     <script type="text/javascript">
+        // Parameters
         var tab = 'impacts';
+
+        // Datasets
+        var hazard_d = [];
         /**
         * This function change the type of information and functionalities of the web page depending of the value
         */
         function click_tab(tab_selected) {
             tab = tab_selected;
-            if (tab === 'impacts') {
+            $(".tab_layout").css("invisible");
+
+            if (tab === 'cropping') {
+                $("#title").html("Cropping system");
+                $("#description").html("Description");                
+                $("#cropping").css("visible");
+            }
+            else if (tab === 'climate') {
+                $("#title").html("Climate");
+                $("#description").html("Description");                
+                $("#climate").css("visible");
+            }
+            else if (tab === 'impacts') {
                 $("#title").html("CC Impacts");
                 $("#description").html("Description");
-                $(".tab_layout").css("invisible");
                 $("#impacts").css("visible");
+            }
+            else if (tab === 'practices') {
+                $("#title").html("Practices");
+                $("#description").html("Description");                
+                $("#practices").css("visible");
+            }
+            else if (tab === 'enablers') {
+                $("#title").html("Enablers");
+                $("#description").html("Description");                
+                $("#enablers").css("visible");
             }
         }
 
@@ -211,53 +236,78 @@
                                 .interpolate(d3.interpolateHcl)
                                 .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
         */
+
+        /**
+        * Function which filter dataset for impacts and show data into the table
+        */
+        function impact_fill_table(crop, hazard) {
+            // Filtering data
+            var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1.Input ' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard)}).sort((a, b) => d3.descending(a.freq, b.freq));
+            var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+
+            // Fixing data in the table
+            var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
+            var table = '';
+            for (var i = 0; i < max; i++) {
+                table = table + '<tr ' + (i < 5 ? 'class="table-danger"' : '') + '>';
+                table = table + '<td>' + (inputs.length > i ? inputs[i].impact : '') + '</td>';
+                table = table + '<td>' + (on_farm.length > i ? on_farm[i].impact : '') + '</td>';
+                table = table + '<td>' + (harvesting.length > i ? harvesting[i].impact : '') + '</td>';
+                table = table + '<td>' + (marketing.length > i ? marketing[i].impact : '') + '</td>';
+                table = table + '</tr>';
+            }
+            table = table + '</table>';
+            $("#impacts_table  > tbody").html(table);
+
+        }
+
+        /**
+        * Function for each feature into the map
+        */
         function onEachFeature(feature, layer) {
             //console.log(feature.properties);
             layer.on('click', function (e) {
-                if (tab === 'impacts') {
+                if(tab === 'cropping'){}
+                else if(tab === 'climate'){
+
+                }
+                else if (tab === 'impacts') {
                     //console.log(layer.feature.properties);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
-                        cp = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+                        hazard_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                         $("#impacts_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
 
-                        var crops_livestock = d3.map(cp, function(d){return d.crop_livestock;}).keys();
+                        // Filling the cbo controls with hazard and crops
+                        var crops_livestock = d3.map(hazard_d, function (d) { return d.crop_livestock; }).keys();
                         var cbo_impact_crop = $("#cbo_impact_crop");
-                        $.each(crops_livestock, function() {
+                        cbo_impact_crop.empty();
+                        $.each(crops_livestock, function () {
                             cbo_impact_crop.append($("<option />").val(this).text(this));
                         });
+                        cbo_impact_crop.append($("<option />").val("All").text("All"));
+                        cbo_impact_crop.val("All");
 
-                        var hazard = d3.map(cp, function(d){return d.hazard;}).keys();
-                        console.log(hazard);
+                        var hazard = d3.map(hazard_d, function (d) { return d.hazard; }).keys();
                         var cbo_impact_hazard = $("#cbo_impact_hazard");
-                        $.each(hazard, function() {
+                        cbo_impact_hazard.empty();
+                        $.each(hazard, function () {
                             cbo_impact_hazard.append($("<option />").val(this).text(this));
                         });
-                        /*var crops_livestock = d3.map(cp, function(d){return d.crop_livestock;}).keys();
-                        var hazard = d3.map(cp, function(d){return d.hazard;}).keys();
-                        if(crops_livestock.length > 0){
-                            crops_livestock.forEach(element => {
-                                
-                            });
-                        }*/                        
-                        var inputs = cp.filter(function (item) { return item.vc_stage == '1.Input ' }).sort((a, b) => d3.descending(a.freq, b.freq));
-                        var on_farm = cp.filter(function (item) { return item.vc_stage == '2. On-farm' }).sort((a, b) => d3.descending(a.freq, b.freq));
-                        var harvesting = cp.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' }).sort((a, b) => d3.descending(a.freq, b.freq));
-                        var marketing = cp.filter(function (item) { return item.vc_stage == '4. Marketing' }).sort((a, b) => d3.descending(a.freq, b.freq));                        
-                        
-                        var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);                        
-                        var table = '';
-                        for (var i =0; i < max; i++) {
-                            table = table + '<tr ' + (i<5? 'class="table-danger"': '') + '>';
-                            table = table + '<td>' + (inputs.length > i ? inputs[i].impact : '') + '</td>';
-                            table = table + '<td>' + (on_farm.length > i ? on_farm[i].impact:'') + '</td>';
-                            table = table + '<td>' + (harvesting.length > i ? harvesting[i].impact:'') + '</td>';
-                            table = table + '<td>' + (marketing.length > i ? marketing[i].impact:'') + '</td>';
-                            table = table + '</tr>';
-                        }
-                        table = table + '</table>';
-                        $("#impacts_table  > tbody").html(table);
+                        cbo_impact_hazard.append($("<option />").val("All").text("All"));
+                        cbo_impact_hazard.val("All");
 
+                        // Set the event change for both controls
+                        cbo_impact_crop.on('change', function (e) {
+                            impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
+                        });
+                        cbo_impact_hazard.on('change', function (e) {
+                            impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
+                        });
 
+                        // Default fill
+                        impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
                     });
                 }
 
