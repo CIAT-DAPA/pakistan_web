@@ -97,7 +97,7 @@
                 <div id="impacts" class="tab_layout">
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h2>Section title</h2>
+                        <h2 id="impacts_title"></h2>
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group mr-2">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -116,17 +116,14 @@
                             </button>
                         </div>
                     </div>
-
-
                     <div class="table-responsive">
-                        <table class="table table-striped table-sm">
+                        <table id="impacts_table" class="table table-striped table-sm">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
+                                    <th>1. Input</th>
+                                    <th>2. On-farm</th>
+                                    <th>3. Harvesting, storage & processing</th>
+                                    <th>4. Marketing</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -221,19 +218,38 @@
                                 .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
         */
         function onEachFeature(feature, layer) {
-            console.log(feature.properties);
+            //console.log(feature.properties);
             layer.on('click', function (e) {
                 if (tab === 'impacts') {
+                    //console.log(layer.feature.properties);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
-                        cp = data.filter(function (item) { return item.id == layer.feature.id; });
-                        if (cp.length > 0) {
-                            var table = '<table class="table">';
-                            for (var key in cp[0]) {
-                                table = table + '<tr><th>' + key + '</th><td>' + cp[0][key] + '</td></tr>';
-                            }
-                            table = table + '</table>';
-                            $("#cp").html(table);
+                        cp = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+                        $("#impacts_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+                        /*var crops_livestock = d3.map(cp, function(d){return d.crop_livestock;}).keys();
+                        var hazard = d3.map(cp, function(d){return d.hazard;}).keys();
+                        if(crops_livestock.length > 0){
+                            crops_livestock.forEach(element => {
+                                
+                            });
+                        }*/                        
+                        var inputs = cp.filter(function (item) { return item.vc_stage == '1.Input ' }).sort((a, b) => d3.descending(a.freq, b.freq));
+                        var on_farm = cp.filter(function (item) { return item.vc_stage == '2. On-farm' }).sort((a, b) => d3.descending(a.freq, b.freq));
+                        var harvesting = cp.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' }).sort((a, b) => d3.descending(a.freq, b.freq));
+                        var marketing = cp.filter(function (item) { return item.vc_stage == '4. Marketing' }).sort((a, b) => d3.descending(a.freq, b.freq));                        
+                        
+                        var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);                        
+                        var table = '';
+                        for (var i =0; i < max; i++) {
+                            table = table + '<tr ' + (i<5? 'class="table-danger"': '') + '>';
+                            table = table + '<td>' + (inputs.length > i ? inputs[i].impact : '') + '</td>';
+                            table = table + '<td>' + (on_farm.length > i ? on_farm[i].impact:'') + '</td>';
+                            table = table + '<td>' + (harvesting.length > i ? harvesting[i].impact:'') + '</td>';
+                            table = table + '<td>' + (marketing.length > i ? marketing[i].impact:'') + '</td>';
+                            table = table + '</tr>';
                         }
+                        table = table + '</table>';
+                        $("#impacts_table  > tbody").html(table);
+
 
                     });
                 }
