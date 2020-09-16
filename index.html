@@ -16,6 +16,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style>
+        .cell_green{
+            background-color: #eaf1dd;
+        }
+        .cell_yellow{
+            background-color: #fdfed0;
+        }
+        .cell_orange{
+            background-color: #fde9d9;
+        }
+        .cell_red{
+            background-color: #ffb3b3;
+        }
         #plot svg {
             height: 500px;
             width: 100%;
@@ -59,8 +71,14 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" onclick="click_tab('impacts')">
+                                <i class="fas fa-bolt"></i>
+                                Climate impacts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="click_tab('risk')">
                                 <i class="fas fa-biohazard"></i>
-                                CC Impacts
+                                Climate risk
                             </a>
                         </li>
                         <li class="nav-item">
@@ -100,7 +118,7 @@
                         <h2 id="climate_climatology_title"></h2>
                     </div>
                     <h3>Climatology</h3>
-                    <div id="climate_climatology_plot">
+                    <div id="climate_climatology_plot" style="height: 400px;">
                         <svg></svg>
                     </div>
                 </div>
@@ -140,6 +158,55 @@
                     </div>
                 </div>
                 <!-- End CC Impacts -->
+
+                <!-- Start Risk -->
+                <div id="risk" class="tab_layout">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h2 id="risk_title"></h2>
+                    </div>
+                    <h3>Climate risk</h3>
+                    <div class="table-responsive">
+                        <table id="risk_table" class="table table-striped table-sm">
+                            <tr>
+                                <th>Severity / Frequency</th>
+                                <th>Minor severity (<10% losses)</th>
+                                <th>Moderate severity (10-30% losses)</th>
+                                <th>Major severity (30-50% losses)</th>
+                                <th>Severe severity (>50% losses)</th>
+                            </tr>
+                            <tr>
+                                <th>Every 10 years</th>
+                                <th id="r1-1" class="cell_green"></th>
+                                <th id="r1-2" class="cell_green"></th>
+                                <th id="r1-3" class="cell_yellow"></th>
+                                <th id="r1-4" class="cell_orange"></th>
+                            </tr>
+                            <tr>
+                                <th>Every 5 years</th>
+                                <th id="r2-1" class="cell_green"></th>
+                                <th id="r2-2" class="cell_yellow"></th>
+                                <th id="r2-3" class="cell_yellow"></th>
+                                <th id="r2-4" class="cell_orange"></th>
+                            </tr>
+                            <tr>
+                                <th>Every second year</th>
+                                <th id="r3-1" class="cell_yellow"></th>
+                                <th id="r3-2" class="cell_yellow"></th>
+                                <th id="r3-3" class="cell_orange"></th>
+                                <th id="r3-4" class="cell_red"></th>
+                            </tr>
+                            <tr>
+                                <th>Every year</th>
+                                <th id="r4-1" class="cell_orange"></th>
+                                <th id="r4-2" class="cell_orange"></th>
+                                <th id="r4-3" class="cell_red"></th>
+                                <th id="r4-4" class="cell_red"></th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- End Risk -->
             </main>
         </div>
     </div>
@@ -174,6 +241,7 @@
         // Datasets
         var climate_climatology_d = [];
         var hazard_d = [];
+        var risk_d = [];
         /**
         * This function change the type of information and functionalities of the web page depending of the value
         */
@@ -192,9 +260,14 @@
                 $("#climate").removeClass("d-none");
             }
             else if (tab === 'impacts') {
-                $("#title").html("CC Impacts");
+                $("#title").html("Climate impacts");
                 $("#description").html("Description");
                 $("#impacts").removeClass("d-none");
+            }
+            else if (tab === 'risk') {
+                $("#title").html("Climate risk");
+                $("#description").html("Description");
+                $("#risk").removeClass("d-none");
             }
             else if (tab === 'practices') {
                 $("#title").html("Practices");
@@ -249,56 +322,61 @@
             // Clear char
             $("#chart svg").html("");
             // Filtering data
-            var d_f = climate_climatology_d.filter(function (d) { return d.district == district });
-            df = [{
-                    values: d_f.map(function (item) {
-                                return {
-                                    x: parseInt(item.month),
-                                    y: parseFloat(item.prec)
-                                }
-                            }),      //values - represents the array of {x,y} data points
-                            bar: true,
-                            key: 'Precipitation', //key  - the name of the series.
-                            color: '#ff7f0e'  //color - optional: choose your own line color.
-                        },
-                        {
-                    values: d_f.map(function (item) {
-                                return {
-                                    x: parseInt(item.month),
-                                    y: parseFloat(item.tmax)
-                                }
-                            }),      //values - represents the array of {x,y} data points
-                            key: 'Temperature maximun', //key  - the name of the series.
-                            color: '#ff7f0e'  //color - optional: choose your own line color.
-                        },
-                        {
-                    values: d_f.map(function (item) {
-                                return {
-                                    x: parseInt(item.month),
-                                    y: parseFloat(item.tmin)
-                                }
-                            }),      //values - represents the array of {x,y} data points
-                            key: 'Temperature minimun', //key  - the name of the series.
-                            color: '#ff7f0e'  //color - optional: choose your own line color.
-                        }];            
+            var d_f = climate_climatology_d;
+            d_f = [{
+                values: d_f.map(function (item) {
+                    return {
+                        x: parseInt(item.month),
+                        y: parseFloat(item.prec)
+                    }
+                }),      //values - represents the array of {x,y} data points
+                bar: true,
+                key: 'Precipitation', //key  - the name of the series.
+                color: '#596dad'  //color - optional: choose your own line color.
+            },
+            {
+                values: d_f.map(function (item) {
+                    return {
+                        x: parseInt(item.month),
+                        y: parseFloat(item.tmax)
+                    }
+                }),      //values - represents the array of {x,y} data points
+                key: 'Maximum temperature', //key  - the name of the series.
+                color: '#e34147'  //color - optional: choose your own line color.
+            },
+            {
+                values: d_f.map(function (item) {
+                    return {
+                        x: parseInt(item.month),
+                        y: parseFloat(item.tmin)
+                    }
+                }),      //values - represents the array of {x,y} data points
+                key: 'Minimum temperature', //key  - the name of the series.
+                color: '#e5d900'  //color - optional: choose your own line color.
+            }];
+            console.log(d_f)
             nv.addGraph(function () {
                 var chart_climatology = nv.models.linePlusBarChart()
                     //.useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
                     .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
-                    .showYAxis(true)        //Show the y-axis
-                    .showXAxis(true)        //Show the x-axis
+                    //.showYAxis(true)        //Show the y-axis
+                    //.showXAxis(true)        //Show the x-axis
                     ;
 
                 chart_climatology.xAxis     //Chart x-axis settings
-                    .axisLabel('N Rate')
+                    .axisLabel('Months')
                     .tickFormat(d3.format('.0f'));
 
-                chart_climatology.yAxis     //Chart y-axis settings
-                    .axisLabel('Yield (kg/ha)')
+                chart_climatology.y1Axis     //Chart y-axis settings
+                    .axisLabel('Precipitatio (mm)')
+                    .tickFormat(d3.format('.0f'));
+
+                chart_climatology.y2Axis     //Chart y-axis settings
+                    .axisLabel('Temperature (°C)')
                     .tickFormat(d3.format('.0f'));
 
 
-                d3.select('#plot svg')    //Select the <svg> element you want to render the chart in.   
+                d3.select('#climate_climatology_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(d_f)         //Populate the <svg> element with chart data...
                     .call(chart_climatology);          //Finally, render the chart!
 
@@ -331,7 +409,10 @@
             }
             table = table + '</table>';
             $("#impacts_table  > tbody").html(table);
+        }
 
+        function risk_fill(data) {
+            data.forEach(element => $("#r" + element.severity + '-' + element.frequency).html($("#r" + element.severity + '-' + element.frequency).html() + '- ' + element.hazard + '<br />'));
         }
 
         /**
@@ -344,10 +425,10 @@
                 else if (tab === 'climate') {
                     $("#climate_climatology_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/climatology.csv", function (error, data) {
-                        climate_climatology_d = data;
-                        
+                        climate_climatology_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+
                         climate_fill(layer.feature.properties.NAME_2, layer.feature.properties.NAME_3);
-                        
+
                     });
                 }
                 else if (tab === 'impacts') {
@@ -384,6 +465,15 @@
 
                         // Default fill
                         impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
+                    });
+                }
+                else if (tab === 'risk') {
+                    $("#risk_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/risk/risk.csv", function (error, data) {
+                        risk_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+
+                        risk_fill(risk_d);
+
                     });
                 }
                 else if (tab === 'practices') {
@@ -455,7 +545,8 @@
             L.geoJSON(data, { onEachFeature: onEachFeature }).addTo(map);
         });
 
-
+        // Default tab
+        click_tab('cropping');
 
     </script>
 </body>
