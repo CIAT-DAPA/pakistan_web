@@ -422,7 +422,7 @@
             }
             data.forEach(element => {
                 var key = "#r" + element.severity + '-' + element.frequency;
-                if(key != '#r#N/A-#N/A'){
+                if(element.severity != '#N/A' && element.frequency !='#N/A'){
                     $(key).html($(key).html() + '- ' + element.hazard + '<br />')
                 }
             });
