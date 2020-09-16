@@ -179,32 +179,32 @@
         */
         function click_tab(tab_selected) {
             tab = tab_selected;
-            $(".tab_layout").addClass("invisible");
+            $(".tab_layout").addClass("d-none");
 
             if (tab === 'cropping') {
                 $("#title").html("Cropping system");
                 $("#description").html("Description");
-                $("#cropping").removeClass("invisible");
+                $("#cropping").removeClass("d-none");
             }
             else if (tab === 'climate') {
                 $("#title").html("Climate");
                 $("#description").html("Description");
-                $("#climate").removeClass("invisible");
+                $("#climate").removeClass("d-none");
             }
             else if (tab === 'impacts') {
                 $("#title").html("CC Impacts");
                 $("#description").html("Description");
-                $("#impacts").removeClass("invisible");
+                $("#impacts").removeClass("d-none");
             }
             else if (tab === 'practices') {
                 $("#title").html("Practices");
                 $("#description").html("Description");
-                $("#practices").removeClass("invisible");
+                $("#practices").removeClass("d-none");
             }
             else if (tab === 'enablers') {
                 $("#title").html("Enablers");
                 $("#description").html("Description");
-                $("#enablers").removeClass("invisible");
+                $("#enablers").removeClass("d-none");
             }
         }
 
@@ -283,7 +283,7 @@
                         }];            
             nv.addGraph(function () {
                 var chart_climatology = nv.models.linePlusBarChart()
-                    .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
+                    //.useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
                     .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
                     .showYAxis(true)        //Show the y-axis
                     .showXAxis(true)        //Show the x-axis
