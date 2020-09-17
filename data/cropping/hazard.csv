@@ -1,0 +1,97 @@
+province,district,village,hazard,month,value
+Uchu,Chitral,,Drought - Low rainfall,Jan,++
+Uchu,Chitral,,Drought - Low rainfall,Feb,+
+Uchu,Chitral,,Drought - Low rainfall,Mar,+
+Uchu,Chitral,,Drought - Low rainfall,Apr,
+Uchu,Chitral,,Drought - Low rainfall,May,
+Uchu,Chitral,,Drought - Low rainfall,Jun,
+Uchu,Chitral,,Drought - Low rainfall,Jul,
+Uchu,Chitral,,Drought - Low rainfall,Aug,
+Uchu,Chitral,,Drought - Low rainfall,Sep,
+Uchu,Chitral,,Drought - Low rainfall,Oct,
+Uchu,Chitral,,Drought - Low rainfall,Nov,
+Uchu,Chitral,,Drought - Low rainfall,Dec,
+Uchu,Chitral,,Flooding - Riverine,Jan,
+Uchu,Chitral,,Flooding - Riverine,Feb,++
+Uchu,Chitral,,Flooding - Riverine,Mar,++
+Uchu,Chitral,,Flooding - Riverine,Apr,+
+Uchu,Chitral,,Flooding - Riverine,May,+
+Uchu,Chitral,,Flooding - Riverine,Jun,
+Uchu,Chitral,,Flooding - Riverine,Jul,
+Uchu,Chitral,,Flooding - Riverine,Aug,
+Uchu,Chitral,,Flooding - Riverine,Sep,
+Uchu,Chitral,,Flooding - Riverine,Oct,
+Uchu,Chitral,,Flooding - Riverine,Nov,
+Uchu,Chitral,,Flooding - Riverine,Dec,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Jan,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Feb,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Mar,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Apr,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",May,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Jun,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Jul,++
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Aug,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Sep,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Oct,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Nov,
+Uchu,Chitral,,"Pest outbreak (Locust, Army worm, Hopper burn)",Dec,
+Uchu,Chitral,,Heat stress,Jan,
+Uchu,Chitral,,Heat stress,Feb,
+Uchu,Chitral,,Heat stress,Mar,
+Uchu,Chitral,,Heat stress,Apr,
+Uchu,Chitral,,Heat stress,May,
+Uchu,Chitral,,Heat stress,Jun,
+Uchu,Chitral,,Heat stress,Jul,
+Uchu,Chitral,,Heat stress,Aug,+
+Uchu,Chitral,,Heat stress,Sep,+
+Uchu,Chitral,,Heat stress,Oct,
+Uchu,Chitral,,Heat stress,Nov,
+Uchu,Chitral,,Heat stress,Dec,
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Jan,
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Feb,
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Mar,
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Apr,
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),May,++
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Jun,+
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Jul,+
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Aug,
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Sep,
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Oct,
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Nov,
+Uchu,Chitral,,Disease outbreak (Plant & Livestock),Dec,
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Jan,
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Feb,
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Mar,
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Apr,
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,May,
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Jun,++
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Jul,++
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Aug,+
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Sep,+
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Oct,
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Nov,
+Uchu,Chitral,,Flooding - Heavy rain/Flash flooding,Dec,
+Uchu,Chitral,,Thunders (Lightening & Fire),Jan,
+Uchu,Chitral,,Thunders (Lightening & Fire),Feb,++
+Uchu,Chitral,,Thunders (Lightening & Fire),Mar,+
+Uchu,Chitral,,Thunders (Lightening & Fire),Apr,+
+Uchu,Chitral,,Thunders (Lightening & Fire),May,
+Uchu,Chitral,,Thunders (Lightening & Fire),Jun,
+Uchu,Chitral,,Thunders (Lightening & Fire),Jul,
+Uchu,Chitral,,Thunders (Lightening & Fire),Aug,
+Uchu,Chitral,,Thunders (Lightening & Fire),Sep,
+Uchu,Chitral,,Thunders (Lightening & Fire),Oct,
+Uchu,Chitral,,Thunders (Lightening & Fire),Nov,
+Uchu,Chitral,,Thunders (Lightening & Fire),Dec,
+Uchu,Chitral,,Drought - Low irrigation water supply,Jan,
+Uchu,Chitral,,Drought - Low irrigation water supply,Feb,
+Uchu,Chitral,,Drought - Low irrigation water supply,Mar,++
+Uchu,Chitral,,Drought - Low irrigation water supply,Apr,++
+Uchu,Chitral,,Drought - Low irrigation water supply,May,+
+Uchu,Chitral,,Drought - Low irrigation water supply,Jun,+
+Uchu,Chitral,,Drought - Low irrigation water supply,Jul,
+Uchu,Chitral,,Drought - Low irrigation water supply,Aug,
+Uchu,Chitral,,Drought - Low irrigation water supply,Sep,
+Uchu,Chitral,,Drought - Low irrigation water supply,Oct,
+Uchu,Chitral,,Drought - Low irrigation water supply,Nov,
+Uchu,Chitral,,Drought - Low irrigation water supply,Dec,
