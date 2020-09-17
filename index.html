@@ -434,7 +434,7 @@
                                 .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
         */
 
-        function cropping_fill(production, crop_c) {
+        function cropping_fill(production, crop_c, hazard_c) {
             // Clear chart
             $("#cropping_planted_plot svg").html("");
             $("#cropping_production_plot svg").html("");
@@ -485,11 +485,11 @@
                 return d_li_chart;
             });
 
+            // Data calendars
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
             // Cropping calendar
-            var crops = Array.from(new Set(crop_c.map(function(d){ return d.crop_livestock;})));
-            
-            //hazard_d.filter(function (item) { return item.vc_stage == '1.Input ' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+            var crops = Array.from(new Set(crop_c.map(function(d){ return d.crop_livestock;})));            
             var table = '';
             $.each(crops, function( index, value ){                
                 table = table + '<tr>';
@@ -501,6 +501,20 @@
             });
             table = table + '</table>';
             $("#cropping_calendar_table  > tbody").html(table);
+
+            // Hazard calendar
+            var hazards = Array.from(new Set(hazard_c.map(function(d){ return d.hazard;})));            
+            table = '';
+            $.each(hazards, function( index, value ){                
+                table = table + '<tr>';
+                table = table + '<td>' + value + '</td>';
+                $.each(months, function( i, v ){
+                    table = table + '<td>' + hazard_c.filter(function(d){ return d.hazard == value && d.month == v})[0].value  + '</td>';
+                });
+                table = table + '</tr>';
+            });
+            table = table + '</table>';
+            $("#cropping_hazard_table  > tbody").html(table);
 
         }
 
@@ -626,7 +640,11 @@
 
                         d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data2) {
                             var crop_c = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });                            
-                            cropping_fill(c_production,crop_c);
+                            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/hazard.csv", function (error, data3) {
+                                var hazard_c = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });                            
+                                cropping_fill(c_production,crop_c,hazard_c);
+
+                            });
 
                         });
 
