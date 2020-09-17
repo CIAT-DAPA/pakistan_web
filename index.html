@@ -285,9 +285,7 @@
         var tab = 'impacts';
 
         // Datasets
-        var climate_climatology_d = [];
         var hazard_d = [];
-        var risk_d = [];
         /**
         * This function change the type of information and functionalities of the web page depending of the value
         */
@@ -364,9 +362,62 @@
                                 .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
         */
 
-        function climate_fill(province, district) {
-            // Clear char
-            $("#chart svg").html("");
+        function cropping_fill(production) {
+            // Clear chart
+            $("#cropping_planted_plot svg").html("");
+            $("#cropping_production_plot svg").html("");
+            $("#cropping_livestock_plot svg").html("");           
+            // Filtering data
+            var d_pl = production.filter(function (d) { return d.sector == 'Crops'; }).map(function (d) { return { "label": d.crop_livestock, "value": parseFloat(d.value) } });
+            var d_pr = production.filter(function (d) { return d.sector == 'Production'; }).map(function (d) { return { "label": d.crop_livestock, "value": parseFloat(d.value) } });
+            var d_li = production.filter(function (d) { return d.sector == 'Livestock'; }).map(function (d) { return { "label": d.crop_livestock, "value": parseFloat(d.value) } });
+            console.log(production);
+            // Plots
+            nv.addGraph(function () {
+                var d_pl_chart = nv.models.pieChart()
+                    .x(function (d) { return d.label })
+                    .y(function (d) { return d.value })
+                    .showLabels(true);
+
+                d3.select("#cropping_planted_plot svg")
+                    .datum(d_pl)
+                    .transition().duration(1200)
+                    .call(d_pl_chart);
+
+                return d_pl_chart;
+            });
+            nv.addGraph(function () {
+                var d_pr_chart = nv.models.pieChart()
+                    .x(function (d) { return d.label })
+                    .y(function (d) { return d.value })
+                    .showLabels(true);
+
+                d3.select("#cropping_production_plot svg")
+                    .datum(d_pr)
+                    .transition().duration(1200)
+                    .call(d_pr_chart);
+
+                return d_pr_chart;
+            });
+            nv.addGraph(function () {
+                var d_li_chart = nv.models.pieChart()
+                    .x(function (d) { return d.label })
+                    .y(function (d) { return d.value })
+                    .showLabels(true);
+
+                d3.select("#cropping_livestock_plot svg")
+                    .datum(d_li)
+                    .transition().duration(1200)
+                    .call(d_li_chart);
+
+                return d_li_chart;
+            });
+
+        }
+
+        function climate_fill(climate_climatology_d) {
+            // Clear chart
+            $("#climate_climatology_plot svg").html("");
             // Filtering data
             var d_f = climate_climatology_d;
             d_f = [{
@@ -400,7 +451,6 @@
                 key: 'Minimum temperature', //key  - the name of the series.
                 color: '#e5d900'  //color - optional: choose your own line color.
             }];
-            console.log(d_f)
             nv.addGraph(function () {
                 var chart_climatology = nv.models.linePlusBarChart()
                     //.useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
@@ -480,13 +530,21 @@
         function onEachFeature(feature, layer) {
             //console.log(feature.properties);
             layer.on('click', function (e) {
-                if (tab === 'cropping') { }
+                if (tab === 'cropping') {
+                    $("#cropping_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
+                        var c_production = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+
+                        cropping_fill(c_production);
+
+                    });
+                }
                 else if (tab === 'climate') {
                     $("#climate_climatology_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/climatology.csv", function (error, data) {
-                        climate_climatology_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+                        var c_climatology_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
 
-                        climate_fill(layer.feature.properties.NAME_2, layer.feature.properties.NAME_3);
+                        climate_fill(c_climatology_d);
 
                     });
                 }
@@ -529,10 +587,8 @@
                 else if (tab === 'risk') {
                     $("#risk_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/risk/risk.csv", function (error, data) {
-                        risk_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-
+                        var risk_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                         risk_fill(risk_d);
-
                     });
                 }
                 else if (tab === 'practices') {
