@@ -643,6 +643,33 @@
         }
 
         /**
+        * Function which filter dataset for practices and show data into the table
+        */
+        function practices_fill(crop, hazard) {
+            // Filtering data
+            /*
+            var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1.Input ' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+
+            // Fixing data in the table
+            var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
+            var table = '';
+            for (var i = 0; i < max; i++) {
+                table = table + '<tr ' + (i < 5 ? 'class="table-danger"' : '') + '>';
+                table = table + '<td>' + (inputs.length > i ? inputs[i].impact : '') + '</td>';
+                table = table + '<td>' + (on_farm.length > i ? on_farm[i].impact : '') + '</td>';
+                table = table + '<td>' + (harvesting.length > i ? harvesting[i].impact : '') + '</td>';
+                table = table + '<td>' + (marketing.length > i ? marketing[i].impact : '') + '</td>';
+                table = table + '</tr>';
+            }
+            table = table + '</table>';
+            $("#impacts_table  > tbody").html(table);
+            */
+        }
+
+        /**
         * Function which fill table of risk for climate risk
         */
         function risk_fill(data) {
@@ -669,26 +696,20 @@
                     $("#cropping_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
                         var c_production = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-
                         d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data2) {
                             var crop_c = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });                            
                             d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/hazard.csv", function (error, data3) {
                                 var hazard_c = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });                            
                                 cropping_fill(c_production,crop_c,hazard_c);
-
                             });
-
                         });
-
                     });
                 }
                 else if (tab === 'climate') {
                     $("#climate_climatology_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/climatology.csv", function (error, data) {
                         var c_climatology_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-
                         climate_fill(c_climatology_d);
-
                     });
                 }
                 else if (tab === 'impacts') {
@@ -735,7 +756,40 @@
                     });
                 }
                 else if (tab === 'practices') {
+                    $("#practices_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/practices/practices.csv", function (error, data) {
+                        practices_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
 
+                        // Filling the cbo controls with hazard and crops
+                        var crop = d3.map(practices_d, function (d) { return d.crop; }).keys();
+                        var cbo_practices_crop = $("#cbo_practices_crop");
+                        cbo_practices_crop.empty();
+                        $.each(crop, function () {
+                            cbo_practices_crop.append($("<option />").val(this).text(this));
+                        });
+                        cbo_practices_crop.append($("<option />").val("All").text("All"));
+                        cbo_practices_crop.val("All");
+
+                        var hazard = d3.map(practices_d, function (d) { return d.hazard; }).keys();
+                        var cbo_practices_hazard = $("#cbo_practices_hazard");
+                        cbo_practices_hazard.empty();
+                        $.each(hazard, function () {
+                            cbo_practices_hazard.append($("<option />").val(this).text(this));
+                        });
+                        cbo_practices_hazard.append($("<option />").val("All").text("All"));
+                        cbo_practices_hazard.val("All");
+
+                        // Set the event change for both controls
+                        cbo_practices_crop.on('change', function (e) {
+                            practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
+                        });
+                        cbo_practices_hazard.on('change', function (e) {
+                            practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
+                        });
+
+                        // Default fill
+                        practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
+                    });
                 }
                 else if (tab === 'enablers') {
 
