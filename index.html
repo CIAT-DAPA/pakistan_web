@@ -135,7 +135,7 @@
                 </p>
                 <div id="map" style="height: 500px; width: 100%;"></div>
 
-                <!-- Start Climate -->
+                <!-- Start Cropping -->
                 <div id="cropping" class="tab_layout">
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -227,7 +227,7 @@
                         </table>
                     </div>
                 </div>
-                <!-- End Climate -->
+                <!-- End Cropping -->
 
                 <!-- Start Climate -->
                 <div id="climate" class="tab_layout">
@@ -325,6 +325,31 @@
                     </div>
                 </div>
                 <!-- End Risk -->
+
+                <!-- Start Practices -->
+                <div id="practices" class="tab_layout">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h2 id="practices_title"></h2>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group mr-2">
+                                <select id="cbo_practices_crop" class="form-control form-control-lg">
+                                </select>
+                                <select id="cbo_practices_hazard" class="form-control form-control-lg">
+                                </select>
+                                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <div id="practices_table">
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End Practices -->
             </main>
         </div>
     </div>
@@ -358,6 +383,7 @@
 
         // Datasets
         var hazard_d = [];
+        var practices_d = [];
         /**
         * This function change the type of information and functionalities of the web page depending of the value
         */
@@ -434,6 +460,9 @@
                                 .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
         */
 
+        /**
+        * Function which fill cropping data
+        */
         function cropping_fill(production, crop_c, hazard_c) {
             // Clear chart
             $("#cropping_planted_plot svg").html("");
@@ -518,6 +547,9 @@
 
         }
 
+        /**
+        * Function which fill climate data
+        */
         function climate_fill(climate_climatology_d) {
             // Clear chart
             $("#climate_climatology_plot svg").html("");
