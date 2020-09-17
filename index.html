@@ -16,20 +16,29 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style>
-        .cell_green{
+        .cell_green {
             background-color: #eaf1dd;
         }
-        .cell_yellow{
+
+        .cell_yellow {
             background-color: #fdfed0;
         }
-        .cell_orange{
+
+        .cell_orange {
             background-color: #fde9d9;
         }
-        .cell_red{
+
+        .cell_red {
             background-color: #ffb3b3;
         }
-        #plot svg {
+
+        #climate_climatology_plot svg {
             height: 500px;
+            width: 100%;
+        }
+
+        .cropping_pie svg {
+            height: 300px;
             width: 100%;
         }
     </style>
@@ -112,13 +121,50 @@
                 <div id="map" style="height: 500px; width: 100%;"></div>
 
                 <!-- Start Climate -->
+                <div id="cropping" class="tab_layout">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h2 id="cropping_title"></h2>
+                    </div>
+                    <h3>Production</h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4 class="text-center">Planted area</h4>
+                            <div class="card mb-4 shadow-sm">
+                                <div id="cropping_planted_plot" class="cropping_pie">
+                                    <svg></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <h4 class="text-center">Production</h4>
+                                <div id="cropping_production_plot" class="cropping_pie">
+                                    <svg></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <h4 class="text-center">Livestock</h4>
+                                <div id="cropping_livestock_plot" class="cropping_pie">
+                                    <svg></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- End Climate -->
+
+                <!-- Start Climate -->
                 <div id="climate" class="tab_layout">
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h2 id="climate_climatology_title"></h2>
                     </div>
                     <h3>Climatology</h3>
-                    <div id="climate_climatology_plot" style="height: 400px;">
+                    <div id="climate_climatology_plot">
                         <svg></svg>
                     </div>
                 </div>
@@ -368,7 +414,7 @@
                     .tickFormat(d3.format('.0f'));
 
                 chart_climatology.y1Axis     //Chart y-axis settings
-                    .axisLabel('Precipitatio (mm)')
+                    .axisLabel('Precipitation (mm)')
                     .tickFormat(d3.format('.0f'));
 
                 chart_climatology.y2Axis     //Chart y-axis settings
@@ -415,14 +461,14 @@
         * Function which fill table of risk for climate risk
         */
         function risk_fill(data) {
-            for(var i=1; i<5; i++){
-                for(var j=1; j<5; j++){
+            for (var i = 1; i < 5; i++) {
+                for (var j = 1; j < 5; j++) {
                     $("#r" + i + '-' + j).html("");
-                }    
+                }
             }
             data.forEach(element => {
                 var key = "#r" + element.severity + '-' + element.frequency;
-                if(element.severity != '#N/A' && element.frequency !='#N/A'){
+                if (element.severity != '#N/A' && element.frequency != '#N/A') {
                     $(key).html($(key).html() + '- ' + element.hazard + '<br />')
                 }
             });
