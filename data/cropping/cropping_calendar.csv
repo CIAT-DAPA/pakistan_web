@@ -1,0 +1,73 @@
+province,district,village,crop_livestock,coverage,month,value
+Uchu,Chitral,,Rice,30,Jan,
+Uchu,Chitral,,Rice,30,Feb,
+Uchu,Chitral,,Rice,30,Mar,Planting
+Uchu,Chitral,,Rice,30,Apr,Planting
+Uchu,Chitral,,Rice,30,May,Growing
+Uchu,Chitral,,Rice,30,Jun,Growing
+Uchu,Chitral,,Rice,30,Jul,Growing
+Uchu,Chitral,,Rice,30,Aug,Harvesting
+Uchu,Chitral,,Rice,30,Sep,Harvesting
+Uchu,Chitral,,Rice,30,Oct,
+Uchu,Chitral,,Rice,30,Nov,
+Uchu,Chitral,,Rice,30,Dec,
+Uchu,Chitral,,Wheat,30,Jan,
+Uchu,Chitral,,Wheat,30,Feb,
+Uchu,Chitral,,Wheat,30,Mar,
+Uchu,Chitral,,Wheat,30,Apr,
+Uchu,Chitral,,Wheat,30,May,Planting
+Uchu,Chitral,,Wheat,30,Jun,Planting
+Uchu,Chitral,,Wheat,30,Jul,Growing
+Uchu,Chitral,,Wheat,30,Aug,Growing
+Uchu,Chitral,,Wheat,30,Sep,Growing
+Uchu,Chitral,,Wheat,30,Oct,Harvesting
+Uchu,Chitral,,Wheat,30,Nov,Harvesting
+Uchu,Chitral,,Wheat,30,Dec,
+Uchu,Chitral,,Cotton,20,Jan,Growing
+Uchu,Chitral,,Cotton,20,Feb,Harvesting
+Uchu,Chitral,,Cotton,20,Mar,Harvesting
+Uchu,Chitral,,Cotton,20,Apr,
+Uchu,Chitral,,Cotton,20,May,
+Uchu,Chitral,,Cotton,20,Jun,
+Uchu,Chitral,,Cotton,20,Jul,
+Uchu,Chitral,,Cotton,20,Aug,
+Uchu,Chitral,,Cotton,20,Sep,Planting
+Uchu,Chitral,,Cotton,20,Oct,Planting
+Uchu,Chitral,,Cotton,20,Nov,Growing
+Uchu,Chitral,,Cotton,20,Dec,Growing
+Uchu,Chitral,,Sugarcane,20,Jan,Growing
+Uchu,Chitral,,Sugarcane,20,Feb,Harvesting
+Uchu,Chitral,,Sugarcane,20,Mar,Harvesting
+Uchu,Chitral,,Sugarcane,20,Apr,
+Uchu,Chitral,,Sugarcane,20,May,
+Uchu,Chitral,,Sugarcane,20,Jun,
+Uchu,Chitral,,Sugarcane,20,Jul,
+Uchu,Chitral,,Sugarcane,20,Aug,
+Uchu,Chitral,,Sugarcane,20,Sep,Planting
+Uchu,Chitral,,Sugarcane,20,Oct,Planting
+Uchu,Chitral,,Sugarcane,20,Nov,Growing
+Uchu,Chitral,,Sugarcane,20,Dec,Growing
+Uchu,Chitral,,Cattle,NA,Jan,
+Uchu,Chitral,,Cattle,NA,Feb,
+Uchu,Chitral,,Cattle,NA,Mar,Breeding
+Uchu,Chitral,,Cattle,NA,Apr,Breeding
+Uchu,Chitral,,Cattle,NA,May,Breeding
+Uchu,Chitral,,Cattle,NA,Jun,Breeding
+Uchu,Chitral,,Cattle,NA,Jul,Breeding
+Uchu,Chitral,,Cattle,NA,Aug,
+Uchu,Chitral,,Cattle,NA,Sep,
+Uchu,Chitral,,Cattle,NA,Oct,
+Uchu,Chitral,,Cattle,NA,Nov,
+Uchu,Chitral,,Cattle,NA,Dec,
+Uchu,Chitral,,Buffalo ,NA,Jan,
+Uchu,Chitral,,Buffalo ,NA,Feb,
+Uchu,Chitral,,Buffalo ,NA,Mar,
+Uchu,Chitral,,Buffalo ,NA,Apr,Breeding
+Uchu,Chitral,,Buffalo ,NA,May,Breeding
+Uchu,Chitral,,Buffalo ,NA,Jun,Breeding
+Uchu,Chitral,,Buffalo ,NA,Jul,Breeding
+Uchu,Chitral,,Buffalo ,NA,Aug,Breeding
+Uchu,Chitral,,Buffalo ,NA,Sep,
+Uchu,Chitral,,Buffalo ,NA,Oct,
+Uchu,Chitral,,Buffalo ,NA,Nov,
+Uchu,Chitral,,Buffalo ,NA,Dec,
