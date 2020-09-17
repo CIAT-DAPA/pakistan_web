@@ -168,7 +168,19 @@
                             </div>
                         </div>
                         <h3>Cropping calendar</h3>
-                        <table id="cropping_calendar_table" class="table table-striped table-sm">
+                        <table class="table table-sm">
+                            <tr>
+                                <td class="crop_c_Breeding">&nbsp;</td>
+                                <td class="">Breeding</td>
+                                <td class="crop_c_Growing">&nbsp;</td>
+                                <td class="">Growing</td>
+                                <td class="crop_c_Harvesting">&nbsp;</td>
+                                <td class="">Harvesting</td>
+                                <td class="crop_c_Planting">&nbsp;</td>
+                                <td class="">Planting</td>
+                            </tr>
+                        </table>
+                        <table id="cropping_calendar_table" class="table table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Crop / Livestock</th>
@@ -451,17 +463,21 @@
             });
 
             // Cropping calendar
-            var crops = crop_c.map(function(d){return d.crop_livestock;}).keys();
+            var crops = Array.from(new Set(crop_c.map(function(d){ return d.crop_livestock;})));
+            
             //hazard_d.filter(function (item) { return item.vc_stage == '1.Input ' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
             var table = '';
-            for (var i = 0; i < crops.length; i++) {
+            $.each(crops, function( index, value ){                
                 table = table + '<tr>';
-                table = table + '<td class="crop_c_' + crop_c.filter(function(d){ return d.crop_livestock == crops[i] && d.month == 'Jan'})[0].value  + '"></td>';
-                table = table + '<td class="crop_c_' + crop_c.filter(function(d){ return d.crop_livestock == crops[i] && d.month == 'Feb'})[0].value  + '"></td>';
+                table = table + '<td>' + value + '</td>';
+                $.each(months, function( i, v ){
+                    table = table + '<td class="crop_c_' + crop_c.filter(function(d){ return d.crop_livestock == value && d.month == v})[0].value  + '"></td>';
+                });
                 table = table + '</tr>';
-            }
+            });
             table = table + '</table>';
-            $("#impacts_table  > tbody").html(table);
+            $("#cropping_calendar_table  > tbody").html(table);
 
         }
 
@@ -585,9 +601,8 @@
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
                         var c_production = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
 
-                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data) {
-                            var crop_c = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-
+                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data2) {
+                            var crop_c = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });                            
                             cropping_fill(c_production,crop_c);
 
                         });
