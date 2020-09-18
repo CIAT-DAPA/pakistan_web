@@ -246,6 +246,42 @@
                         </div>
                     </div>
                 </div>    
+                <h3>GCM</h3>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="gcm_prec_plot" class="climatology_plot">
+                            <svg></svg>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="gcm_temp_plot" class="climatology_plot">
+                            <svg></svg>
+                        </div>
+                    </div>
+                </div>  
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                    <h3>Indicators</h3>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <select id="cbo_climate_indicator" class="form-control form-control-lg">
+                            </select>
+                            <select id="cbo_climate_season" class="form-control form-control-lg">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="climate_indicator_plot" class="climatology_plot">
+                            <svg></svg>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="climate_indicator_map" class="climatology_map">
+                        </div>
+                    </div>
+                </div>  
             </div>
             <!-- End Climate -->
 
@@ -517,10 +553,10 @@
         /**
         * Function which fill climate data
         */
-        function climate_fill(climatology) {
+        function climate_fill(climatology, gcm) {
             // Clear chart
             $(".climatology_plot svg").html("");
-            // Filtering data
+            // Climatology
             var c_p = [{
                 values: climatology.map(function (item) {
                     return {
@@ -586,13 +622,6 @@
                 var chart_tem = nv.models.lineChart()
                     .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
                     .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
-                    //.showYAxis(true)        //Show the y-axis
-                    //.showXAxis(true)        //Show the x-axis
-                    //.x(function(d) { return parseInt(d.month); })
-                    //.y(function(d) { return parseFloat(d.prec); })
-                    //.staggerLabels(true)
-                    //.showValues(true)
-                    //.color(['#596dad'])
                     ;
 
                 chart_tem.xAxis     //Chart x-axis settings
@@ -612,6 +641,77 @@
                 //Update the chart when window resizes.
                 nv.utils.windowResize(function () { chart_tem.update() });
                 return chart_tem;
+            });
+
+            // GCM
+            var g_p = [{
+                values: gcm.map(function (item) {
+                    return {
+                        x: parseInt(item.year),
+                        y: parseFloat(item.prec)
+                    }
+                }),      //values - represents the array of {x,y} data points                
+                key: 'Precipitation', //key  - the name of the series.
+                color: '#596dad'  //color - optional: choose your own line color.
+            }]
+            var g_t = [{
+                values: gcm.map(function (item) {
+                    return {
+                        x: parseInt(item.year),
+                        y: parseFloat(item.tmean)
+                    }
+                }),      //values - represents the array of {x,y} data points
+                key: 'Temperature', //key  - the name of the series.
+                color: '#e34147'  //color - optional: choose your own line color.
+            }];
+
+            nv.addGraph(function () {
+                var gcm_pre = nv.models.lineChart()
+                    .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
+                    .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+                    ;
+
+                gcm_pre.xAxis     //Chart x-axis settings
+                    .axisLabel('Year')
+                    //.tickFormat(d3.format('.0f'))
+                    ;
+
+                gcm_pre.yAxis     //Chart y-axis settings
+                    .axisLabel('Precipitation (mm)')
+                    .tickFormat(d3.format('.0f'));
+                
+
+                d3.select('#gcm_prec_plot svg')    //Select the <svg> element you want to render the chart in.   
+                    .datum(g_p)         //Populate the <svg> element with chart data...
+                    .call(gcm_pre);          //Finally, render the chart!
+
+                //Update the chart when window resizes.
+                nv.utils.windowResize(function () { gcm_pre.update() });
+                return gcm_pre;
+            });
+            nv.addGraph(function () {
+                var gcm_tem = nv.models.lineChart()
+                    .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
+                    .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+                    ;
+
+                gcm_tem.xAxis     //Chart x-axis settings
+                    .axisLabel('Year')
+                    //.tickFormat(d3.format('.0f'))
+                    ;
+
+                gcm_tem.yAxis     //Chart y-axis settings
+                    .axisLabel('Temperature (°C)')
+                    .tickFormat(d3.format('.0f'));
+                
+
+                d3.select('#gcm_temp_plot svg')    //Select the <svg> element you want to render the chart in.   
+                    .datum(g_t)         //Populate the <svg> element with chart data...
+                    .call(gcm_tem);          //Finally, render the chart!
+
+                //Update the chart when window resizes.
+                nv.utils.windowResize(function () { gcm_tem.update() });
+                return gcm_tem;
             });
         }
 
@@ -725,8 +825,11 @@
                 else if (tab === 'climate') {
                     $("#climate_climatology_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/climatology.csv", function (error, data) {
-                        var c_climatology_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-                        climate_fill(c_climatology_d);
+                        var climatology = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/gcm.csv", function (error, data2) {
+                            var gcm = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+                            climate_fill(climatology,gcm);
+                        });
                     });
                 }
                 else if (tab === 'impacts') {
