@@ -746,22 +746,21 @@
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/practices/practices.csv", function (error, data) {
                         practices_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
 
-                        // Filling the cbo controls with hazard and crops
-                        Array.from(new Set());
-                        var crop = d3.map(practices_d, function (d) { return d.crop; }).keys();
+                        // Filling the cbo controls with hazard and crops  
+                        var crop = Array.from(new Set(d3.map(practices_d, function (d) { return d.crop; }).keys()));                        
                         var cbo_practices_crop = $("#cbo_practices_crop");
                         cbo_practices_crop.empty();
-                        $.each(crop, function () {
-                            cbo_practices_crop.append($("<option />").val(this).text(this));
+                        crop.forEach(function (i,v) {
+                            cbo_practices_crop.append($("<option />").val(i).text(i));
                         });
                         cbo_practices_crop.append($("<option />").val("All").text("All"));
                         cbo_practices_crop.val("All");
 
-                        var hazard = d3.map(practices_d, function (d) { return d.hazard; }).keys();
+                        var hazard = Array.from(new Set(d3.map(practices_d, function (d) { return d.hazard; }).keys()));
                         var cbo_practices_hazard = $("#cbo_practices_hazard");
                         cbo_practices_hazard.empty();
-                        $.each(hazard, function () {
-                            cbo_practices_hazard.append($("<option />").val(this).text(this));
+                        hazard.forEach(function (i,v) {
+                            cbo_practices_hazard.append($("<option />").val(i).text(i));
                         });
                         cbo_practices_hazard.append($("<option />").val("All").text("All"));
                         cbo_practices_hazard.val("All");
