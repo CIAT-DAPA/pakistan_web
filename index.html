@@ -37,7 +37,7 @@
             background-color: #b07aa1;
         }
 
-        #climate_climatology_plot svg {
+        .climatology_plot svg {
             height: 500px;
             width: 100%;
         }
@@ -234,9 +234,18 @@
                     <h2 id="climate_climatology_title"></h2>
                 </div>
                 <h3>Climatology</h3>
-                <div id="climate_climatology_plot">
-                    <svg></svg>
-                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="climate_prec_plot" class="climatology_plot">
+                            <svg></svg>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="climate_temp_plot" class="climatology_plot">
+                            <svg></svg>
+                        </div>
+                    </div>
+                </div>    
             </div>
             <!-- End Climate -->
 
@@ -377,6 +386,7 @@
     <script type="text/javascript">
         // Parameters
         var tab = 'impacts';
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
         // Datasets
         var hazard_d = [];
@@ -474,9 +484,6 @@
                 return d_li_chart;
             });
 
-            // Data calendars
-            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
             // Cropping calendar
             var crops = Array.from(new Set(crop_c.map(function (d) { return d.crop_livestock; })));
             var table = '';
@@ -510,24 +517,22 @@
         /**
         * Function which fill climate data
         */
-        function climate_fill(climate_climatology_d) {
+        function climate_fill(climatology) {
             // Clear chart
-            $("#climate_climatology_plot svg").html("");
+            $(".climatology_plot svg").html("");
             // Filtering data
-            var d_f = climate_climatology_d;
-            d_f = [{
-                values: d_f.map(function (item) {
+            var c_p = [{
+                values: climatology.map(function (item) {
                     return {
                         x: parseInt(item.month),
                         y: parseFloat(item.prec)
                     }
-                }),      //values - represents the array of {x,y} data points
-                bar: true,
+                }),      //values - represents the array of {x,y} data points                
                 key: 'Precipitation', //key  - the name of the series.
                 color: '#596dad'  //color - optional: choose your own line color.
-            },
-            {
-                values: d_f.map(function (item) {
+            }]
+            var c_t = [{
+                values: climatology.map(function (item) {
                     return {
                         x: parseInt(item.month),
                         y: parseFloat(item.tmax)
@@ -537,7 +542,7 @@
                 color: '#e34147'  //color - optional: choose your own line color.
             },
             {
-                values: d_f.map(function (item) {
+                values: climatology.map(function (item) {
                     return {
                         x: parseInt(item.month),
                         y: parseFloat(item.tmin)
@@ -546,34 +551,67 @@
                 key: 'Minimum temperature', //key  - the name of the series.
                 color: '#e5d900'  //color - optional: choose your own line color.
             }];
+
             nv.addGraph(function () {
-                var chart_climatology = nv.models.linePlusBarChart()
+                var chart_pre = nv.models.discreteBarChart()
                     //.useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
                     .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
                     //.showYAxis(true)        //Show the y-axis
                     //.showXAxis(true)        //Show the x-axis
+                    //.x(function(d) { return parseInt(d.month); })
+                    //.y(function(d) { return parseFloat(d.prec); })
+                    .staggerLabels(true)
+                    .showValues(true)
+                    .color(['#596dad'])
                     ;
 
-                chart_climatology.xAxis     //Chart x-axis settings
+                chart_pre.xAxis     //Chart x-axis settings
                     .axisLabel('Months')
-                    .tickFormat(d3.format('.0f'));
+                    ;
 
-                chart_climatology.y1Axis     //Chart y-axis settings
+                    chart_pre.yAxis     //Chart y-axis settings
                     .axisLabel('Precipitation (mm)')
                     .tickFormat(d3.format('.0f'));
 
-                chart_climatology.y2Axis     //Chart y-axis settings
-                    .axisLabel('Temperature (°C)')
-                    .tickFormat(d3.format('.0f'));
-
-
-                d3.select('#climate_climatology_plot svg')    //Select the <svg> element you want to render the chart in.   
-                    .datum(d_f)         //Populate the <svg> element with chart data...
-                    .call(chart_climatology);          //Finally, render the chart!
+                d3.select('#climate_prec_plot svg')    //Select the <svg> element you want to render the chart in.   
+                    .datum(c_p)         //Populate the <svg> element with chart data...
+                    .call(chart_pre);          //Finally, render the chart!
 
                 //Update the chart when window resizes.
-                nv.utils.windowResize(function () { chart_climatology.update() });
-                return chart_climatology;
+                nv.utils.windowResize(function () { chart_pre.update() });
+                return chart_pre;
+            });
+
+            nv.addGraph(function () {
+                var chart_tem = nv.models.lineChart()
+                    .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
+                    .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+                    //.showYAxis(true)        //Show the y-axis
+                    //.showXAxis(true)        //Show the x-axis
+                    //.x(function(d) { return parseInt(d.month); })
+                    //.y(function(d) { return parseFloat(d.prec); })
+                    //.staggerLabels(true)
+                    //.showValues(true)
+                    //.color(['#596dad'])
+                    ;
+
+                chart_tem.xAxis     //Chart x-axis settings
+                    .axisLabel('Months')
+                    //.tickFormat(d3.format('.0f'))
+                    ;
+
+                chart_tem.yAxis     //Chart y-axis settings
+                    .axisLabel('Temperature (°C)')
+                    .tickFormat(d3.format('.0f'));
+                
+
+                d3.select('#climate_temp_plot svg')    //Select the <svg> element you want to render the chart in.   
+                    .datum(c_t)         //Populate the <svg> element with chart data...
+                    .call(chart_tem);          //Finally, render the chart!
+
+                //Update the chart when window resizes.
+                nv.utils.windowResize(function () { chart_tem.update() });
+                return chart_tem;
             });
         }
 
