@@ -56,6 +56,10 @@
             background-color: #ffb3b3;
         }
 
+        .practices_img_icons{
+            height: 60px;
+            width: 60px;
+        }
     </style>
 
     <title>Pakistan</title>
@@ -423,43 +427,6 @@
             }
         }
 
-
-        /*
-        Function
-        */
-        /*function plot(data) {
-            nv.addGraph(function () {
-                var chart = nv.models.lineChart()
-                    .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
-                    .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
-                    .showYAxis(true)        //Show the y-axis
-                    .showXAxis(true)        //Show the x-axis
-                    ;
-
-                chart.xAxis     //Chart x-axis settings
-                    .axisLabel('N Rate')
-                    .tickFormat(d3.format('.0f'));
-
-                chart.yAxis     //Chart y-axis settings
-                    .axisLabel('Yield (kg/ha)')
-                    .tickFormat(d3.format('.0f'));
-
-
-                d3.select('#plot svg')    //Select the <svg> element you want to render the chart in.   
-                    .datum(data)         //Populate the <svg> element with chart data...
-                    .call(chart);          //Finally, render the chart!
-
-                //Update the chart when window resizes.
-                nv.utils.windowResize(function () { chart.update() });
-                return chart;
-            });
-        }
-
-        var myColor = d3.scale.linear().domain([1,40])
-                                .interpolate(d3.interpolateHcl)
-                                .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
-        */
-
         /**
         * Function which fill cropping data
         */
@@ -647,6 +614,7 @@
         */
         function practices_fill(crop, hazard) {
             // Filtering data
+            var records = practices_d.filter(function (item) { return (crop == 'All' ? true : item.crop == crop) && (hazard == 'All' ? true : item.hazard == hazard) }); 
             /*
             var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1.Input ' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
             var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
@@ -654,19 +622,29 @@
             var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
 
             // Fixing data in the table
-            var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
+            var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);*/
+            //var table = '<div class="row">';
             var table = '';
-            for (var i = 0; i < max; i++) {
-                table = table + '<tr ' + (i < 5 ? 'class="table-danger"' : '') + '>';
-                table = table + '<td>' + (inputs.length > i ? inputs[i].impact : '') + '</td>';
-                table = table + '<td>' + (on_farm.length > i ? on_farm[i].impact : '') + '</td>';
-                table = table + '<td>' + (harvesting.length > i ? harvesting[i].impact : '') + '</td>';
-                table = table + '<td>' + (marketing.length > i ? marketing[i].impact : '') + '</td>';
-                table = table + '</tr>';
+            for (var i = 0; i < records.length; i++) {
+                table = table + '<div class="row">';
+                table = table + '<div class="col-md-2"><h4>' + records[i].crop  + '</h4><p class="text-justify">' + records[i].csa + '<br />' + records[i].adoption + '<p></div>';
+                table = table + '<div class="col-md-4"><div class="row">' + 
+                                    '<div class="col-md-2 text-center">' + (records[i].ind_1 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_1 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_1 + '" />') +'</div>' +
+                                    '<div class="col-md-2 text-center">' + (records[i].ind_2 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_2 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_2 + '" />') +'</div>' +
+                                    '<div class="col-md-2 text-center">' + (records[i].ind_3 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_3 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_3 + '" />') +'</div>' +
+                                    '<div class="col-md-2 text-center">' + (records[i].ind_4 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_4 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_4 + '" />') +'</div>' +
+                                    '<div class="col-md-2 text-center">' + (records[i].ind_5 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_5 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_5 + '" />') +'</div>' +
+                                    '<div class="col-md-2 text-center">' + (records[i].ind_6 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_6 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_6 + '" />') +'</div>' +
+                                '</div>';
+                table = table + '<div class="row">' + 
+                                    '<div class="col-md-2 text-center">' + (records[i].hazard_1 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_1 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_1 + '" />') +'</div>' +
+                                    '<div class="col-md-2 text-center">' + (records[i].hazard_1 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_2 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_2 + '" />') +'</div>' +
+                                    '<div class="col-md-2 text-center">' + (records[i].hazard_1 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_3 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_3 + '" />') +'</div>' +
+                                '</div></div>';
+                table = table + '</div>';
             }
-            table = table + '</table>';
-            $("#impacts_table  > tbody").html(table);
-            */
+            //table = table + '</div>';
+            $("#practices_table").html(table);
         }
 
         /**
