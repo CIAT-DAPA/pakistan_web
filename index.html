@@ -641,7 +641,15 @@
                                     '<div class="col-md-2 text-center">' + (records[i].hazard_1 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_2 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_2 + '" />') +'</div>' +
                                     '<div class="col-md-2 text-center">' + (records[i].hazard_1 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_3 + '.png" class="rounded practices_img_icons" alt="' +records[i].ind_3 + '" />') +'</div>' +
                                 '</div></div>';
+                table = table + '<div class="col-md-4"><h5>Productivity</h5><p class="text-justify">' + records[i].productivity  + '</p><h5>Adaptation</h5><p class="text-justify">' + records[i].adaptation + '</p><h5>Mitigation</h5><p class="text-justify">' + records[i].mitigation + '</p></div>';
+                table = table + '<div class="col-md-2"><div class="row">' + 
+                                    '<div class="col-md-12 text-center">' + (records[i].barrier_1 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/barriers/' + records[i].barrier_1 + '.png" class="rounded practices_img_icons" alt="' +records[i].barrier_1 + '" />') +'</div>' +
+                                '</div>';
+                table = table + '<div class="row">' + 
+                                    '<div class="col-md-12 text-center">' + (records[i].barrier_2 == '' ? '': '<img src="https://ciat-dapa.github.io/pakistan_web/img/barriers/' + records[i].barrier_2 + '.png" class="rounded practices_img_icons" alt="' +records[i].barrier_2 + '" />') +'</div>' +
+                                '</div></div>';
                 table = table + '</div>';
+                table = table + '<div class="row"><div class="col-md-12"><a href="' + records[i].source + '" target="_blank">' + records[i].source + '</a></div></div>';
             }
             //table = table + '</div>';
             $("#practices_table").html(table);
@@ -739,6 +747,7 @@
                         practices_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
 
                         // Filling the cbo controls with hazard and crops
+                        Array.from(new Set());
                         var crop = d3.map(practices_d, function (d) { return d.crop; }).keys();
                         var cbo_practices_crop = $("#cbo_practices_crop");
                         cbo_practices_crop.empty();
