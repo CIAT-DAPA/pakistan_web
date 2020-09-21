@@ -1,4 +1,4 @@
-county,season,time,year,vars,value,CI_lower,CI_upper
+district,season,time,year,vars,value,CI_lower,CI_upper
 Chitral,Kafir,past,1985,CDD,132,,
 Chitral,Kafir,past,1986,CDD,128,,
 Chitral,Kafir,past,1987,CDD,121,,

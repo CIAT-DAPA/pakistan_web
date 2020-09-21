@@ -42,6 +42,16 @@
             width: 100%;
         }
 
+        .indicator_plot svg {
+            height: 500px;
+            width: 100%;
+        }
+
+        .indicator_map {
+            height: 500px;
+            width: 100%;
+        }
+
         .cell_green {
             background-color: #eaf1dd;
         }
@@ -273,12 +283,12 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <div id="climate_indicator_plot" class="climatology_plot">
+                        <div id="climate_indicator_plot" class="indicator_plot">
                             <svg></svg>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div id="climate_indicator_map" class="climatology_map">
+                        <div id="climate_indicator_map" class="indicator_map">
                         </div>
                     </div>
                 </div>  
@@ -427,6 +437,9 @@
         // Datasets
         var hazard_d = [];
         var practices_d = [];
+        var climate_indicator_d = [];
+        var climate_indicator_province = '';
+        var climate_indicator_district = '';
         /**
         * This function change the type of information and functionalities of the web page depending of the value
         */
@@ -592,10 +605,6 @@
                 var chart_pre = nv.models.discreteBarChart()
                     //.useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
                     .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
-                    //.showYAxis(true)        //Show the y-axis
-                    //.showXAxis(true)        //Show the x-axis
-                    //.x(function(d) { return parseInt(d.month); })
-                    //.y(function(d) { return parseFloat(d.prec); })
                     .staggerLabels(true)
                     .showValues(true)
                     .color(['#596dad'])
@@ -716,6 +725,16 @@
         }
 
         /**
+        * Function which fill the indicators for climate
+        */
+        function climate_indicator_fill(indicator, season){
+            // Clear chart
+            $(".indicator_plot svg").html("");
+            $(".indicator_map").html("");
+
+            
+        }
+        /**
         * Function which filter dataset for impacts and show data into the table
         */
         function impact_fill_table(crop, hazard) {
@@ -746,15 +765,7 @@
         function practices_fill(crop, hazard) {
             // Filtering data
             var records = practices_d.filter(function (item) { return (crop == 'All' ? true : item.crop == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
-            /*
-            var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1.Input ' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-
-            // Fixing data in the table
-            var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);*/
-            //var table = '<div class="row">';
+            
             var table = '';
             for (var i = 0; i < records.length; i++) {
                 table = table + '<div class="row">';
@@ -828,7 +839,42 @@
                         var climatology = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                         d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/gcm.csv", function (error, data2) {
                             var gcm = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-                            climate_fill(climatology,gcm);
+
+                            climate_fill(climatology, gcm);
+
+                            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/indicators.csv", function (error, data3) {
+                                climate_indicator_d = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+
+                                climate_indicator_province = layer.feature.properties.NAME_2;
+                                climate_indicator_district = layer.feature.properties.NAME_3;                                
+
+                                // Filling the cbo controls with hazard and crops
+                                var indicators = d3.map(climate_indicator_d, function (d) { return d.vars; }).keys();
+                                console.log(climate_indicator_d);
+                                var cbo_climate_indicator = $("#cbo_climate_indicator");
+                                cbo_climate_indicator.empty();
+                                $.each(indicators, function () {
+                                    cbo_climate_indicator.append($("<option />").val(this).text(this));
+                                });                                
+
+                                var season = d3.map(climate_indicator_d, function (d) { return d.season; }).keys();
+                                var cbo_climate_season = $("#cbo_impact_hazard");
+                                cbo_climate_season.empty();
+                                $.each(season, function () {
+                                    cbo_climate_season.append($("<option />").val(this).text(this));
+                                });
+                                
+                                // Set the event change for both controls
+                                cbo_climate_indicator.on('change', function (e) {
+                                    climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
+                                });
+                                cbo_climate_season.on('change', function (e) {
+                                    climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
+                                });
+
+                                // Default fill
+                                climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
+                            });
                         });
                     });
                 }
