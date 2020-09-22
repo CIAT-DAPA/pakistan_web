@@ -862,7 +862,7 @@
         function filter_map(feature) {
             if (feature.properties.county == climate_indicator_district) return true;
         }
-
+        
         function onEachFeature2(feature, layer) {
             layer.setStyle({
                     fillColor : d3.interpolateOranges(color_indicator(feature.properties[climate_indicator_var])),
@@ -871,6 +871,9 @@
                 });
         }
 
+        function color_impact(value){
+            return value >= 80 ? 'class="table-danger"' : (value < 80 && value >= 60? 'class="table-warning"':'');
+        }
         /**
         * Function which filter dataset for impacts and show data into the table
         */
@@ -880,19 +883,39 @@
             var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
             var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
             var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            //var severity = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
 
+            // Fixing groups and Removing duplicates
+            inputs = d3.nest()
+                            .key(function(d) { return d.impact; })
+                            .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
+                            .entries(inputs);
+            on_farm = d3.nest()
+                            .key(function(d) { return d.impact; })
+                            .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
+                            .entries(on_farm);
+            harvesting = d3.nest()
+                            .key(function(d) { return d.impact; })
+                            .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
+                            .entries(harvesting);
+            marketing = d3.nest()
+                            .key(function(d) { return d.impact; })
+                            .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
+                            .entries(marketing);
+            //d3.map(inputs,function(d){return d.impact}).keys();            
             // Fixing data in the table
             var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
             var table = '';
             for (var i = 0; i < max; i++) {
-                table = table + '<tr ' + (i < 5 ? 'class="table-danger"' : '') + '>';
-                table = table + '<td>' + (inputs.length > i ? inputs[i].impact : '') + '</td>';
-                table = table + '<td>' + (on_farm.length > i ? on_farm[i].impact : '') + '</td>';
-                table = table + '<td>' + (harvesting.length > i ? harvesting[i].impact : '') + '</td>';
-                table = table + '<td>' + (marketing.length > i ? marketing[i].impact : '') + '</td>';
+                console.log(inputs.length + ' ' + i + ' ' + (inputs.length > i));
+                table = table + '<tr>';
+                table = table + (inputs.length > i ? '<td '+ color_impact(inputs[i].values) + '>' + inputs[i].key + '</td>' : '<td></td>');
+                table = table + (on_farm.length > i ? '<td '+ color_impact(on_farm[i].values) + '>' + on_farm[i].key + '</td>' : '<td></td>');
+                table = table + (harvesting.length > i ? '<td '+ color_impact(harvesting[i].values) + '>' + harvesting[i].key + '</td>' : '<td></td>');
+                table = table + (marketing.length > i ? '<td '+ color_impact(marketing[i].values) + '>' + marketing[i].key + '</td>' : '<td></td>');
                 table = table + '</tr>';
             }
-            table = table + '</table>';
+            //table = table + '</table>';
             $("#impacts_table  > tbody").html(table);
         }
 

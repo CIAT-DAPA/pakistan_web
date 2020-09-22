@@ -1,5 +1,5 @@
 province,district,crop_livestock,hazard,vc_stage,impact,freq,severity,percentage
-KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),1.Input ,Excess demand for new/improved/tolerant varieties,14,Text here,14
+KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),1.Input ,Excess demand for new/improved/tolerant varieties,80,Text here,80
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),1.Input ,Poor quality seed,5,Text here,5
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),1.Input ,Farmers unable to repay loans,2,Text here,2
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),1.Input ,Increased price of 1.Inputs,2,Text here,2
@@ -14,7 +14,7 @@ KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),2. On-farm,Loss of alter
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),2. On-farm,More weeds,2,Text here,2
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),2. On-farm,Cant work in the field,1,Text here,1
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),2. On-farm,Damage to irrigation system,1,Text here,1
-KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),"3. Harvesting, storage & processing",Low quality produce for processing,14,Text here,14
+KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),"3. Harvesting, storage & processing",Low quality produce for processing,60,Text here,60
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),"3. Harvesting, storage & processing",Increase in post-harvest losses,13,Text here,13
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),"3. Harvesting, storage & processing",Increased storage costs,9,Text here,9
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),"3. Harvesting, storage & processing",Need for more processing/ increased processing costs,7,Text here,7
@@ -23,7 +23,7 @@ KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),"3. Harvesting, storage 
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),"3. Harvesting, storage & processing",Farm to market roads damaged,2,Text here,2
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),"3. Harvesting, storage & processing",Increase in transportation costs,2,Text here,2
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),4. Marketing,Low level of value addition,15,Text here,15
-KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),4. Marketing,Lower quality produce/ doesn’t meet standards,15,Text here,15
+KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),4. Marketing,Lower quality produce/ doesn’t meet standards,70,Text here,70
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),4. Marketing,Products fetch low prices due to poor quality,15,Text here,15
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),4. Marketing,Unable to fulfill orders,11,Text here,11
 KP,Chitral,Apricot,Disease outbreak (Plant & Livestock),4. Marketing,Unpredictability of supply,5,Text here,5
@@ -55,7 +55,7 @@ KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),"3. Harvesting, stora
 KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),"3. Harvesting, storage & processing",Processing delayed/disrupted,1,Text here,1
 KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),4. Marketing,Reduced access to market information,3,Text here,3
 KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),4. Marketing,Unable to fulfill orders,3,Text here,3
-KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),4. Marketing,Low level of value addition,2,Text here,2
+KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),4. Marketing,Low level of value addition,60,Text here,60
 KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),4. Marketing,Lower quality produce/ doesn’t meet standards,2,Text here,2
 KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),4. Marketing,Products fetch low prices due to poor quality,2,Text here,2
 KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),4. Marketing,Farm to market roads damaged,1,Text here,1
@@ -63,7 +63,7 @@ KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),4. Marketing,High cos
 KP,Chitral,Apricot,Heavy rain/ Flooding (Flash + Riverine),4. Marketing,Unpredictability of supply,1,Text here,1
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),1.Input ,Excess demand for new/improved/tolerant varieties,13,Text here,13
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),1.Input ,Poor quality seed,13,Text here,13
-KP,Chitral,Potato,Disease outbreak (Plant & Livestock),1.Input ,Increased price of 1.Inputs,10,Text here,10
+KP,Chitral,Potato,Disease outbreak (Plant & Livestock),1.Input ,Increased price of 1.Inputs,90,Text here,90
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),1.Input ,Farmers unable to repay loans,5,Text here,5
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),1.Input ,"Trouble accessing 1.Inputs (fertilizer, pesticides, seeds, feeds)",4,Text here,4
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),1.Input ,Reduced access to extension services,3,Text here,3
@@ -78,7 +78,7 @@ KP,Chitral,Potato,Disease outbreak (Plant & Livestock),2. On-farm,More weeds,4,T
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),2. On-farm,Crops don't germinate,1,Text here,1
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),2. On-farm,Damage to irrigation system,1,Text here,1
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),2. On-farm,"Delayed planting/ uncertainty in planning farm operations (planting, maintenance & harvesting)",1,Text here,1
-KP,Chitral,Potato,Disease outbreak (Plant & Livestock),2. On-farm,Extra labour & costs in land preparation,1,Text here,1
+KP,Chitral,Potato,Disease outbreak (Plant & Livestock),2. On-farm,Extra labour & costs in land preparation,99,Text here,99
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),2. On-farm,"Increased requirement for mechanisation (ploughs, mechanised weeders)",1,Text here,1
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),2. On-farm,Loss of alternative income sources,1,Text here,1
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),"3. Harvesting, storage & processing",Increased storage costs,11,Text here,11
@@ -96,7 +96,7 @@ KP,Chitral,Potato,Disease outbreak (Plant & Livestock),4. Marketing,Products fet
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),4. Marketing,Unpredictability of supply,5,Text here,5
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),4. Marketing,Farm to market roads damaged,3,Text here,3
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),4. Marketing,High costs to reach markets,3,Text here,3
-KP,Chitral,Potato,Disease outbreak (Plant & Livestock),4. Marketing,Reduced access to market information,2,Text here,2
+KP,Chitral,Potato,Disease outbreak (Plant & Livestock),4. Marketing,Reduced access to market information,65,Text here,65
 KP,Chitral,Potato,Disease outbreak (Plant & Livestock),4. Marketing,Increased buying prices for produce,1,Text here,1
 KP,Chitral,Potato,Heavy rain/ Flooding (Flash + Riverine),1.Input ,Increased demand for irrigation infrastructure materials,6,Text here,6
 KP,Chitral,Potato,Heavy rain/ Flooding (Flash + Riverine),1.Input ,"Trouble accessing 1.Inputs (fertilizer, pesticides, seeds, feeds)",5,Text here,5
