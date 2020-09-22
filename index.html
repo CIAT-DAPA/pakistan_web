@@ -52,6 +52,10 @@
             width: 100%;
         }
 
+        #map_scale svg {
+            width: 500;
+        }
+
         .cell_green {
             background-color: #eaf1dd;
         }
@@ -428,18 +432,26 @@
         crossorigin=""></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://cdn.rawgit.com/novus/nvd3/master/build/nv.d3.min.js"></script>
+    <script src="https://d3js.org/d3-color.v2.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
 
     <script type="text/javascript">
         // Parameters
         var tab = 'impacts';
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
+        var color_indicator;
         // Datasets
         var hazard_d = [];
         var practices_d = [];
         var climate_indicator_d = [];
         var climate_indicator_province = '';
         var climate_indicator_district = '';
+        var climate_indicator_var = '';
+        var climate_indicator_coords = [];
+        // Controls
+        var map_i;
+
         /**
         * This function change the type of information and functionalities of the web page depending of the value
         */
@@ -730,10 +742,135 @@
         function climate_indicator_fill(indicator, season){
             // Clear chart
             $(".indicator_plot svg").html("");
-            $(".indicator_map").html("");
+            $("#climate_indicator_map").html("");
+            // Set global vars
+            climate_indicator_var = indicator;
 
+            var i_i = climate_indicator_d.filter(function(d){return d.season == season && d.vars == indicator});
+            var i_p = [{
+                values: i_i.filter(function(d){return d.time == 'past'}).map(function (item) {
+                    return {
+                        x: parseInt(item.year),
+                        y: parseFloat(item.value)
+                    }
+                }),      //values - represents the array of {x,y} data points
+                key: 'Past', //key  - the name of the series.
+                color: '#ffbe7d'  //color - optional: choose your own line color.
+            },
+            {
+                values: i_i.filter(function(d){return d.time == 'future'}).map(function (item) {
+                    return {
+                        x: parseInt(item.year),
+                        y: parseFloat(item.value)
+                    }
+                }),      //values - represents the array of {x,y} data points
+                key: 'Future', //key  - the name of the series.
+                color: '#4e79a7'  //color - optional: choose your own line color.
+            },
+            {
+                values: i_i.filter(function(d){return d.time == 'future'}).map(function (item) {
+                    return {
+                        x: parseInt(item.year),
+                        y: parseFloat(item.CI_lower)
+                    }
+                }),      //values - represents the array of {x,y} data points
+                key: 'CI lower', //key  - the name of the series.
+                color: '#75a1c7'  //color - optional: choose your own line color.
+            },
+            {
+                values: i_i.filter(function(d){return d.time == 'future'}).map(function (item) {
+                    return {
+                        x: parseInt(item.year),
+                        y: parseFloat(item.CI_upper)
+                    }
+                }),      //values - represents the array of {x,y} data points
+                key: 'CI upper', //key  - the name of the series.
+                color: '#75a1c7'  //color - optional: choose your own line color.
+            }];
+
+            nv.addGraph(function () {
+                var ind_p = nv.models.lineChart()
+                    .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
+                    .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+                    ;
+
+                ind_p.xAxis     //Chart x-axis settings
+                    .axisLabel('Year')
+                    //.tickFormat(d3.format('.0f'))
+                    ;
+
+                ind_p.yAxis     //Chart y-axis settings
+                    .axisLabel('Value')
+                    .tickFormat(d3.format('.0f'));
+                
+
+                d3.select('#climate_indicator_plot svg')    //Select the <svg> element you want to render the chart in.   
+                    .datum(i_p)         //Populate the <svg> element with chart data...
+                    .call(ind_p);          //Finally, render the chart!
+
+                //Update the chart when window resizes.
+                nv.utils.windowResize(function () { ind_p.update() });
+                return ind_p;
+            });
             
+            if(map_i != null){
+                map_i.off();
+                map_i.remove();
+            }
+            map_i = L.map('climate_indicator_map').setView([climate_indicator_coords[1],climate_indicator_coords[0]], 7);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map_i);
+            
+            var min = d3.min(i_i,function(d){return parseFloat(d.value);});
+            var max = d3.max(i_i,function(d){return parseFloat(d.value);});
+            color_indicator = d3.scale.linear()
+                                        .domain([min,max])
+                                        .range([0,1]);
+            //var x = d3.scale.linear().domain([0, 1]).range([d3.min(i_i,function(d){return parseFloat(d.value);}),d3.max(i_i,function(d){return parseFloat(d.value);})]);
+            
+            var indicator_url = "https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/"+ season + "_new_version.json";
+            $.getJSON(indicator_url, function (data) {
+                L.geoJSON(data, { filter: filter_map, onEachFeature: onEachFeature2,  weight: 0.5 }).addTo(map_i);
+            });
+            /*
+            var legend = L.control({position: 'bottomleft'});
+            legend.onAdd = function (map) {
+                var div = L.DomUtil.create('div', 'info legend');
+                div.innerHTML += '<h4>Scale</h4>' + 
+                                '<div id="map_scale"><svg></svg></div>';
+                return div;
+            };
+            legend.addTo(map_i);
+
+            var svg = d3.select("#map_scale svg");
+            console.log(d3.range(0,1,0.1));
+            var rects = svg.selectAll(".rects")
+                .data(d3.range(0,1,0.1))
+                .enter()
+                .append("rect")
+                .attr("y", 10)
+                .attr("height", 25)
+                .attr("x", (d,i)=>10 + i*9)
+                .attr("width", 6)
+                .attr("fill", d=>{ d3.interpolateOranges(d);})
+                .attr("stroke", "gray");
+            */
         }
+
+        function filter_map(feature) {
+            if (feature.properties.county == climate_indicator_district) return true;
+        }
+
+        function onEachFeature2(feature, layer) {
+            layer.setStyle({
+                    fillColor : d3.interpolateOranges(color_indicator(feature.properties[climate_indicator_var])),
+                    fillOpacity: 0.8,
+                    weight: 0.5
+                });
+        }
+
         /**
         * Function which filter dataset for impacts and show data into the table
         */
@@ -847,10 +984,10 @@
 
                                 climate_indicator_province = layer.feature.properties.NAME_2;
                                 climate_indicator_district = layer.feature.properties.NAME_3;                                
+                                climate_indicator_coords = layer.feature.geometry.coordinates[0][0];
 
                                 // Filling the cbo controls with hazard and crops
                                 var indicators = d3.map(climate_indicator_d, function (d) { return d.vars; }).keys();
-                                console.log(climate_indicator_d);
                                 var cbo_climate_indicator = $("#cbo_climate_indicator");
                                 cbo_climate_indicator.empty();
                                 $.each(indicators, function () {
@@ -858,7 +995,7 @@
                                 });                                
 
                                 var season = d3.map(climate_indicator_d, function (d) { return d.season; }).keys();
-                                var cbo_climate_season = $("#cbo_impact_hazard");
+                                var cbo_climate_season = $("#cbo_climate_season");
                                 cbo_climate_season.empty();
                                 $.each(season, function () {
                                     cbo_climate_season.append($("<option />").val(this).text(this));
