@@ -1,4 +1,4 @@
-OBJECTID,ID_0,ISO,NAME_0,ID_1,NAME_1,ID_2,NAME_2,ID_3,NAME_3,TYPE_3,ENGTYPE_3,NL_NAME_3,VARNAME_3,cropping,climate,impact,risk,practices,enablers
+OBJECTID,ID_0,ISO,NAME_0,ID_1,NAME_1,ID_2,NAME_2,ID_3,NAME_3,TYPE_3,ENGTYPE_3,NL_NAME_3,VARNAME_3,cropping,climate,impacts,risk,practices,enablers
 1,171,PAK,Pakistan,1,Azad Kashmir,1,Azad Kashmir,1,Bagh,District,District,NA,NA,0,0,0,0,0,0
 2,171,PAK,Pakistan,1,Azad Kashmir,1,Azad Kashmir,2,Bhimber,District,District,NA,NA,0,0,0,0,0,0
 3,171,PAK,Pakistan,1,Azad Kashmir,1,Azad Kashmir,3,Kotli,District,District,NA,NA,0,0,0,0,0,0

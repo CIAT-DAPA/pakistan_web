@@ -453,6 +453,7 @@
         var climate_indicator_district = '';
         var climate_indicator_var = '';
         var climate_indicator_coords = [];
+        var tab = '';
         // Controls
         var map_i;
         var map;
@@ -1012,12 +1013,14 @@
         * Function for each feature into the map
         */
         function onEachFeature(feature, layer) {
-            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
-                /*layer.setStyle({
-                    fillColor : d3.interpolateOranges(color_indicator(feature.properties[climate_indicator_var])),
+            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/maps/pakistan_data.csv", function (error, data) {
+                var district = data.filter(function (item) { return item.NAME_3 == layer.feature.properties.NAME_3; });
+                layer.setStyle({
+                    fillColor : district.length > 0 && district[0][tab] == '1' ? "#0099e6" : "#a6a6a6",
                     fillOpacity: 0.8,
                     weight: 0.5
-                });*/
+                });
+                
             });
             
 
