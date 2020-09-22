@@ -455,6 +455,7 @@
         var climate_indicator_coords = [];
         // Controls
         var map_i;
+        var map;
 
         /**
         * This function change the type of information and functionalities of the web page depending of the value
@@ -493,6 +494,22 @@
                 $("#description").html("Description");
                 $("#enablers").removeClass("d-none");
             }
+
+            if(map != null){
+                map.off();
+                map.remove();
+            }
+
+            map = L.map('map').setView([29.8724623, 66.1822339], 5);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            var layer_url = "https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/maps/pakistan_map.json";
+            $.getJSON(layer_url, function (data) {
+                L.geoJSON(data, { onEachFeature: onEachFeature }).addTo(map);
+            });
         }
 
         /**
@@ -931,6 +948,9 @@
                 table = table + '</ul>';
                 $("#impacts_severity").html(table);
             }
+            else{
+                $("#impacts_severity").html("");
+            }
         }
 
         /**
@@ -992,6 +1012,15 @@
         * Function for each feature into the map
         */
         function onEachFeature(feature, layer) {
+            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
+                /*layer.setStyle({
+                    fillColor : d3.interpolateOranges(color_indicator(feature.properties[climate_indicator_var])),
+                    fillOpacity: 0.8,
+                    weight: 0.5
+                });*/
+            });
+            
+
             //console.log(feature.properties);
             layer.on('click', function (e) {
                 if (tab === 'cropping') {
@@ -1136,66 +1165,7 @@
                 }
 
             });
-            /*if (layer.feature && layer.feature.id) {
-                layer.setStyle({
-                    fillColor :myColor(layer.feature.id),
-                    fillOpacity: 0.8,
-                    weight: 0.5
-                });
-                
-                layer.on('click', function (e) {
-                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/ethiopia_fertilize/master/data/40/env/cluster_properties.csv", function (error, data) {
-                        cp = data.filter(function(item){ return item.id == layer.feature.id; });
-                        if(cp.length > 0){
-                            var table = '<table class="table">';
-                            for (var key in cp[0]) {
-                                table = table + '<tr><th>' + key + '</th><td>' + cp[0][key] + '</td></tr>';
-                            }
-                            table = table + '</table>';
-                            $("#cp").html(table);
-                        }
-                        
-                    });
-                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/ethiopia_fertilize/master/data/40/rates/" + layer.feature.id + ".csv", function (error, data) {
-                        if (error) {
-                            console.log(error);  //Log the error.
-                            console.log("Clearing data");
-                            $("#plot svg").html('');
-                            $("#rate_optimal").html('');
-                            $("#cluster").html('');
-                        }
-                        else {
-                            $("#cluster").html(layer.feature.id);
-                            var rate_optimal = data.filter(function (item) { return item.yield == d3.max(data, function (item) { return item.yield; }) });
-                            $("#rate_optimal").html('The optimal rate is <b>'+ d3.format(".2f")(d3.min(rate_optimal, function (item) { return item.rate; })) + ' (kg/ha)</b>.');
-                            var data = [{
-                                values: data.map(function (item) {
-                                    return {
-                                        x: parseInt(item.rate),
-                                        y: parseFloat(item.yield)
-                                    }
-                                }),      //values - represents the array of {x,y} data points
-                                key: 'Yield', //key  - the name of the series.
-                                color: '#ff7f0e'  //color - optional: choose your own line color.
-                            }];
-                            plot(data);
-                        }
-                    });
-                });
-            }*/
-
         }
-
-        var map = L.map('map').setView([29.8724623, 66.1822339], 5);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        var layer_url = "https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/maps/pakistan_map.json";
-        $.getJSON(layer_url, function (data) {
-            L.geoJSON(data, { onEachFeature: onEachFeature }).addTo(map);
-        });
 
         // Default tab
         click_tab('cropping');
