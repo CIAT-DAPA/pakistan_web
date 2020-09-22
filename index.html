@@ -316,6 +316,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div id="impacts_severity" class="col-md-12">
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table id="impacts_table" class="table table-striped table-sm">
                         <thead>
@@ -879,35 +883,35 @@
         */
         function impact_fill_table(crop, hazard) {
             // Filtering data
-            var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1.Input ' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            //var severity = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1.Input ' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
+            var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
+            var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
+            var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
+            var severity = hazard_d.filter(function (item) { return item.crop_livestock == crop && item.hazard == hazard });
+            severity = d3.map(severity, function(d){ return d.severity; }).keys();
 
             // Fixing groups and Removing duplicates
             inputs = d3.nest()
                             .key(function(d) { return d.impact; })
                             .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
-                            .entries(inputs);
+                            .entries(inputs).sort((a, b) => d3.descending(a.values, b.values));
             on_farm = d3.nest()
                             .key(function(d) { return d.impact; })
                             .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
-                            .entries(on_farm);
+                            .entries(on_farm).sort((a, b) => d3.descending(a.values, b.values));
             harvesting = d3.nest()
                             .key(function(d) { return d.impact; })
                             .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
-                            .entries(harvesting);
+                            .entries(harvesting).sort((a, b) => d3.descending(a.values, b.values));
             marketing = d3.nest()
                             .key(function(d) { return d.impact; })
                             .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
-                            .entries(marketing);
+                            .entries(marketing).sort((a, b) => d3.descending(a.values, b.values));
             //d3.map(inputs,function(d){return d.impact}).keys();            
             // Fixing data in the table
             var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
             var table = '';
-            for (var i = 0; i < max; i++) {
-                console.log(inputs.length + ' ' + i + ' ' + (inputs.length > i));
+            for (var i = 0; i < max; i++) {                
                 table = table + '<tr>';
                 table = table + (inputs.length > i ? '<td '+ color_impact(inputs[i].values) + '>' + inputs[i].key + '</td>' : '<td></td>');
                 table = table + (on_farm.length > i ? '<td '+ color_impact(on_farm[i].values) + '>' + on_farm[i].key + '</td>' : '<td></td>');
@@ -917,6 +921,16 @@
             }
             //table = table + '</table>';
             $("#impacts_table  > tbody").html(table);
+
+            // Sverity
+            if(severity.length > 0){
+                table = '<h3>Severity</h3><ul>';
+                for(var i=0; i < severity.length; i++){
+                    table = table + '<li>' + severity + '</li>';
+                }
+                table = table + '</ul>';
+                $("#impacts_severity").html(table);
+            }
         }
 
         /**
