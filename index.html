@@ -911,19 +911,19 @@
             // Fixing groups and Removing duplicates
             inputs = d3.nest()
                             .key(function(d) { return d.impact; })
-                            .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
+                            .rollup(function(v) { return d3.mean(v,function(k){return parseFloat(k.percentage);})  })
                             .entries(inputs).sort((a, b) => d3.descending(a.values, b.values));
             on_farm = d3.nest()
                             .key(function(d) { return d.impact; })
-                            .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
+                            .rollup(function(v) { return d3.mean(v,function(k){return parseFloat(k.percentage);})  })
                             .entries(on_farm).sort((a, b) => d3.descending(a.values, b.values));
             harvesting = d3.nest()
                             .key(function(d) { return d.impact; })
-                            .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
+                            .rollup(function(v) { return d3.mean(v,function(k){return parseFloat(k.percentage);})  })
                             .entries(harvesting).sort((a, b) => d3.descending(a.values, b.values));
             marketing = d3.nest()
                             .key(function(d) { return d.impact; })
-                            .rollup(function(v) { return d3.sum(v,function(k){return parseFloat(k.percentage);})  })
+                            .rollup(function(v) { return d3.mean(v,function(k){return parseFloat(k.percentage);})  })
                             .entries(marketing).sort((a, b) => d3.descending(a.values, b.values));
             //d3.map(inputs,function(d){return d.impact}).keys();            
             // Fixing data in the table
