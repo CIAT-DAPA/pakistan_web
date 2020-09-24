@@ -46,7 +46,7 @@ OBJECTID,ID_0,ISO,NAME_0,ID_1,NAME_1,ID_2,NAME_2,ID_3,NAME_3,TYPE_3,ENGTYPE_3,NL
 45,171,PAK,Pakistan,4,F.C.T.,9,Islamabad,45,Islamabad,District,District,NA,NA,0,0,0,0,0,0
 46,171,PAK,Pakistan,5,N.W.F.P.,10,Bannu,46,Bannu,District,District,NA,NA,0,0,0,0,0,0
 47,171,PAK,Pakistan,5,N.W.F.P.,10,Bannu,47,Lakki Marwat,District,District,NA,NA,0,0,0,0,0,0
-48,171,PAK,Pakistan,5,N.W.F.P.,11,Dera Ismail Khan,48,Dera Ismail Khan,District,District,NA,D.I.Khan,0,1,0,0,0,0
+48,171,PAK,Pakistan,5,N.W.F.P.,11,Dera Ismail Khan,48,D.I. Khan,District,District,NA,D.I.Khan,0,1,0,0,0,0
 49,171,PAK,Pakistan,5,N.W.F.P.,11,Dera Ismail Khan,49,Tank,District,District,NA,NA,0,0,0,0,0,0
 50,171,PAK,Pakistan,5,N.W.F.P.,12,F.A.T.A.,50,Adam Khel,District,District,NA,NA,0,0,0,0,0,0
 51,171,PAK,Pakistan,5,N.W.F.P.,12,F.A.T.A.,51,Bhittani,District,District,NA,NA,0,0,0,0,0,0
@@ -81,7 +81,7 @@ OBJECTID,ID_0,ISO,NAME_0,ID_1,NAME_1,ID_2,NAME_2,ID_3,NAME_3,TYPE_3,ENGTYPE_3,NL
 80,171,PAK,Pakistan,7,Punjab,20,Dera Ghazi Khan,80,Dera Ghazi Kha,District,District,NA,NA,0,0,0,0,0,0
 81,171,PAK,Pakistan,7,Punjab,20,Dera Ghazi Khan,81,Layyah,District,District,NA,Lieah,0,0,0,0,0,0
 82,171,PAK,Pakistan,7,Punjab,20,Dera Ghazi Khan,82,Muzaffargarh,District,District,NA,NA,0,1,1,0,0,0
-83,171,PAK,Pakistan,7,Punjab,20,Dera Ghazi Khan,83,Rajan Pur,District,District,NA,Rajanpur,0,1,0,0,0,0
+83,171,PAK,Pakistan,7,Punjab,20,Dera Ghazi Khan,83,Rajanpur,District,District,NA,Rajanpur,0,1,0,0,0,0
 84,171,PAK,Pakistan,7,Punjab,21,Faisalabad,84,Faisalabad,District,District,NA,NA,0,0,0,0,0,0
 85,171,PAK,Pakistan,7,Punjab,21,Faisalabad,85,Jhang,District,District,NA,NA,0,1,1,1,0,0
 86,171,PAK,Pakistan,7,Punjab,21,Faisalabad,86,Toba Tek Singh,District,District,NA,NA,0,0,0,0,0,0
@@ -131,7 +131,7 @@ OBJECTID,ID_0,ISO,NAME_0,ID_1,NAME_1,ID_2,NAME_2,ID_3,NAME_3,TYPE_3,ENGTYPE_3,NL
 130,171,PAK,Pakistan,8,Sind,29,Larkana,130,Larkana,District,District,NA,NA,0,0,0,0,0,0
 131,171,PAK,Pakistan,8,Sind,29,Larkana,131,Shikarpur,District,District,NA,NA,0,0,0,0,0,0
 132,171,PAK,Pakistan,8,Sind,30,Mirpur Khas,132,Mirphurkhas,District,District,NA,NA,0,0,0,0,0,0
-133,171,PAK,Pakistan,8,Sind,30,Mirpur Khas,133,Mithi,District,District,NA,NA,0,1,0,0,0,0
+133,171,PAK,Pakistan,8,Sind,30,Mirpur Khas,133,Tharparkar,District,District,NA,NA,0,1,0,0,0,0
 134,171,PAK,Pakistan,8,Sind,30,Mirpur Khas,134,Sanghar,District,District,NA,NA,0,0,0,0,0,0
 135,171,PAK,Pakistan,8,Sind,30,Mirpur Khas,135,Umerkot,District,District,NA,Umarkot,0,0,0,0,0,0
 136,171,PAK,Pakistan,8,Sind,31,Rann of Kutch,136,Rann of Kutch,District,District,NA,NA,0,0,0,0,0,0
