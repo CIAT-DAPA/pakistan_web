@@ -578,11 +578,13 @@
                 table = table + '<tr>';
                 table = table + '<td>' + value + '</td>';
                 $.each(months, function (i, v) {
-                    table = table + '<td class="crop_c_' + crop_c.filter(function (d) { return d.crop_livestock == value && d.month == v })[0].value + '"></td>';
+                    var cell = crop_c.filter(function (d) { return d.crop_livestock == value && d.month == v })[0];
+                    table = table + '<td class="crop_c_' + cell.value + 
+                                    '" data-toggle="tooltip" data-html="true" title="'+ cell.practices +'"' + '></td>';
                 });
                 table = table + '</tr>';
             });
-            table = table + '</table>';
+            //table = table + '</table>';
             $("#cropping_calendar_table  > tbody").html(table);
 
             // Hazard calendar
@@ -596,7 +598,7 @@
                 });
                 table = table + '</tr>';
             });
-            table = table + '</table>';
+            //table = table + '</table>';
             $("#cropping_hazard_table  > tbody").html(table);
 
         }
