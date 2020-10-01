@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style>
+
+        #title {
+            padding-top: 20px;
+        }
         .cropping_pie svg {
             height: 300px;
             width: 100%;
@@ -92,7 +96,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="click_tab('cropping')">
+                        <a class="nav-link" href="#" onclick="click_tab('cropping')">
                             <i class="fab fa-envira"></i>
                             Cropping system
                         </a>
@@ -102,17 +106,17 @@
                             <i class="fas fa-cloud-sun-rain"></i>
                             Climate
                         </a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="click_tab('risk')">
+                            <i class="fas fa-biohazard"></i>
+                            Climate risk
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" onclick="click_tab('impacts')">
                             <i class="fas fa-bolt"></i>
                             Climate impacts
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="click_tab('risk')">
-                            <i class="fas fa-biohazard"></i>
-                            Climate risk
                         </a>
                     </li>
                     <li class="nav-item">
@@ -135,11 +139,12 @@
 
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            
-                <h1 id="title" class="mt-5"></h1>
-                <p id="description" class="text-justify"></p>
-            
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+            <h1 id="title" class="mt-5 text-center"></h1>
+            <p id="description" class="text-justify"></p>
+
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h2>Map</h2>
             </div>
             <p class="text-justify">
@@ -259,7 +264,7 @@
                             <svg></svg>
                         </div>
                     </div>
-                </div>    
+                </div>
                 <h3>GCM</h3>
                 <div class="row">
                     <div class="col-lg-6">
@@ -272,9 +277,8 @@
                             <svg></svg>
                         </div>
                     </div>
-                </div>  
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                </div>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                     <h3>Indicators</h3>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
@@ -295,7 +299,7 @@
                         <div id="climate_indicator_map" class="indicator_map">
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
             <!-- End Climate -->
 
@@ -496,7 +500,7 @@
                 $("#enablers").removeClass("d-none");
             }
 
-            if(map != null){
+            if (map != null) {
                 map.off();
                 map.remove();
             }
@@ -648,7 +652,7 @@
                     .axisLabel('Months')
                     ;
 
-                    chart_pre.yAxis     //Chart y-axis settings
+                chart_pre.yAxis     //Chart y-axis settings
                     .axisLabel('Precipitation (mm)')
                     .tickFormat(d3.format('.0f'));
 
@@ -675,7 +679,7 @@
                 chart_tem.yAxis     //Chart y-axis settings
                     .axisLabel('Temperature (°C)')
                     .tickFormat(d3.format('.0f'));
-                
+
 
                 d3.select('#climate_temp_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(c_t)         //Populate the <svg> element with chart data...
@@ -722,7 +726,7 @@
                 gcm_pre.yAxis     //Chart y-axis settings
                     .axisLabel('Precipitation (mm)')
                     .tickFormat(d3.format('.0f'));
-                
+
 
                 d3.select('#gcm_prec_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(g_p)         //Populate the <svg> element with chart data...
@@ -746,7 +750,7 @@
                 gcm_tem.yAxis     //Chart y-axis settings
                     .axisLabel('Temperature (°C)')
                     .tickFormat(d3.format('.0f'));
-                
+
 
                 d3.select('#gcm_temp_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(g_t)         //Populate the <svg> element with chart data...
@@ -761,16 +765,16 @@
         /**
         * Function which fill the indicators for climate
         */
-        function climate_indicator_fill(indicator, season){
+        function climate_indicator_fill(indicator, season) {
             // Clear chart
             $(".indicator_plot svg").html("");
             $("#climate_indicator_map").html("");
             // Set global vars
             climate_indicator_var = indicator;
 
-            var i_i = climate_indicator_d.filter(function(d){return d.season == season && d.vars == indicator});
+            var i_i = climate_indicator_d.filter(function (d) { return d.season == season && d.vars == indicator });
             var i_p = [{
-                values: i_i.filter(function(d){return d.time == 'past'}).map(function (item) {
+                values: i_i.filter(function (d) { return d.time == 'past' }).map(function (item) {
                     return {
                         x: parseInt(item.year),
                         y: parseFloat(item.value)
@@ -780,7 +784,7 @@
                 color: '#ffbe7d'  //color - optional: choose your own line color.
             },
             {
-                values: i_i.filter(function(d){return d.time == 'future'}).map(function (item) {
+                values: i_i.filter(function (d) { return d.time == 'future' }).map(function (item) {
                     return {
                         x: parseInt(item.year),
                         y: parseFloat(item.value)
@@ -790,7 +794,7 @@
                 color: '#4e79a7'  //color - optional: choose your own line color.
             },
             {
-                values: i_i.filter(function(d){return d.time == 'future'}).map(function (item) {
+                values: i_i.filter(function (d) { return d.time == 'future' }).map(function (item) {
                     return {
                         x: parseInt(item.year),
                         y: parseFloat(item.CI_lower)
@@ -800,7 +804,7 @@
                 color: '#75a1c7'  //color - optional: choose your own line color.
             },
             {
-                values: i_i.filter(function(d){return d.time == 'future'}).map(function (item) {
+                values: i_i.filter(function (d) { return d.time == 'future' }).map(function (item) {
                     return {
                         x: parseInt(item.year),
                         y: parseFloat(item.CI_upper)
@@ -824,7 +828,7 @@
                 ind_p.yAxis     //Chart y-axis settings
                     .axisLabel('Value')
                     .tickFormat(d3.format('.0f'));
-                
+
 
                 d3.select('#climate_indicator_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(i_p)         //Populate the <svg> element with chart data...
@@ -834,27 +838,27 @@
                 nv.utils.windowResize(function () { ind_p.update() });
                 return ind_p;
             });
-            
-            if(map_i != null){
+
+            if (map_i != null) {
                 map_i.off();
                 map_i.remove();
             }
-            map_i = L.map('climate_indicator_map').setView([climate_indicator_coords[1],climate_indicator_coords[0]], 7);
+            map_i = L.map('climate_indicator_map').setView([climate_indicator_coords[1], climate_indicator_coords[0]], 7);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map_i);
-            
-            var min = d3.min(i_i,function(d){return parseFloat(d.value);});
-            var max = d3.max(i_i,function(d){return parseFloat(d.value);});
+
+            var min = d3.min(i_i, function (d) { return parseFloat(d.value); });
+            var max = d3.max(i_i, function (d) { return parseFloat(d.value); });
             color_indicator = d3.scale.linear()
-                                        .domain([min,max])
-                                        .range([0,1]);
+                .domain([min, max])
+                .range([0, 1]);
             //var x = d3.scale.linear().domain([0, 1]).range([d3.min(i_i,function(d){return parseFloat(d.value);}),d3.max(i_i,function(d){return parseFloat(d.value);})]);
-            
-            var indicator_url = "https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/"+ season + "_new_version.json";
+
+            var indicator_url = "https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/" + season + "_new_version.json";
             $.getJSON(indicator_url, function (data) {
-                L.geoJSON(data, { filter: filter_map, onEachFeature: onEachFeature2,  weight: 0.5 }).addTo(map_i);
+                L.geoJSON(data, { filter: filter_map, onEachFeature: onEachFeature2, weight: 0.5 }).addTo(map_i);
             });
             /*
             var legend = L.control({position: 'bottomleft'});
@@ -884,17 +888,17 @@
         function filter_map(feature) {
             if (feature.properties.county == climate_indicator_district) return true;
         }
-        
+
         function onEachFeature2(feature, layer) {
             layer.setStyle({
-                    fillColor : d3.interpolateOranges(color_indicator(feature.properties[climate_indicator_var])),
-                    fillOpacity: 0.8,
-                    weight: 0.5
-                });
+                fillColor: d3.interpolateOranges(color_indicator(feature.properties[climate_indicator_var])),
+                fillOpacity: 0.8,
+                weight: 0.5
+            });
         }
 
-        function color_impact(value){
-            return value >= 80 ? 'class="table-danger"' : (value < 80 && value >= 60? 'class="table-warning"':'');
+        function color_impact(value) {
+            return value >= 60 ? 'class="table-danger"' : (value < 60 && value >= 30 ? 'class="table-warning"' : '');
         }
         /**
         * Function which filter dataset for impacts and show data into the table
@@ -906,50 +910,50 @@
             var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
             var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
             var severity = hazard_d.filter(function (item) { return item.crop_livestock == crop && item.hazard == hazard });
-            severity = d3.map(severity, function(d){ return d.severity; }).keys();
+            severity = d3.map(severity, function (d) { return d.severity; }).keys();
 
             // Fixing groups and Removing duplicates
             inputs = d3.nest()
-                            .key(function(d) { return d.impact; })
-                            .rollup(function(v) { return d3.mean(v,function(k){return parseFloat(k.percentage);})  })
-                            .entries(inputs).sort((a, b) => d3.descending(a.values, b.values));
+                .key(function (d) { return d.impact; })
+                .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
+                .entries(inputs).sort((a, b) => d3.descending(a.values, b.values));
             on_farm = d3.nest()
-                            .key(function(d) { return d.impact; })
-                            .rollup(function(v) { return d3.mean(v,function(k){return parseFloat(k.percentage);})  })
-                            .entries(on_farm).sort((a, b) => d3.descending(a.values, b.values));
+                .key(function (d) { return d.impact; })
+                .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
+                .entries(on_farm).sort((a, b) => d3.descending(a.values, b.values));
             harvesting = d3.nest()
-                            .key(function(d) { return d.impact; })
-                            .rollup(function(v) { return d3.mean(v,function(k){return parseFloat(k.percentage);})  })
-                            .entries(harvesting).sort((a, b) => d3.descending(a.values, b.values));
+                .key(function (d) { return d.impact; })
+                .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
+                .entries(harvesting).sort((a, b) => d3.descending(a.values, b.values));
             marketing = d3.nest()
-                            .key(function(d) { return d.impact; })
-                            .rollup(function(v) { return d3.mean(v,function(k){return parseFloat(k.percentage);})  })
-                            .entries(marketing).sort((a, b) => d3.descending(a.values, b.values));
+                .key(function (d) { return d.impact; })
+                .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
+                .entries(marketing).sort((a, b) => d3.descending(a.values, b.values));
             //d3.map(inputs,function(d){return d.impact}).keys();            
             // Fixing data in the table
             var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
             var table = '';
-            for (var i = 0; i < max; i++) {                
+            for (var i = 0; i < max; i++) {
                 table = table + '<tr>';
-                table = table + (inputs.length > i ? '<td '+ color_impact(inputs[i].values) + '>' + inputs[i].key + '</td>' : '<td></td>');
-                table = table + (on_farm.length > i ? '<td '+ color_impact(on_farm[i].values) + '>' + on_farm[i].key + '</td>' : '<td></td>');
-                table = table + (harvesting.length > i ? '<td '+ color_impact(harvesting[i].values) + '>' + harvesting[i].key + '</td>' : '<td></td>');
-                table = table + (marketing.length > i ? '<td '+ color_impact(marketing[i].values) + '>' + marketing[i].key + '</td>' : '<td></td>');
+                table = table + (inputs.length > i ? '<td ' + color_impact(inputs[i].values) + '>' + inputs[i].key + '</td>' : '<td></td>');
+                table = table + (on_farm.length > i ? '<td ' + color_impact(on_farm[i].values) + '>' + on_farm[i].key + '</td>' : '<td></td>');
+                table = table + (harvesting.length > i ? '<td ' + color_impact(harvesting[i].values) + '>' + harvesting[i].key + '</td>' : '<td></td>');
+                table = table + (marketing.length > i ? '<td ' + color_impact(marketing[i].values) + '>' + marketing[i].key + '</td>' : '<td></td>');
                 table = table + '</tr>';
             }
             //table = table + '</table>';
             $("#impacts_table  > tbody").html(table);
 
             // Sverity
-            if(severity.length > 0){
+            if (severity.length > 0) {
                 table = '<h3>Severity</h3><ul>';
-                for(var i=0; i < severity.length; i++){
+                for (var i = 0; i < severity.length; i++) {
                     table = table + '<li>' + severity + '</li>';
                 }
                 table = table + '</ul>';
                 $("#impacts_severity").html(table);
             }
-            else{
+            else {
                 $("#impacts_severity").html("");
             }
         }
@@ -960,7 +964,7 @@
         function practices_fill(crop, hazard) {
             // Filtering data
             var records = practices_d.filter(function (item) { return (crop == 'All' ? true : item.crop == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
-            
+
             var table = '';
             for (var i = 0; i < records.length; i++) {
                 table = table + '<div class="row">';
@@ -1016,13 +1020,13 @@
             d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/maps/pakistan_data.csv", function (error, data) {
                 var district = data.filter(function (item) { return item.NAME_3 == layer.feature.properties.NAME_3; });
                 layer.setStyle({
-                    fillColor : district.length > 0 && district[0][tab] == '1' ? "#0099e6" : "#a6a6a6",
+                    fillColor: district.length > 0 && district[0][tab] == '1' ? "#0099e6" : "#a6a6a6",
                     fillOpacity: 0.8,
                     weight: 0.5
                 });
-                
+
             });
-            
+
 
             //console.log(feature.properties);
             layer.on('click', function (e) {
@@ -1052,7 +1056,7 @@
                                 climate_indicator_d = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
 
                                 climate_indicator_province = layer.feature.properties.NAME_2;
-                                climate_indicator_district = layer.feature.properties.NAME_3;                                
+                                climate_indicator_district = layer.feature.properties.NAME_3;
                                 climate_indicator_coords = layer.feature.geometry.coordinates[0][0];
 
                                 // Filling the cbo controls with hazard and crops
@@ -1061,7 +1065,7 @@
                                 cbo_climate_indicator.empty();
                                 $.each(indicators, function () {
                                     cbo_climate_indicator.append($("<option />").val(this).text(this));
-                                });                                
+                                });
 
                                 var season = d3.map(climate_indicator_d, function (d) { return d.season; }).keys();
                                 var cbo_climate_season = $("#cbo_climate_season");
@@ -1069,7 +1073,7 @@
                                 $.each(season, function () {
                                     cbo_climate_season.append($("<option />").val(this).text(this));
                                 });
-                                
+
                                 // Set the event change for both controls
                                 cbo_climate_indicator.on('change', function (e) {
                                     climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
