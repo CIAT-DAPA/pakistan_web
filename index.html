@@ -904,31 +904,31 @@
         * Function which filter dataset for impacts and show data into the table
         */
         function impact_fill_table(crop, hazard) {
-            // Filtering data
-            var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1.Input ' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
-            var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
-            var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
-            var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
+            // Filtering data and order by frequency
+            var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1. Input' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
             var severity = hazard_d.filter(function (item) { return item.crop_livestock == crop && item.hazard == hazard });
             severity = d3.map(severity, function (d) { return d.severity; }).keys();
-
+            
             // Fixing groups and Removing duplicates
             inputs = d3.nest()
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
-                .entries(inputs).sort((a, b) => d3.descending(a.values, b.values));
+                .entries(inputs).filter(function(d){ return d.values > 20});
             on_farm = d3.nest()
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
-                .entries(on_farm).sort((a, b) => d3.descending(a.values, b.values));
+                .entries(on_farm).filter(function(d){ return d.values > 20});
             harvesting = d3.nest()
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
-                .entries(harvesting).sort((a, b) => d3.descending(a.values, b.values));
+                .entries(harvesting).filter(function(d){ return d.values > 20});
             marketing = d3.nest()
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
-                .entries(marketing).sort((a, b) => d3.descending(a.values, b.values));
+                .entries(marketing).filter(function(d){ return d.values > 20});
             //d3.map(inputs,function(d){return d.impact}).keys();            
             // Fixing data in the table
             var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
