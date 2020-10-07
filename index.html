@@ -917,6 +917,7 @@
         * Function which filter dataset for impacts and show data into the table
         */
         function impact_fill_table(crop, hazard) {
+            var filter_level = crop != 'All' && hazard != 'All';
             // Filtering data and order by frequency
             var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1. Input' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
             var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
@@ -948,10 +949,10 @@
             var table = '';
             for (var i = 0; i < max; i++) {
                 table = table + '<tr>';
-                table = table + (inputs.length > i ? '<td ' + color_impact(inputs[i].values) + '>' + inputs[i].key + '</td>' : '<td></td>');
-                table = table + (on_farm.length > i ? '<td ' + color_impact(on_farm[i].values) + '>' + on_farm[i].key + '</td>' : '<td></td>');
-                table = table + (harvesting.length > i ? '<td ' + color_impact(harvesting[i].values) + '>' + harvesting[i].key + '</td>' : '<td></td>');
-                table = table + (marketing.length > i ? '<td ' + color_impact(marketing[i].values) + '>' + marketing[i].key + '</td>' : '<td></td>');
+                table = table + (inputs.length > i ? '<td ' + (filter_level ? color_impact(inputs[i].values) : '') + '>' + inputs[i].key + '</td>' : '<td></td>');
+                table = table + (on_farm.length > i ? '<td ' + (filter_level ? color_impact(on_farm[i].values) : '') + '>' + on_farm[i].key + '</td>' : '<td></td>');
+                table = table + (harvesting.length > i ? '<td ' + (filter_level ? color_impact(harvesting[i].values) : '') + '>' + harvesting[i].key + '</td>' : '<td></td>');
+                table = table + (marketing.length > i ? '<td ' + (filter_level ? color_impact(marketing[i].values) : '') + '>' + marketing[i].key + '</td>' : '<td></td>');
                 table = table + '</tr>';
             }
             //table = table + '</table>';
