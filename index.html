@@ -27,18 +27,22 @@
 
         .crop_c_Breeding {
             background-color: #76b7b2;
+            cursor: pointer;
         }
 
         .crop_c_Growing {
             background-color: #59a14f;
+            cursor: pointer;
         }
 
         .crop_c_Harvesting {
             background-color: #edc948;
+            cursor: pointer;
         }
 
         .crop_c_Planting {
             background-color: #b07aa1;
+            cursor: pointer;
         }
 
         .climatology_plot svg {
@@ -461,6 +465,10 @@
         // Controls
         var map_i;
         var map;
+        // Global function
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
 
         /**
         * This function change the type of information and functionalities of the web page depending of the value
@@ -580,7 +588,7 @@
                 $.each(months, function (i, v) {
                     var cell = crop_c.filter(function (d) { return d.crop_livestock == value && d.month == v })[0];
                     table = table + '<td class="crop_c_' + cell.value + 
-                                    '" data-toggle="tooltip" data-html="true" title="'+ cell.practices +'"' + '></td>';
+                                    '" data-toggle="tooltip" data-placement="bottom" data-html="true" title="'+ cell.practices +'"' + '></td>';
                 });
                 table = table + '</tr>';
             });
@@ -594,7 +602,7 @@
                 table = table + '<tr>';
                 table = table + '<td>' + value + '</td>';
                 $.each(months, function (i, v) {
-                    table = table + '<td>' + hazard_c.filter(function (d) { return d.hazard == value && d.month == v })[0].value + '</td>';
+                    table = table + '<td class="text-center text-danger">' + hazard_c.filter(function (d) { return d.hazard == value && d.month == v })[0].value + '</td>';
                 });
                 table = table + '</tr>';
             });
@@ -897,6 +905,9 @@
                 fillOpacity: 0.8,
                 weight: 0.5
             });
+            layer.on('click', function (e) {
+
+            });
         }
 
         function color_impact(value) {
@@ -1029,11 +1040,9 @@
 
             });
 
-
-            //console.log(feature.properties);
             layer.on('click', function (e) {
                 if (tab === 'cropping') {
-                    $("#cropping_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+                    $("#cropping_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
                         var c_production = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                         d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data2) {
@@ -1046,7 +1055,7 @@
                     });
                 }
                 else if (tab === 'climate') {
-                    $("#climate_climatology_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+                    $("#climate_climatology_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/climatology.csv", function (error, data) {
                         var climatology = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                         d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/gcm.csv", function (error, data2) {
@@ -1057,7 +1066,7 @@
                             d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/indicators.csv", function (error, data3) {
                                 climate_indicator_d = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
 
-                                climate_indicator_province = layer.feature.properties.NAME_2;
+                                climate_indicator_province = layer.feature.properties.NAME_1;
                                 climate_indicator_district = layer.feature.properties.NAME_3;
                                 climate_indicator_coords = layer.feature.geometry.coordinates[0][0];
 
@@ -1091,7 +1100,7 @@
                     });
                 }
                 else if (tab === 'impacts') {
-                    $("#impacts_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+                    $("#impacts_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
                         hazard_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
 
@@ -1127,14 +1136,14 @@
                     });
                 }
                 else if (tab === 'risk') {
-                    $("#risk_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+                    $("#risk_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/risk/risk.csv", function (error, data) {
                         var risk_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                         risk_fill(risk_d);
                     });
                 }
                 else if (tab === 'practices') {
-                    $("#practices_title").html(layer.feature.properties.NAME_2 + ' - ' + layer.feature.properties.NAME_3);
+                    $("#practices_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/practices/practices.csv", function (error, data) {
                         practices_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
 
