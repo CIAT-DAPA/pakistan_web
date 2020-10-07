@@ -918,6 +918,7 @@
         */
         function impact_fill_table(crop, hazard) {
             var filter_level = crop != 'All' && hazard != 'All';
+            var count = 0;
             // Filtering data and order by frequency
             var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1. Input' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
             var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
