@@ -26,22 +26,22 @@
         }
 
         .crop_c_Breeding {
-            background-color: #76b7b2;
+            background-color: #8ebf3f;
             cursor: pointer;
         }
 
         .crop_c_Growing {
-            background-color: #59a14f;
+            background-color: #cad32b;
             cursor: pointer;
         }
 
         .crop_c_Harvesting {
-            background-color: #edc948;
+            background-color: #f5d226;
             cursor: pointer;
         }
 
         .crop_c_Planting {
-            background-color: #b07aa1;
+            background-color: #f68b33;
             cursor: pointer;
         }
 
@@ -146,11 +146,12 @@
 
             <h1 id="title" class="mt-5 text-center"></h1>
             <p id="description" class="text-justify"></p>
-
+            <!--
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h2>Map</h2>
             </div>
+            -->
             <p class="text-justify">
                 Select a district into the map
             </p>
@@ -224,7 +225,7 @@
                         </tbody>
                     </table>
                     <h3>Hazard calendar</h3>
-                    <table id="cropping_hazard_table" class="table table-bordered table-sm">
+                    <table id="cropping_hazard_table" class="table table-striped table-sm">
                         <thead>
                             <tr>
                                 <th>Hazard</th>
@@ -537,12 +538,14 @@
             var d_pl = production.filter(function (d) { return d.sector == 'Crops'; }).map(function (d) { return { "label": d.crop_livestock, "value": parseFloat(d.value) } });
             var d_pr = production.filter(function (d) { return d.sector == 'Production'; }).map(function (d) { return { "label": d.crop_livestock, "value": parseFloat(d.value) } });
             var d_li = production.filter(function (d) { return d.sector == 'Livestock'; }).map(function (d) { return { "label": d.crop_livestock, "value": parseFloat(d.value) } });
-
+            
+            var colors_pie = ["#6e4c1f","#9d9fa2","#0088c6","#8ebf3f","#cad32b","#f5d226","#f68b33","#993399","#009933","#cc3333","#414042","#2f8927","#003580","#19191a"];
             // Production plots
             nv.addGraph(function () {
                 var d_pl_chart = nv.models.pieChart()
                     .x(function (d) { return d.label })
                     .y(function (d) { return d.value })
+                    .color(colors_pie)
                     .showLabels(true);
 
                 d3.select("#cropping_planted_plot svg")
@@ -556,6 +559,7 @@
                 var d_pr_chart = nv.models.pieChart()
                     .x(function (d) { return d.label })
                     .y(function (d) { return d.value })
+                    .color(colors_pie)
                     .showLabels(true);
 
                 d3.select("#cropping_production_plot svg")
@@ -569,6 +573,7 @@
                 var d_li_chart = nv.models.pieChart()
                     .x(function (d) { return d.label })
                     .y(function (d) { return d.value })
+                    .color(colors_pie)
                     .showLabels(true);
 
                 d3.select("#cropping_livestock_plot svg")
