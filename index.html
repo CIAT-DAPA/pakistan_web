@@ -917,15 +917,16 @@
         * Function which filter dataset for impacts and show data into the table
         */
         function impact_fill_table(crop, hazard) {
-            var filter_level = crop != 'All' && hazard != 'All';
-            var count = 0;
+            var filter_level = crop != 'All' && hazard != 'All';            
             // Filtering data and order by frequency
-            var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1. Input' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
-            var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(a.freq, b.freq));
+            var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1. Input' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(parseFloat(a.freq), parseFloat(b.freq)));
+            var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(parseFloat(a.freq), parseFloat(b.freq)));
+            var harvesting = hazard_d.filter(function (item) { return item.vc_stage == '3. Harvesting, storage & processing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(parseFloat(a.freq), parseFloat(b.freq)));
+            var marketing = hazard_d.filter(function (item) { return item.vc_stage == '4. Marketing' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(parseFloat(a.freq), parseFloat(b.freq)));
             var severity = hazard_d.filter(function (item) { return item.crop_livestock == crop && item.hazard == hazard });
             severity = d3.map(severity, function (d) { return d.severity; }).keys();
+            var count = hazard_d.filter(function (item) { return item.crop_livestock == crop && item.hazard == hazard });
+            count = d3.map(count, function (d) { return d.count; }).keys();
             
             // Fixing groups and Removing duplicates
             inputs = d3.nest()
@@ -944,7 +945,7 @@
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
                 .entries(marketing).filter(function(d){ return d.values > 20});
-            //d3.map(inputs,function(d){return d.impact}).keys();            
+            
             // Fixing data in the table
             var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
             var table = '';
@@ -961,11 +962,11 @@
 
             // Sverity
             if (severity.length > 0) {
-                table = '<h3>Severity</h3><ul>';
+                table = '<table class="table table-striped table-sm">';
                 for (var i = 0; i < severity.length; i++) {
-                    table = table + '<li>' + severity + '</li>';
+                    table = table + '<tr><th>Severity</th><td>' + severity[i] + '</td><th>Count</th><td>' + count[i] + '</td></tr>';
                 }
-                table = table + '</ul>';
+                table = table + '</table>';
                 $("#impacts_severity").html(table);
             }
             else {
