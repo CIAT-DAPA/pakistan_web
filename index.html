@@ -253,6 +253,7 @@
 
             <!-- Start Climate -->
             <div id="climate" class="tab_layout">
+            
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h2 id="climate_climatology_title"></h2>
@@ -305,6 +306,7 @@
                         </div>
                     </div>
                 </div>
+            
             </div>
             <!-- End Climate -->
 
@@ -487,6 +489,8 @@
                 $("#title").html("Climate");
                 $("#description").html("Description");
                 $("#climate").removeClass("d-none");
+                
+                //$("#climate").html('<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"><h2 id="climate_climatology_title"></h2></div><h3>Climatology</h3><div class="row"><div class="col-lg-6"><div id="climate_prec_plot" class="climatology_plot"><svg></svg></div></div><div class="col-lg-6"><div id="climate_temp_plot" class="climatology_plot"><svg></svg>                         </div>                     </div>                 </div>                 <h3>GCM</h3>                 <div class="row">                     <div class="col-lg-6">                         <div id="gcm_prec_plot" class="climatology_plot">                             <svg></svg>                         </div>                     </div>                     <div class="col-lg-6">                         <div id="gcm_temp_plot" class="climatology_plot">                             <svg></svg>                         </div>                     </div>                 </div>                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">                     <h3>Indicators</h3>                     <div class="btn-toolbar mb-2 mb-md-0">                         <div class="btn-group mr-2">                             <select id="cbo_climate_indicator" class="form-control form-control-lg">                             </select>                             <select id="cbo_climate_season" class="form-control form-control-lg">                             </select>                         </div>                     </div>                 </div>                 <div class="row">                     <div class="col-lg-6">                         <div id="climate_indicator_plot" class="indicator_plot">                             <svg></svg>                         </div>                     </div>                     <div class="col-lg-6">                         <div id="climate_indicator_map" class="indicator_map">                         </div>                     </div>                 </div>');
             }
             else if (tab === 'impacts') {
                 $("#title").html("Climate impacts");
@@ -654,18 +658,24 @@
                 color: '#e5d900'  //color - optional: choose your own line color.
             }];
 
+            //console.log(c_p);
+
             nv.addGraph(function () {
-                var chart_pre = nv.models.discreteBarChart()
+                var chart_pre = nv.models.multiBarChart()
+                    .stacked(true)
                     //.useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!                      
                     .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
-                    .staggerLabels(true)
-                    .showValues(true)
+                    .staggerLabels(false)
+                    .showControls(false)
+                    //.showValues(true)
                     .color(['#596dad'])
                     ;
 
                 chart_pre.xAxis     //Chart x-axis settings
                     .axisLabel('Months')
-                    ;
+                    .tickFormat(function (d,i) {                        
+                        return months[d-1];
+                    });
 
                 chart_pre.yAxis     //Chart y-axis settings
                     .axisLabel('Precipitation (mm)')
@@ -690,8 +700,9 @@
 
                 chart_tem.xAxis     //Chart x-axis settings
                     .axisLabel('Months')
-                    //.tickFormat(d3.format('.0f'))
-                    ;
+                    .tickFormat(function (d,i) {                        
+                        return months[d-1];
+                    });
 
                 chart_tem.yAxis     //Chart y-axis settings
                     .axisLabel('Temperature (°C)')
