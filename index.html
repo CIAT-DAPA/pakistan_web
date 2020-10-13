@@ -45,12 +45,12 @@
             cursor: pointer;
         }
 
-        .climatology_plot svg {
+        .climatology_plot {
             height: 500px;
             width: 100%;
         }
 
-        .indicator_plot svg {
+        .indicator_plot{
             height: 500px;
             width: 100%;
         }
@@ -60,8 +60,8 @@
             width: 100%;
         }
 
-        #map_scale svg {
-            width: 500;
+        #map_scale {
+            width: 500px;
         }
 
         .cell_green {
@@ -673,9 +673,11 @@
 
                 d3.select('#climate_prec_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(c_p)         //Populate the <svg> element with chart data...
+                    .transition().duration(500)
                     .call(chart_pre);          //Finally, render the chart!
 
                 //Update the chart when window resizes.
+                
                 nv.utils.windowResize(function () { chart_pre.update() });
                 return chart_pre;
             });
@@ -698,6 +700,7 @@
 
                 d3.select('#climate_temp_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(c_t)         //Populate the <svg> element with chart data...
+                    .transition().duration(500)
                     .call(chart_tem);          //Finally, render the chart!
 
                 //Update the chart when window resizes.
@@ -745,6 +748,7 @@
 
                 d3.select('#gcm_prec_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(g_p)         //Populate the <svg> element with chart data...
+                    .transition().duration(500)
                     .call(gcm_pre);          //Finally, render the chart!
 
                 //Update the chart when window resizes.
@@ -769,6 +773,7 @@
 
                 d3.select('#gcm_temp_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(g_t)         //Populate the <svg> element with chart data...
+                    .transition().duration(500)
                     .call(gcm_tem);          //Finally, render the chart!
 
                 //Update the chart when window resizes.
