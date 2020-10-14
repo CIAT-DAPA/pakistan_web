@@ -11,11 +11,12 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-        crossorigin="" />
-    <link rel="stylesheet" href="https://cdn.rawgit.com/novus/nvd3/master/build/nv.d3.min.css" />
+        crossorigin="" />       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.css" />    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style>
+        .nvtooltip { margin-top: -50px; }
 
         #title {
             padding-top: 20px;
@@ -446,7 +447,7 @@
         integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
         crossorigin=""></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="https://cdn.rawgit.com/novus/nvd3/master/build/nv.d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.js"></script>
     <script src="https://d3js.org/d3-color.v2.min.js"></script>
     <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
@@ -707,8 +708,7 @@
                 chart_tem.yAxis     //Chart y-axis settings
                     .axisLabel('Temperature (°C)')
                     .tickFormat(d3.format('.0f'));
-
-
+                
                 d3.select('#climate_temp_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(c_t)         //Populate the <svg> element with chart data...
                     .transition().duration(500)
