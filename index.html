@@ -61,8 +61,27 @@
             width: 100%;
         }
 
-        #map_scale {
-            width: 500px;
+        #map_scale{
+            width: 100px;
+            height: 50px;
+        }
+
+        .legend {
+            line-height: 18px;
+            color: #555;
+        }
+
+        .info {
+            padding: 6px 8px;
+            
+            background: white;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
         }
 
         .cell_green {
@@ -489,9 +508,7 @@
             else if (tab === 'climate') {
                 $("#title").html("Climate");
                 $("#description").html("Description");
-                $("#climate").removeClass("d-none");
-                
-                //$("#climate").html('<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"><h2 id="climate_climatology_title"></h2></div><h3>Climatology</h3><div class="row"><div class="col-lg-6"><div id="climate_prec_plot" class="climatology_plot"><svg></svg></div></div><div class="col-lg-6"><div id="climate_temp_plot" class="climatology_plot"><svg></svg>                         </div>                     </div>                 </div>                 <h3>GCM</h3>                 <div class="row">                     <div class="col-lg-6">                         <div id="gcm_prec_plot" class="climatology_plot">                             <svg></svg>                         </div>                     </div>                     <div class="col-lg-6">                         <div id="gcm_temp_plot" class="climatology_plot">                             <svg></svg>                         </div>                     </div>                 </div>                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">                     <h3>Indicators</h3>                     <div class="btn-toolbar mb-2 mb-md-0">                         <div class="btn-group mr-2">                             <select id="cbo_climate_indicator" class="form-control form-control-lg">                             </select>                             <select id="cbo_climate_season" class="form-control form-control-lg">                             </select>                         </div>                     </div>                 </div>                 <div class="row">                     <div class="col-lg-6">                         <div id="climate_indicator_plot" class="indicator_plot">                             <svg></svg>                         </div>                     </div>                     <div class="col-lg-6">                         <div id="climate_indicator_map" class="indicator_map">                         </div>                     </div>                 </div>');
+                $("#climate").removeClass("d-none");                
             }
             else if (tab === 'impacts') {
                 $("#title").html("Climate impacts");
@@ -881,39 +898,47 @@
             }).addTo(map_i);
 
             var min = d3.min(i_i, function (d) { return parseFloat(d.value); });
-            var max = d3.max(i_i, function (d) { return parseFloat(d.value); });
+            var max = d3.max(i_i, function (d) { return parseFloat(d.value); });            
             color_indicator = d3.scale.linear()
                 .domain([min, max])
                 .range([0, 1]);
-            //var x = d3.scale.linear().domain([0, 1]).range([d3.min(i_i,function(d){return parseFloat(d.value);}),d3.max(i_i,function(d){return parseFloat(d.value);})]);
-
+            
             var indicator_url = "https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/" + season + "_new_version.json";
             $.getJSON(indicator_url, function (data) {
                 L.geoJSON(data, { filter: filter_map, onEachFeature: onEachFeature2, weight: 0.5 }).addTo(map_i);
             });
-            /*
-            var legend = L.control({position: 'bottomleft'});
+            
+            var legend = L.control({position: 'topright'});
             legend.onAdd = function (map) {
                 var div = L.DomUtil.create('div', 'info legend');
-                div.innerHTML += '<h4>Scale</h4>' + 
+                div.innerHTML += '<h4>Scale (' + climate_indicator_var + ')</h4>' + 
                                 '<div id="map_scale"><svg></svg></div>';
                 return div;
             };
             legend.addTo(map_i);
-
-            var svg = d3.select("#map_scale svg");
-            console.log(d3.range(0,1,0.1));
+            
+            var range = d3.range(min,max,(max-min)/100);
+            var svg = d3.select("#map_scale svg");                        
             var rects = svg.selectAll(".rects")
-                .data(d3.range(0,1,0.1))
+                .data(range)
                 .enter()
                 .append("rect")
                 .attr("y", 10)
                 .attr("height", 25)
-                .attr("x", (d,i)=>10 + i*9)
+                .attr("x", (d,i)=>10 + i)
                 .attr("width", 6)
-                .attr("fill", d=>{ d3.interpolateOranges(d);})
-                .attr("stroke", "gray");
-            */
+                .attr("fill", function(d){ return "" + d3.interpolateOranges(color_indicator(d));});
+            
+            svg.append("text")
+                //.attr("x", function(d) { return x(d) - 3; })
+                .attr("y", 7)
+                .attr("dy", ".35em")
+                .text(function(d) { return min; });
+            svg.append("text")
+                .attr("x", 110)
+                .attr("y", 7)
+                .attr("dy", ".35em")
+                .text(function(d) { return max; });
         }
 
         function filter_map(feature) {
