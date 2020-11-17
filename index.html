@@ -1151,8 +1151,7 @@
                 else if (tab === 'impacts') {
                     $("#impacts_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
-                        hazard_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-
+                        hazard_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });                        
                         // Filling the cbo controls with hazard and crops
                         var crops_livestock = d3.map(hazard_d, function (d) { return d.crop_livestock; }).keys();
                         var cbo_impact_crop = $("#cbo_impact_crop");
