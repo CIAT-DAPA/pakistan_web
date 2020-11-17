@@ -975,6 +975,7 @@
             count = d3.map(count, function (d) { return d.count; }).keys();
             
             // Fixing groups and Removing duplicates
+            //console.log(inputs);
             inputs = d3.nest()
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
@@ -991,7 +992,7 @@
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
                 .entries(marketing).filter(function(d){ return d.values > 20});
-            
+            //console.log(inputs);
             // Fixing data in the table
             var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
             var table = '';
