@@ -1,0 +1,306 @@
+province,district,crop,csa,adoption,ind_1,ind_2,ind_3,ind_4,ind_5,ind_6,productivity,adaptation,mitigation,hazard,hazard_1,hazard_2,hazard_3,barrier_1,b1_exp,barrier_2,b2_exp,name,contact,source
+KP,Chitral,Chickpea,Agroforestry systems (establishment of wind barriers),>60%,Water,Soil & Nutrient,Carbon,Landscapes,Biodiversity,Yield Income,Agroforestry increases productivity and farmers’ incomes from a diversified production system with food security benefits.,"Promotes soil and water conservation. [2]
+Reduces erosion, land degradation and vulnerability to climate shocks, increased soil stabilization and water infiltration rates.[3]
+",Increased above- and below-ground biomass from agroforestry increases carbon stocks in the soil and reduce soil C losses from erosion. [3],Drought,High temps,Flooding,,Training & Info,Farmers lack training for the practice,,,James Giles,,link
+KP,Chitral,Cotton,Ridge sowing,>60%,Water,Yield Income,Plant Animal health,Soil & Nutrient,,,"Increased crop productivity by 20-30% [3]
+Increased net profits of 22% compared to conventional production [4]
+Decreases cost of digging tubewells by 40% [2, 3]
+20-25% less seed required [3]","Water saving up to 30-50% [1,2]
+Reduced water stress
+Reduced crop lodging 
+Better drainige during heavy rains","Higher nutrient use efficiency, reducing fertilizer requirement",Drought,Heavy rains,,,Training & Info,Farmers lack information on the benefits,Labour,Labour intensive,James Giles,,link
+KP,Chitral,Goat,Backyard livestock (Small animals),>60%,Yield Income,Soil & Nutrient,Carbon,,,,"Net income of 15,030 PKR/Year with three animals [1]
+Healthy goats can yield 1-3 liters of milk a day [1]",,Manure can be used as a source of organic fertiliser,,,,,Training & Info,Farmers lack training for the practice,,,James Giles,,link
+KP,Chitral,Legumes,Green manuring,>60%,Soil & Nutrient,Yield Income,Water,Carbon,,,"Increased yields by 10% [1]
+14% more profitable than conventional practices [2]","Water saving upto 20% [1]
+Increased water-holding capacity and decreased soil loss via erosion [2]
+Can decrease soil salinity (when using saline toleran variaties) [2]
+","Increases organic matter in soil [2]
+Reduced fertilizer input costs [2]
+Nitrigen added to soil through nitrogen fixation [2]",Drought,Salinization,,,Labour,Labour intensive,Training & Info,Farmers unaware of benefits,James Giles,,link
+KP,Chitral,Rice,Conservation Agriculture (CA),>60%,Soil & Nutrient,Water,Yield Income,Carbon,Biodiversity,Plant Animal health,"The water- and soil-conserving effects of CA help to stabilize or increase yields against weather extremes and in the long term. 
+CA also reduces costs associated with tillage, whether manual or by machinery by 15-20% in Malawi [1]. 
+The reduction in field preparations with CA also allows timelier planting, which supports successful harvests [1]
+","CA increases soil water content by increasing infiltration and reducing runoff and evaporation thus improves water use efficiency and buffers crops against drought. 
+Mulch cover also buffers the soil against temperature extremes. 
+Reducing tillage and maintaining soil cover with crop residues can reduce erosion by up to 80%. [1]
+CA also generally increases soil organic matter in topsoil, as well as soil biological activity and biodiversity.",CA practices can mitigate climate change by increasing carbon sequestration in the soil.,Drought,Flooding,Heavy rains,Pest & Disease,Training & Info,Farmers lack training for the practice,,,James Giles,,link
+KP,Chitral,Rice,Direct seeding rice,>60%,Yield Income,Water,Carbon,,,,"30% more profitable than conventional transplanting [5]
+Increase yield by 160-200 kg per acre [2]
+Reduced cropping period by approx. one month [2]
+Give 20-25% more plant population [2] 
+Labor saving
+Allow timely planting of subsequent crop due to early harvest [2]
+","Water savings by 15-30% [1,2]
+Deeper root growth, more tolerance to water and heat stress [1]
+",Reduced methane emission [1],Drought,,,,Economic,Higher costs for production,Social/Cultural,"Younger farmers are more likely to adopt, older farmers are more accustomed to the conventional method",James Giles,,link
+KP,Chitral,Rice,Alternate Wetting and Drying (AWD),>60%,Carbon,Water,Yield Income,Soil & Nutrient,,,"25% reduction in irrigation costs [4]
+According to the projection, if the adopted rate of AWD moves from 10% to 49% in Punjab over the next 10 years, the aggregate benefit would be $ 286,827,000.[4]
+FAO projects have calculated that AWD is 7% more profitable than conventional production [5]",30% less water used [2],48% reduction in methane emissions [2],Drought,,,,Training & Info,Farmers lack training for the practice,,,James Giles,,link
+KP,Chitral,Rice,Laser land levelling,>60%,Water,Carbon,Yield Income,Soil & Nutrient,Plant Animal health,,"Improve yields by 12-20% [3, 5]
+Increases yields and germination rates [2]
+","30-50% reduction in the use of irrigation water [4, 5]
+Reducing water requirement in drought prone areas 
+Reduces water logging and salinity by upto 42% [4]
+","Reduce energy use by 31% [3]
+Improved fertiliser use efficiency 15-35% [4]
+",Drought,Salinization,,,Economic,Higher costs for production,Market,Not enough service providers,James Giles,,link
+KP,Chitral,Sugarcane,Conservation Agriculture (CA),>60%,Soil & Nutrient,Water,Yield Income,Carbon,Biodiversity,Plant Animal health,"The water- and soil-conserving effects of CA help to stabilize or increase yields against weather extremes and in the long term. 
+CA also reduces costs associated with tillage, whether manual or by machinery by 15-20% in Malawi [1]. 
+The reduction in field preparations with CA also allows timelier planting, which supports successful harvests [1]
+","CA increases soil water content by increasing infiltration and reducing runoff and evaporation thus improves water use efficiency and buffers crops against drought. 
+Mulch cover also buffers the soil against temperature extremes. 
+Reducing tillage and maintaining soil cover with crop residues can reduce erosion by up to 80%. [1]
+CA also generally increases soil organic matter in topsoil, as well as soil biological activity and biodiversity.",CA practices can mitigate climate change by increasing carbon sequestration in the soil.,Drought,Flooding,Heavy rains,Pest & Disease,Training & Info,Farmers lack training for the practice,,,James Giles,,link
+KP,Chitral,Sugarcane,Multching,>60%,Water,Yield Income,Soil & Nutrient,Carbon,Plant Animal health,,"Increased crop yield 10-12% [1,2]
+20% more profitable [3]
+Uniform germination and decreased fertilizer use [1,2]
+Saves labour on weeding","Up to 20% water saving [1]
+Improves soil nutrient content 
+Inhibits germination of weeds 
+Continuous supply of moisture promote deeper root, more tolerance to water and heat stress","Trash mulching increase the organic carbon content, available nitrogen, phosphorus and potassium in soil [2]",Drought,Pest & Disease,Heavy rains,,Training & Info,Farmers lack information on the benefits,Labour,Labour intensive,James Giles,,link
+KP,Chitral,Sugarcane,Intercropping,>60%,Soil & Nutrient,Water,Yield Income,Biodiversity,Plant Animal health,,"Enhanced nutrient use efficiency [1]
+Integration of legumes into system can improve nutrient availability [1]","Better water use efficiency [1]
+Diversifies income sources [1]
+Can reduce risld from pest and disease [1]",,Drought,Pest & Disease,,,Training & Info,Farmers lack information on the benefits,,,,,link
+KP,Chitral,Wheat,Raised Bed Planting,>60%,Yield Income,Water,Soil & Nutrient,Plant Animal health,,,"Increase yields by 15-30% [1,2,3,4]
+29% increase in economic returns [3]","Water saving by 20-50% [1,2]
+Less moisture stress during non rainy days 
+Better weed management 
+Better drainage following heavy rains
+Easier to apply zero-till in following crop rotation","Increased nutrient uptake efficiency by 15-30%, reducing inorganic fertilizer requirement [3]",Drought,Flooding,Pest & Disease,,Training & Info,Farmers lack information on the benefits,Environmental,Farmers prefer the use of a seed drill on flat land with available irrigation water,James Giles,,link
+KP,Chitral,Wheat,Laser land levelling,>60%,Water,Carbon,Yield Income,Soil & Nutrient,Plant Animal health,,"Improve yields by 12-20% [3, 5]
+Increases yields and germination rates [2]
+","30-50% reduction in the use of irrigation water [4, 5]
+Reducing water requirement in drought prone areas 
+Reduces water logging and salinity by upto 42% [4]
+","Reduce energy use by 31% [3]
+Improved fertiliser use efficiency 15-35% [4]
+",Drought,Salinization,,,Economic,Higher costs for production,Market,Not enough service providers,James Giles,,link
+KP,Chitral,Wheat,Conservation Agriculture (CA),>60%,Soil & Nutrient,Water,Yield Income,Carbon,Biodiversity,Plant Animal health,"The water- and soil-conserving effects of CA help to stabilize or increase yields against weather extremes and in the long term. 
+CA also reduces costs associated with tillage, whether manual or by machinery by 15-20% in Malawi [1]. 
+The reduction in field preparations with CA also allows timelier planting, which supports successful harvests [1]
+","CA increases soil water content by increasing infiltration and reducing runoff and evaporation thus improves water use efficiency and buffers crops against drought. 
+Mulch cover also buffers the soil against temperature extremes. 
+Reducing tillage and maintaining soil cover with crop residues can reduce erosion by up to 80%. [1]
+CA also generally increases soil organic matter in topsoil, as well as soil biological activity and biodiversity.",CA practices can mitigate climate change by increasing carbon sequestration in the soil.,Drought,Flooding,Heavy rains,Pest & Disease,Training & Info,Farmers lack training for the practice,,,James Giles,,link
+Punjab,Muzaffargarh,Cotton,Community based seed quality management,Adopted 30%,Crop & Livestock Suitability,Yield Income,Plant Animal health,,,,"provision of productive and climate-adapted seeds where private companies are not able to deliver, thereby increasing yield","community seed banks can be essential instruments for conserving local varieties, restoring ‘lost’ varieties and sharing knowledge and expertise among farmers. 
+They therefore serve as a buffer against environmental and economic losses.","High-performing and adapted seeds can reduce resource requirements, indirectly reducing GHGs",Flooding,Drought,Pest & Disease,,Policy & Inst,"Lack of regulatory and legal framework to promote CBSS, as supposed to formal private-sector seed production",Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+Punjab,Muzaffargarh,Cotton,Laser land levelling,Want to adopt,Water,Carbon,Yield Income,Soil & Nutrient,Plant Animal health,,"Improve yields by 12-20% [3, 5]
+Increases yields and germination rates [2]
+","30-50% reduction in the use of irrigation water [4, 5]
+Reducing water requirement in drought prone areas 
+Reduces water logging and salinity by upto 42% [4]
+","Reduce energy use by 31% [3]
+Improved fertiliser use efficiency 15-35% [4]
+",Drought,Salinization,,,Economic,Higher costs for production,Market,Not enough service providers,Nam Nguyen,,link
+Punjab,Muzaffargarh,Cotton,Raised Bed Planting,Adopted 60%,Yield Income,Water,Soil & Nutrient,Plant Animal health,,,"Increase yields by 15-30% [1,2,3,4]
+29% increase in economic returns [3]","Water saving by 20-50% [1,2]
+Less moisture stress during non rainy days 
+Better weed management 
+Better drainage following heavy rains
+Easier to apply zero-till in following crop rotation","Increased nutrient uptake efficiency by 15-30%, reducing inorganic fertilizer requirement [3]",Drought,Flooding,Pest & Disease,,Training & Info,Farmers lack information on the benefits,Environmental,Farmers prefer the use of a seed drill on flat land with available irrigation water,Nam Nguyen,,link
+Punjab,Muzaffargarh,Cotton,Intergrated Soil Fertility Management (ISFM),Want to adopt,Soil & Nutrient,Yield Income,Carbon,,,,"Increases in yield. Reduces cost of production and hence increases profit from agriculture.
+The integrated application of soil-water conservantion and imporved fertiliser application has been found to increase crop yields in the rainfed areas of Punjab","Improves soil health by increasing organic
+matter content and biological activities.
+ISFM can play a major role in improving farm output from degraded lands","Reduces requirements of synthetic
+fertilizers use, thereby related GHG
+emissions during its production and use.
+Conserves Soil Organic Matter (SOM).",Salinization,Heavy rains,Drought,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+Punjab,Muzaffargarh,Cotton,Crop Rotation,"Adopted<30%(Rice, maize, oil seed)",Soil & Nutrient,Biodiversity,Plant Animal health,Yield Income,Carbon,Water,Crop rotation increases total production and productivity per unit area of land. Harvests of multiple crops from this system increase farmer’s income and food security.,This practice reduces the risk of total crop failure due to diversification of crops under climatic shocks. Improves soil fertility. Rotating crops maintains soil fertility and minimizes the incidence of pests and diseases.,"The practice of crop rotation helps to protect soil structure, increases soil organic matter and organic carbon reserves. Leguminous species integration reduces the need of synthetic fertilizers. When combined with nitrogen fixation species (leguminous) reduces the use of nitrogen-based synthetic fertilizers.",Pest & Disease,Drought,High temps,Flooding,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+Punjab,Muzaffargarh,Cotton,Integrated Pest Management (IPM),Adopted<30%,Plant Animal health,Yield Income,Pollution,Biodiversity,Landscapes,,"Reduces losses from pests, improves yields [2]
+Reduces cost of pesticide purchase [1,2], doses of pesticide chemicals can be largely reduced (up to 41 percent) on IPM-trained farms [4]
+Maintains or increases the cost-effectiveness of pest management programs [1]","Builds resilience of plants to pests [1]
+Protects beneficial non-target species [1]
+Lower impact on surrounding landscape supports greater biodversity [3]","Reduces the potential for air and ground water contamination [1]
+Reduces exposure of workers to pesticides [1]",Pest & Disease,,,,Training & Info,Farmers lack information on the benefits,Market,Cant access equipment,Nam Nguyen,,link
+Punjab,Muzaffargarh,Mango,Intergrated Soil Fertility Management (ISFM),D 30---60 fodder crops,Soil & Nutrient,Yield Income,Carbon,,,,"Increases in yield. Reduces cost of production and hence increases profit from agriculture.
+The integrated application of soil-water conservantion and imporved fertiliser application has been found to increase crop yields in the rainfed areas of Punjab","Improves soil health by increasing organic
+matter content and biological activities.
+ISFM can play a major role in improving farm output from degraded lands","Reduces requirements of synthetic
+fertilizers use, thereby related GHG
+emissions during its production and use.
+Conserves Soil Organic Matter (SOM).",Salinization,Heavy rains,Drought,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+Punjab,Muzaffargarh,Mango,Composting,Want to adopted,Soil & Nutrient,Yield Income,Water,Carbon,,,"increased crop production and income.
+
+Application rates can be decreased from tonnes to kilograms per hectare when using incorprating N fertiliser with N-enriched compost, and dependence on chemical fertilizer can be reduced to a certain extent.","Composting enriches soil, helping retain moisture, encourages the production of beneficial bacteria and fungi to produce humus.","waste management solution that can reduces greenhouse gases, methane emissions from landfills (dump) and lowers carbon footprint, reduces the need for chemical fertilizers",High temps,,,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+Punjab,Muzaffargarh,Mango,Liming,D 30---60,Soil & Nutrient,Yield Income,Carbon,,,,"Allows production in soils with adverse chemical characteristics (low pH). Increases income per unit of area or produce. 
+The Zn and lime application and their interaction significantly increased the soil amino acids, with potential to double rice yields in zinc-deficient soils.","Progressive reduction of lime application
+can be achieved through inclusion of
+organic matter/fertilizers, enhancing
+biological activity and subsequently soil
+fertility","In combination with organic fertilizers
+improves soil carbon stocks and organic
+matter content, hence reducing gradually
+the use of synthetic fertilizers and
+associated GHG emissions.",Pest & Disease,,,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+Punjab,Muzaffargarh,Mango,"Irrigation practices (Drip, Sprinkler, Regulated deficit)",Want to adopt,Water,Carbon,Plant Animal health,Yield Income,,,"Plants receive exact water requirement,
+improving productivity and quality. 
+Improves or maintains yield per unit of
+water","Improved water use efficiency, reducing
+requirement in times of drought.
+In combination with standardized irrigation
+designs/schemes leads to water use
+efficiency reducing the water demand in
+drought prone areas. Minimizes erosion.","Reduced pumping costs due to precision
+application
+Reduces energy requirements for irrigation
+hence associated GHG emissions per unit
+of produce.",Drought,Pest & Disease,,,Economic,Higher costs for production,,,Nam Nguyen,,link
+Punjab,Muzaffargarh,Mango,Improved Varieties,Want to Adopt,Crop & Livestock Suitability,Plant Animal health,Yield Income,Water,Carbon,,"High yielding, resilient varieties reduce
+losses and increase productivity.","Improved varieties reduce losses under
+adverse climatic conditions along with pest
+and disease outbreaks.","Reduced requirement for pesticide and
+fungicide use reduces emissions and
+associated environmental degradation.",Drought,Flooding,Pest & Disease,,Market,Lack of available improved varieties. Seed supply does not meet demand.,,,Nam Nguyen,,link
+Punjab,Muzaffargarh,Wheat,Laser land levelling,Want to Adopt and adopted,Water,Carbon,Yield Income,Soil & Nutrient,Plant Animal health,,"Improve yields by 12-20% [3, 5]
+Increases yields and germination rates [2]
+","30-50% reduction in the use of irrigation water [4, 5]
+Reducing water requirement in drought prone areas 
+Reduces water logging and salinity by upto 42% [4]
+","Reduce energy use by 31% [3]
+Improved fertiliser use efficiency 15-35% [4]
+",Drought,Salinization,,,Economic,Higher costs for production,Market,Not enough service providers,Nam Nguyen,,link
+Punjab,Muzaffargarh,Wheat,Laser land levelling,Want to Adopt,Water,Carbon,Yield Income,Soil & Nutrient,Plant Animal health,,"Improve yields by 12-20% [3, 5]
+Increases yields and germination rates [2]
+","30-50% reduction in the use of irrigation water [4, 5]
+Reducing water requirement in drought prone areas 
+Reduces water logging and salinity by upto 42% [4]
+","Reduce energy use by 31% [3]
+Improved fertiliser use efficiency 15-35% [4]
+",Drought,Salinization,,,Economic,Higher costs for production,Market,Not enough service providers,Nam Nguyen,,link
+Punjab,Muzaffargarh,Wheat,Community based seed quality management,Not Adopted,Crop & Livestock Suitability,Yield Income,Plant Animal health,,,,"provision of productive and climate-adapted seeds where private companies are not able to deliver, thereby increasing yield","community seed banks can be essential instruments for conserving local varieties, restoring ‘lost’ varieties and sharing knowledge and expertise among farmers. 
+They therefore serve as a buffer against environmental and economic losses.","High-performing and adapted seeds can reduce resource requirements, indirectly reducing GHGs",Flooding,Drought,Pest & Disease,,Policy & Inst,"Lack of regulatory and legal framework to promote CBSS, as supposed to formal private-sector seed production",Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+Punjab,Muzaffargarh,Wheat,Raised Bed Planting,Not Adopted,Yield Income,Water,Soil & Nutrient,Plant Animal health,,,"Increase yields by 15-30% [1,2,3,4]
+29% increase in economic returns [3]","Water saving by 20-50% [1,2]
+Less moisture stress during non rainy days 
+Better weed management 
+Better drainage following heavy rains
+Easier to apply zero-till in following crop rotation","Increased nutrient uptake efficiency by 15-30%, reducing inorganic fertilizer requirement [3]",Drought,Flooding,Pest & Disease,,Training & Info,Farmers lack information on the benefits,Environmental,Farmers prefer the use of a seed drill on flat land with available irrigation water,Nam Nguyen,,link
+Punjab,Muzaffargarh,Wheat,Zero-till (Drill),Not Adopted,Yield Income,Water,Soil & Nutrient,Carbon,,,"Yield gains, cost savings on labour and machinery up to 34% [1]
+More than 30.00% saving of irrigation and saving of complete land preparation costs have been reported also, the sowing of wheat after rice under Zero-Tillage, when compared to conventional method, gave 20.20% more grain yield with a reduced cost of land preparation and a net benefit of 77.00% [2]",Reduced water usage [1] crop residues are left on the soil surface which adds to soil organic matter content [2] and avoids late planting and mitigates the effects of poor land preparation,Reduce GHG due to no crop residue burning [1],Drought,,,,Environmental,Saline and poorly drained with hard pan soils are not suitable for zero-till,,,Nam Nguyen,,link
+Punjab,Muzaffargarh,Wheat,Seed treatment (disease),Not Adopted,Plant Animal health,Yield Income,,,,,Yield increase and reduction of losses,protect seeds from microbial pathogens and insect pests. Maintain crop health,,Pest & Disease,,,,Training & Info,Farmers lack training for the practice,Economic,Higher costs for production,Nam Nguyen,,link
+KP,Chitral,Wheat,Community based seed quality management,<30 %,Crop & Livestock Suitability,Yield Income,Plant Animal health,,,,"provision of productive and climate-adapted seeds where private companies are not able to deliver, thereby increasing yield","community seed banks can be essential instruments for conserving local varieties, restoring ‘lost’ varieties and sharing knowledge and expertise among farmers. 
+They therefore serve as a buffer against environmental and economic losses.","High-performing and adapted seeds can reduce resource requirements, indirectly reducing GHGs",Flooding,Drought,Pest & Disease,,Policy & Inst,"Lack of regulatory and legal framework to promote CBSS, as supposed to formal private-sector seed production",Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+KP,Chitral,Wheat,Intergrated Soil Fertility Management (ISFM),Want to adopt,Soil & Nutrient,Yield Income,Carbon,,,,"Increases in yield. Reduces cost of production and hence increases profit from agriculture.
+The integrated application of soil-water conservantion and imporved fertiliser application has been found to increase crop yields in the rainfed areas of Punjab","Improves soil health by increasing organic
+matter content and biological activities.
+ISFM can play a major role in improving farm output from degraded lands","Reduces requirements of synthetic
+fertilizers use, thereby related GHG
+emissions during its production and use.
+Conserves Soil Organic Matter (SOM).",Salinization,Heavy rains,Drought,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+KP,Chitral,Wheat,Composting,30-60 %,Soil & Nutrient,Yield Income,Water,Carbon,,,"increased crop production and income.
+
+Application rates can be decreased from tonnes to kilograms per hectare when using incorprating N fertiliser with N-enriched compost, and dependence on chemical fertilizer can be reduced to a certain extent.","Composting enriches soil, helping retain moisture, encourages the production of beneficial bacteria and fungi to produce humus.","waste management solution that can reduces greenhouse gases, methane emissions from landfills (dump) and lowers carbon footprint, reduces the need for chemical fertilizers",High temps,,,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+KP,Chitral,Wheat,Crop Rotation,"<30 % (Potato, peas)",Soil & Nutrient,Biodiversity,Plant Animal health,Yield Income,Carbon,Water,Crop rotation increases total production and productivity per unit area of land. Harvests of multiple crops from this system increase farmer’s income and food security.,This practice reduces the risk of total crop failure due to diversification of crops under climatic shocks. Improves soil fertility. Rotating crops maintains soil fertility and minimizes the incidence of pests and diseases.,"The practice of crop rotation helps to protect soil structure, increases soil organic matter and organic carbon reserves. Leguminous species integration reduces the need of synthetic fertilizers. When combined with nitrogen fixation species (leguminous) reduces the use of nitrogen-based synthetic fertilizers.",Pest & Disease,Drought,High temps,Flooding,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+KP,Chitral,Wheat,Season-adapted planting times (e.g. use of cropping calendars),>60 %,Plant Animal health,Yield Income,Carbon,,,,"Increases land and crop productivity per
+unit of water.",Adjusting the cropping calendar by planting with the onset of rains reduces losses due to changing weather patterns.,"Provides moderate reduction in GHG
+emissions per unit of food produced.",High temps,Heavy rains,,,Environmental,Varying and uncertain climate conditions,Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+KP,Chitral,Potato,Community based seed quality management,< 30 %,Crop & Livestock Suitability,Yield Income,Plant Animal health,,,,"provision of productive and climate-adapted seeds where private companies are not able to deliver, thereby increasing yield","community seed banks can be essential instruments for conserving local varieties, restoring ‘lost’ varieties and sharing knowledge and expertise among farmers. 
+They therefore serve as a buffer against environmental and economic losses.","High-performing and adapted seeds can reduce resource requirements, indirectly reducing GHGs",Flooding,Drought,Pest & Disease,,Policy & Inst,"Lack of regulatory and legal framework to promote CBSS, as supposed to formal private-sector seed production",Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+KP,Chitral,Potato,Raised Bed Planting,>60 %,Yield Income,Water,Soil & Nutrient,Plant Animal health,,,"Increase yields by 15-30% [1,2,3,4]
+29% increase in economic returns [3]","Water saving by 20-50% [1,2]
+Less moisture stress during non rainy days 
+Better weed management 
+Better drainage following heavy rains
+Easier to apply zero-till in following crop rotation","Increased nutrient uptake efficiency by 15-30%, reducing inorganic fertilizer requirement [3]",Drought,Flooding,Pest & Disease,,Training & Info,Farmers lack information on the benefits,Environmental,Farmers prefer the use of a seed drill on flat land with available irrigation water,Nam Nguyen,,link
+KP,Chitral,Potato,Organic farming,<30 %,Yield Income,Water,Biodiversity,Plant Animal health,Soil & Nutrient,Carbon,"Decreased input costs. Higher farm incomes are thus
+possible due to lower input costs and higher sale prices.The average per month income associated with
+organic farmers is significantly higher than conventional
+households (PKR 34,033 and 30,170 respectively). 
+","enhance soil fertility, soils are improved by
+developing drainage system as well as the use of organic material","minimizing the pollution and wastage of resources, such as fertiliser",Pest & Disease,Drought,,,Policy & Inst,Limited institutional support and subsidies for organic agriculture,Market,Markets not well developed for organic produce,Nam Nguyen,,link
+KP,Chitral,Potato,Intergrated Soil Fertility Management (ISFM),Want to adopt,Soil & Nutrient,Yield Income,Carbon,,,,"Increases in yield. Reduces cost of production and hence increases profit from agriculture.
+The integrated application of soil-water conservantion and imporved fertiliser application has been found to increase crop yields in the rainfed areas of Punjab","Improves soil health by increasing organic
+matter content and biological activities.
+ISFM can play a major role in improving farm output from degraded lands","Reduces requirements of synthetic
+fertilizers use, thereby related GHG
+emissions during its production and use.
+Conserves Soil Organic Matter (SOM).",Salinization,Heavy rains,Drought,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+KP,Chitral,Potato,Season-adapted planting times (e.g. use of cropping calendars),30-60 %,Plant Animal health,Yield Income,Carbon,,,,"Increases land and crop productivity per
+unit of water.",Adjusting the cropping calendar by planting with the onset of rains reduces losses due to changing weather patterns.,"Provides moderate reduction in GHG
+emissions per unit of food produced.",High temps,Heavy rains,,,Environmental,Varying and uncertain climate conditions,Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+KP,Chitral,Apricot,Improved Varieties,"<30 % (quality fruit regarding size, shape and taste)",Crop & Livestock Suitability,Plant Animal health,Yield Income,Water,Carbon,,"High yielding, resilient varieties reduce
+losses and increase productivity.","Improved varieties reduce losses under
+adverse climatic conditions along with pest
+and disease outbreaks.","Reduced requirement for pesticide and
+fungicide use reduces emissions and
+associated environmental degradation.",Drought,Flooding,Pest & Disease,,Market,Lack of available improved varieties. Seed supply does not meet demand.,,,Nam Nguyen,,link
+KP,Chitral,Apricot,Intergrated Soil Fertility Management (ISFM),Want to adopt,Soil & Nutrient,Yield Income,Carbon,,,,"Increases in yield. Reduces cost of production and hence increases profit from agriculture.
+The integrated application of soil-water conservantion and imporved fertiliser application has been found to increase crop yields in the rainfed areas of Punjab","Improves soil health by increasing organic
+matter content and biological activities.
+ISFM can play a major role in improving farm output from degraded lands","Reduces requirements of synthetic
+fertilizers use, thereby related GHG
+emissions during its production and use.
+Conserves Soil Organic Matter (SOM).",Salinization,Heavy rains,Drought,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+KP,Chitral,Apricot,Composting,Want to adopt,Soil & Nutrient,Yield Income,Water,Carbon,,,"increased crop production and income.
+
+Application rates can be decreased from tonnes to kilograms per hectare when using incorprating N fertiliser with N-enriched compost, and dependence on chemical fertilizer can be reduced to a certain extent.","Composting enriches soil, helping retain moisture, encourages the production of beneficial bacteria and fungi to produce humus.","waste management solution that can reduces greenhouse gases, methane emissions from landfills (dump) and lowers carbon footprint, reduces the need for chemical fertilizers",High temps,,,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+KP,Chitral,Apricot,Harvesting at optimal time,30-60%,Yield Income,Plant Animal health,,,,,Yield preservation,Reduce post-harvest losses,,Drought,Flooding,,,,,,,Nam Nguyen,,link
+KP,Chitral,Apricot,Integrated Pest Management (IPM),Want to adopt,Plant Animal health,Yield Income,Pollution,Biodiversity,Landscapes,,"Reduces losses from pests, improves yields [2]
+Reduces cost of pesticide purchase [1,2], doses of pesticide chemicals can be largely reduced (up to 41 percent) on IPM-trained farms [4]
+Maintains or increases the cost-effectiveness of pest management programs [1]","Builds resilience of plants to pests [1]
+Protects beneficial non-target species [1]
+Lower impact on surrounding landscape supports greater biodversity [3]","Reduces the potential for air and ground water contamination [1]
+Reduces exposure of workers to pesticides [1]",Pest & Disease,,,,Training & Info,Farmers lack information on the benefits,Market,Cant access equipment,Nam Nguyen,,link
+Sindh,Tharparkar,Beans,Community based seed quality management,Want to adopt 30-60% (cluster bean with cucurbits and Moth (kidney bean),Crop & Livestock Suitability,Yield Income,Plant Animal health,,,,"provision of productive and climate-adapted seeds where private companies are not able to deliver, thereby increasing yield","community seed banks can be essential instruments for conserving local varieties, restoring ‘lost’ varieties and sharing knowledge and expertise among farmers. 
+They therefore serve as a buffer against environmental and economic losses.","High-performing and adapted seeds can reduce resource requirements, indirectly reducing GHGs",Flooding,Drought,Pest & Disease,,Policy & Inst,"Lack of regulatory and legal framework to promote CBSS, as supposed to formal private-sector seed production",Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+Sindh,Tharparkar,Beans,Crop diversification,Want to adopt (cluster bean with cucurbits and Moth (kidney bean),Yield Income,Crop & Livestock Suitability,Soil & Nutrient,Plant Animal health,Biodiversity,,"yield stability in crop production, efficient use of labor and resources, high returns to
+labo","spread production and income risk over a wider range of crops, thus reducing livelihood vulnerability to weather or market shocks.
+produce agronomic benefits in terms of pest management and soil quality",,Drought,Flooding,Pest & Disease,,Training & Info,Farmers lack training for the practice,Market,Inadequate supply of seeds and plants of improved cultivars,Nam Nguyen,,link
+Sindh,Tharparkar,Beans,Early Maturing Varieties,Want to adopt,Crop & Livestock Suitability,Yield Income,Plant Animal health,Carbon,,,"Promotes high yields per unit area hence
+an increase in income and profit due to
+reduced production costs","reducing the vulnerability of farmers to extreme events.
+reduce harvest and post?harvest loses and increases the food security
+Optimizes the use of available soil moisture contributing to avoid crop loss. Increases water use efficiency.","Provides moderate reduction in GHG
+emissions per unit of food produced.",Drought,Flooding,Pest & Disease,,Market,Lack of available improved varieties. Seed supply does not meet demand.,,,Nam Nguyen,,link
+Sindh,Tharparkar,Beans,Improved Varieties,Want to adopt,Crop & Livestock Suitability,Plant Animal health,Yield Income,Water,Carbon,,"High yielding, resilient varieties reduce
+losses and increase productivity.","Improved varieties reduce losses under
+adverse climatic conditions along with pest
+and disease outbreaks.","Reduced requirement for pesticide and
+fungicide use reduces emissions and
+associated environmental degradation.",Drought,Flooding,Pest & Disease,,Market,Lack of available improved varieties. Seed supply does not meet demand.,,,Nam Nguyen,,link
+Sindh,Tharparkar,Beans,Green manuring,Not adopted (because every part of crop is consumed),Soil & Nutrient,Yield Income,Water,Carbon,,,"Increased yields by 10% [1]
+14% more profitable than conventional practices [2]","Water saving upto 20% [1]
+Increased water-holding capacity and decreased soil loss via erosion [2]
+Can decrease soil salinity (when using saline toleran variaties) [2]
+","Increases organic matter in soil [2]
+Reduced fertilizer input costs [2]
+Nitrigen added to soil through nitrogen fixation [2]",Drought,Salinization,,,Labour,Labour intensive,Training & Info,Farmers unaware of benefits,Nam Nguyen,,link
+Sindh,Tharparkar,Millet,Community based seed quality management,Adopted 30-60%,Crop & Livestock Suitability,Yield Income,Plant Animal health,,,,"provision of productive and climate-adapted seeds where private companies are not able to deliver, thereby increasing yield","community seed banks can be essential instruments for conserving local varieties, restoring ‘lost’ varieties and sharing knowledge and expertise among farmers. 
+They therefore serve as a buffer against environmental and economic losses.","High-performing and adapted seeds can reduce resource requirements, indirectly reducing GHGs",Flooding,Drought,Pest & Disease,,Policy & Inst,"Lack of regulatory and legal framework to promote CBSS, as supposed to formal private-sector seed production",Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+Sindh,Tharparkar,Millet,Composting,Adopted,Soil & Nutrient,Yield Income,Water,Carbon,,,"increased crop production and income.
+
+Application rates can be decreased from tonnes to kilograms per hectare when using incorprating N fertiliser with N-enriched compost, and dependence on chemical fertilizer can be reduced to a certain extent.","Composting enriches soil, helping retain moisture, encourages the production of beneficial bacteria and fungi to produce humus.","waste management solution that can reduces greenhouse gases, methane emissions from landfills (dump) and lowers carbon footprint, reduces the need for chemical fertilizers",High temps,,,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+Sindh,Tharparkar,Millet,Laser land levelling,Not adopted,Water,Carbon,Yield Income,Soil & Nutrient,Plant Animal health,,"Improve yields by 12-20% [3, 5]
+Increases yields and germination rates [2]
+","30-50% reduction in the use of irrigation water [4, 5]
+Reducing water requirement in drought prone areas 
+Reduces water logging and salinity by upto 42% [4]
+","Reduce energy use by 31% [3]
+Improved fertiliser use efficiency 15-35% [4]
+",Drought,Salinization,,,Economic,Higher costs for production,Market,Not enough service providers,Nam Nguyen,,link
+Sindh,Tharparkar,Millet,Crop Rotation,Adopted <30%,Soil & Nutrient,Biodiversity,Plant Animal health,Yield Income,Carbon,Water,Crop rotation increases total production and productivity per unit area of land. Harvests of multiple crops from this system increase farmer’s income and food security.,This practice reduces the risk of total crop failure due to diversification of crops under climatic shocks. Improves soil fertility. Rotating crops maintains soil fertility and minimizes the incidence of pests and diseases.,"The practice of crop rotation helps to protect soil structure, increases soil organic matter and organic carbon reserves. Leguminous species integration reduces the need of synthetic fertilizers. When combined with nitrogen fixation species (leguminous) reduces the use of nitrogen-based synthetic fertilizers.",Pest & Disease,Drought,High temps,Flooding,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+Sindh,Tharparkar,Millet,Agroforestry systems (establishment of wind barriers),Want to Adopt,Water,Soil & Nutrient,Carbon,Landscapes,Biodiversity,Yield Income,Agroforestry increases productivity and farmers’ incomes from a diversified production system with food security benefits.,"Promotes soil and water conservation. [2]
+Reduces erosion, land degradation and vulnerability to climate shocks, increased soil stabilization and water infiltration rates.[3]
+",Increased above- and below-ground biomass from agroforestry increases carbon stocks in the soil and reduce soil C losses from erosion. [3],Drought,High temps,Flooding,,Training & Info,Farmers lack training for the practice,,,Nam Nguyen,,link
+Sindh,Tharparkar,Cattle,Controlled Shed,Want to adopt <5%,Plant Animal health,Yield Income,Crop & Livestock Suitability,Carbon,,,"Faster growth and higher feed conversion ratio due to proper housing.
+For poultry farming, it is estimated Net revenue was PKR 10.269 per broiler for open shed and PKR 72.502 per broiler for Environmentally Controlled shed","Reduces exposure to adverse climatic conditions, reducing animal’s stresses.","Allows better manure management, thereby reducing the related GHG emissions.",High temps,Pest & Disease,Heavy rains,,Economic,Higher costs for production,Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+Sindh,Tharparkar,Cattle,Community based seed quality management,Want to adopt <5%,Crop & Livestock Suitability,Yield Income,Plant Animal health,,,,"provision of productive and climate-adapted seeds where private companies are not able to deliver, thereby increasing yield","community seed banks can be essential instruments for conserving local varieties, restoring ‘lost’ varieties and sharing knowledge and expertise among farmers. 
+They therefore serve as a buffer against environmental and economic losses.","High-performing and adapted seeds can reduce resource requirements, indirectly reducing GHGs",Flooding,Drought,Pest & Disease,,Policy & Inst,"Lack of regulatory and legal framework to promote CBSS, as supposed to formal private-sector seed production",Training & Info,Farmers lack training for the practice,Nam Nguyen,,link
+Sindh,Tharparkar,Cattle,Improved Varieties,Want to adopt (Drought) 30-60%,Crop & Livestock Suitability,Plant Animal health,Yield Income,Water,Carbon,,"High yielding, resilient varieties reduce
+losses and increase productivity.","Improved varieties reduce losses under
+adverse climatic conditions along with pest
+and disease outbreaks.","Reduced requirement for pesticide and
+fungicide use reduces emissions and
+associated environmental degradation.",Drought,Flooding,Pest & Disease,,Market,Lack of available improved varieties. Seed supply does not meet demand.,,,Nam Nguyen,,link
+Sindh,Tharparkar,Cattle,Improved Breeds,Want to adopt 10%,Crop & Livestock Suitability,Plant Animal health,Yield Income,Carbon,,,"Reduced losses in times of drought or
+extreme heat increase productivity.","Livestock breeds selected to be resilient to
+extreme conditions","Varieties which produce fewer methane
+emissions can be selected",High temps,Pest & Disease,,,Policy & Inst,Institutions lack resources to drive tangible breed improvement and improved utilization,Market,Lack of available improved breeds,Nam Nguyen,,link
+Sindh,Tharparkar,Cattle,Early Maturing Varieties,Want to adopt 5%,Crop & Livestock Suitability,Yield Income,Plant Animal health,Carbon,,,"Promotes high yields per unit area hence
+an increase in income and profit due to
+reduced production costs","reducing the vulnerability of farmers to extreme events.
+reduce harvest and post?harvest loses and increases the food security
+Optimizes the use of available soil moisture contributing to avoid crop loss. Increases water use efficiency.","Provides moderate reduction in GHG
+emissions per unit of food produced.",Drought,Flooding,Pest & Disease,,Market,Lack of available improved varieties. Seed supply does not meet demand.,,,Nam Nguyen,,link
