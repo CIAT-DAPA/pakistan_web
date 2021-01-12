@@ -104,6 +104,36 @@
             height: 60px;
             width: 60px;
         }
+	
+	.practices_item {
+	    background-color: #cccccc;
+	    padding: 12px 12px 12px;
+	}
+
+	.practices_border {
+	    border-width: 1px;
+	    border-style: solid;
+	    border-color: #ffffff;
+	}
+
+	.practices_table{
+	    border: 1px solid #ffffff;
+	}
+
+	.borderless td, .borderless th {
+	    border: none;
+	}
+
+	table.table-bordered{
+    		border:1px solid #ffffff;
+    		margin-top:20px;
+  	}
+	table.table-bordered > thead > tr > th{
+    		border:1px solid #ffffff;
+	}
+	table.table-bordered > tbody > tr > td{
+		border:1px solid #ffffff;
+	}
     </style>
 
     <title>Pakistan</title>
@@ -1028,26 +1058,52 @@
             // Filtering data
             var records = practices_d.filter(function (item) { return (crop == 'All' ? true : item.crop == crop) && (hazard == 'All' ? true : item.hazard == hazard) });
 
-            var table = '';
+            //var table = '';
+	    var table = '<table class="table table-bordered table-sm">';
             for (var i = 0; i < records.length; i++) {
-                table = table + '<div class="row"><div class="col-sm-12">';
-                table = table + '<div class="row"><div class="col-md-12"><h4>' + records[i].crop + '</h4></div></div>';
-                table = table + '<div class="row"><div style="padding: 25px 25px 25px 25px;" class="col-md-4 bg-secondary text-white"><p class="text-justify">' + records[i].csa + '</p><p class="text-warning"><b>' + records[i].adoption + '</b><p></div>';
-                table = table + '<div class="col-md-2">' +
+		table = table + '<tr class="table-secondary d-flex">';
+		table = table + '<td rowspan="2" class="col-3"><h4>' + records[i].crop + '</h4><p class="text-justify">' + records[i].csa + '</p><p class="text-warning"><b>' + records[i].adoption + '</b></p></td>';
+		table = table + '<td class="col-6"><table class="table borderless"><tr><td>' + 
+				(records[i].ind_1 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_1 + '" />') +
+                        	(records[i].ind_2 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_2 + '" />') +
+	                        (records[i].ind_3 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_3 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_3 + '" />') +
+        	                (records[i].ind_4 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_4 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_4 + '" />') +
+                	        (records[i].ind_5 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_5 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_5 + '" />') +
+                        	(records[i].ind_6 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_6 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_6 + '" />') +
+			'</td></tr>';
+		table = table + '<tr><td>' + 
+	                        (records[i].hazard_1 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_1 + '" />') +
+        	                (records[i].hazard_2 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_2 + '" />') +
+                	        (records[i].hazard_3 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_3 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_3 + '" />') +
+			'</td></tr></table></td>';
+		table = table + '<td rowspan="2" class="col-3"><table class="table borderless">';
+		if(records[i].barrier_1 != '')
+                    table = table + '<tr><td><img src="https://ciat-dapa.github.io/pakistan_web/img/barriers/' + records[i].barrier_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].barrier_1 + '" /></td>' +
+                                    '<td>'+ records[i].b1_exp + '</td></tr>';
+                if(records[i].barrier_2 != '')
+                    table = table + '<tr><td><img src="https://ciat-dapa.github.io/pakistan_web/img/barriers/' + records[i].barrier_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].barrier_2 + '" /></td>' + 
+                                    '<td>'+ records[i].b2_exp + '</td></tr>';
+		table = table + '</table></td>';
+		table = table + '</tr>';
+		
+		/*
+		table = table + '<div class="row">';
+                table = table + '<div class="col-md-3 practices_item practices_border"><h4>' + records[i].crop + '</h4><p class="text-justify">' + records[i].csa + '</p><p class="text-warning"><b>' + records[i].adoption + '</b></p></div>';
+                table = table + '<div class="col-md-5 practices_item"><div class="row"><div class="col-sm-10 practices_border">' +
                         (records[i].ind_1 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_1 + '" />') +
                         (records[i].ind_2 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_2 + '" />') +
                         (records[i].ind_3 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_3 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_3 + '" />') +
                         (records[i].ind_4 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_4 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_4 + '" />') +
                         (records[i].ind_5 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_5 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_5 + '" />') +
                         (records[i].ind_6 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_6 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_6 + '" />') +
-                    '</div>';
-                table = table + '<div class="col-md-2">' +
+                    '</div></div>';
+                table = table + '<div class="row"><div class="col-sm-10 practices_border">' +
                         (records[i].hazard_1 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_1 + '" />') +
                         (records[i].hazard_2 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_2 + '" />') +
                         (records[i].hazard_3 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_3 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_3 + '" />') +
-                    '</div>';
+                    '</div></div></div>';
                 //table = table + '<div class="col-md-4"><h5>Productivity</h5><p class="text-justify">' + records[i].productivity + '</p><h5>Adaptation</h5><p class="text-justify">' + records[i].adaptation + '</p><h5>Mitigation</h5><p class="text-justify">' + records[i].mitigation + '</p></div>';
-                table = table + '<div class="col-md-4">';
+                table = table + '<div class="col-md-4 practices_item practices_border">';
                 if(records[i].barrier_1 != '')
                     table = table + '<div class="row"><div class="col-md-2"><img src="https://ciat-dapa.github.io/pakistan_web/img/barriers/' + records[i].barrier_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].barrier_1 + '" /></div>' +
                                     '<div class="col-md-10"><p class="text-justify">' + records[i].b1_exp + '</p></div></div>';
@@ -1057,6 +1113,7 @@
                 //table = table + '</div>';
                 //table = table + '<div class="row"><div class="col-md-12"><a href="' + records[i].source + '" target="_blank">' + records[i].source + '</a></div>';
                 table = table + '</div></div>';
+		*/
             }
             //table = table + '</div>';
             $("#practices_table").html(table);
