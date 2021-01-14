@@ -1163,6 +1163,7 @@
                             var crop_c = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                             d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/hazard.csv", function (error, data3) {
                                 var hazard_c = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+                                console.log(c_production);
                                 cropping_fill(c_production);
 
                                 // Filling the cbo controls village

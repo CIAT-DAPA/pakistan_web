@@ -1,4 +1,4 @@
-province,district,village,crop_livestock,coverage,month,value,management Practices,comments
+Province,District,Village,Crop_livestock,Coverage,Month,Value,Management Practices,Comments
 KP,Chitral,Shagram,Wheat,30,Jan,Growing,,
 KP,Chitral,Shagram,Wheat,30,Feb,Growing,,
 KP,Chitral,Shagram,Wheat,30,Mar,Growing,Irrigation,
