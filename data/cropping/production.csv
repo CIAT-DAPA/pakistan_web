@@ -1,349 +1,346 @@
-province,district,village,sector,crop_livestock,value
-KP,Chitral,,Crops,Potato,1388.5
-KP,Chitral,,Crops,Apricot,52
-KP,Chitral,,Crops,Wheat,8139
-KP,Chitral,,Crops,Maize,5518
-KP,Chitral,,Crops,Rice,1855
-KP,Chitral,,Crops,Barley,1724
-KP,Chitral,,Crops,Bajra,67
-KP,Chitral,,Crops,Walnut,95
-KP,Chitral,,Crops,Apple,250.5
-KP,Chitral,,Crops,Pear,81
-KP,Chitral,,Crops,Onion,372.5
-KP,Chitral,,Livestock,Poultry,474500
-KP,Chitral,,Livestock,Goats,386000
-KP,Chitral,,Livestock,Sheep,185650
-KP,Chitral,,Livestock,Cattle,170000
-KP,Chitral,,Livestock,Assess,3725
-KP,Chitral,,Livestock,Buffaloes,0
-KP,Chitral,,Livestock,Horse,410
-KP,Chitral,,Livestock,Yak,4090
-KP,Chitral,,Production,Potato,42321
-KP,Chitral,,Production,Apricot,269.8
-KP,Chitral,,Production,Wheat,15123
-KP,Chitral,,Production,Maize,13464
-KP,Chitral,,Production,Rice,3710
-KP,Chitral,,Production,Barley,2413
-KP,Chitral,,Production,Bajra,73.7
-KP,Chitral,,Production,Walnut,1140
-KP,Chitral,,Production,Apple,1660.7
-KP,Chitral,,Production,Pear,478.6
-KP,Chitral,,Production,Onion,4581
-KP,D.I. Khan,,Crops,Wheat,43210
-KP,D.I. Khan,,Crops,Sugarcane ,26762
-KP,D.I. Khan,,Crops,Rice,12733
-KP,D.I. Khan,,Crops,Gram  ,6078
-KP,D.I. Khan,,Crops,Maize ,1564
-KP,D.I. Khan,,Crops,Jowar ,1268
-KP,D.I. Khan,,Crops,Cotton ,966
-KP,D.I. Khan,,Crops,Rape seed mustard ,845
-KP,D.I. Khan,,Crops,Bajra,464
-KP,D.I. Khan,,Crops,Barley ,267
-KP,D.I. Khan,,Livestock,Poultry,1280079
-KP,D.I. Khan,,Livestock,Goats,583923
-KP,D.I. Khan,,Livestock,Cattle,411432
-KP,D.I. Khan,,Livestock,Sheep,248491
-KP,D.I. Khan,,Livestock,Buffaloes,205634
-KP,D.I. Khan,,Livestock,Assess,43254
-KP,D.I. Khan,,Livestock,Camel,12930
-KP,D.I. Khan,,Production,Wheat,82797
-KP,D.I. Khan,,Production,Sugarcane ,1236136
-KP,D.I. Khan,,Production,Rice,29943
-KP,D.I. Khan,,Production,Gram  ,4482
-KP,D.I. Khan,,Production,Maize ,3888
-KP,D.I. Khan,,Production,Jowar ,721
-KP,D.I. Khan,,Production,Cotton ,501
-KP,D.I. Khan,,Production,Rape seed mustard ,376
-KP,D.I. Khan,,Production,Bajra,297
-KP,D.I. Khan,,Production,Barley ,180
-KP,Kurram,,Crops,Wheat,35916
-KP,Kurram,,Crops,Rice,5835
-KP,Kurram,,Crops,Maize,2310
-KP,Kurram,,Crops,Barley,485
-KP,Kurram,,Livestock,Poultry,530621
-KP,Kurram,,Livestock,Goats,221414
-KP,Kurram,,Livestock,Cattle,125865
-KP,Kurram,,Livestock,Sheep,78455
-KP,Kurram,,Livestock,Assess,3966
-KP,Kurram,,Livestock,Buffaloes,3003
-KP,Kurram,,Livestock,Mules,901
-KP,Kurram,,Livestock,Horse,673
-KP,Kurram,,Livestock,Camel,47
-KP,Kurram,,Production,Wheat,53352
-KP,Kurram,,Production,Rice,21077
-KP,Kurram,,Production,Maize,4344
-KP,Kurram,,Production,Barley,850
-KP,N. Waziristan,,Crops,Wheat,8637
-KP,N. Waziristan,,Crops,Maize,3567
-KP,N. Waziristan,,Crops,Gram,2913
-KP,N. Waziristan,,Crops,Rice,63
-KP,N. Waziristan,,Crops,Sugarcane,43
-KP,N. Waziristan,,Crops,Barley,20
-KP,N. Waziristan,,Livestock,Poultry,505521
-KP,N. Waziristan,,Livestock,Goats,263979
-KP,N. Waziristan,,Livestock,Sheeps,233561
-KP,N. Waziristan,,Livestock,Cattle,210480
-KP,N. Waziristan,,Livestock,Buffaloes,18716
-KP,N. Waziristan,,Livestock,Assess,16826
-KP,N. Waziristan,,Livestock,Camel,2746
-KP,N. Waziristan,,Livestock,Horse,1080
-KP,N. Waziristan,,Livestock,Mules,436
-KP,N. Waziristan,,Production,Wheat,11859
-KP,N. Waziristan,,Production,Maize,1894
-KP,N. Waziristan,,Production,Gram,1370
-KP,N. Waziristan,,Production,Rice,93
-KP,N. Waziristan,,Production,Sugarcane,170
-KP,N. Waziristan,,Production,Barley,15
-KP,Orakzai,,Crops,Wheat,4212
-KP,Orakzai,,Crops,Maize,4241
-KP,Orakzai,,Crops,Red Beans,300
-KP,Orakzai,,Crops,Rice,202
-KP,Orakzai,,Crops,Rape seed mustard,195
-KP,Orakzai,,Crops,Jowar,77
-KP,Orakzai,,Crops,Sugarcane,30
-KP,Orakzai,,Crops,Barley,25
-KP,Orakzai,,Livestock,Poultry,350735
-KP,Orakzai,,Livestock,Goats,112266
-KP,Orakzai,,Livestock,Cattle,66671
-KP,Orakzai,,Livestock,Sheeps,48907
-KP,Orakzai,,Livestock,Assess,13390
-KP,Orakzai,,Livestock,Buffaloes,13015
-KP,Orakzai,,Livestock,Mules,2774
-KP,Orakzai,,Livestock,Camel,250
-KP,Orakzai,,Livestock,Horses,190
-KP,Orakzai,,Production,Wheat,5800
-KP,Orakzai,,Production,Maize,5440
-KP,Orakzai,,Production,Red Beans,150
-KP,Orakzai,,Production,Rice,1480
-KP,Orakzai,,Production,Rape seed mustard,69
-KP,Orakzai,,Production,Jowar,36
-KP,Orakzai,,Production,Sugarcane,1050
-KP,Orakzai,,Production,Barley,17
-KP,S. Waziristan,,Crops, Pine nuts,126315
-KP,S. Waziristan,,Crops,Wheat,12044
-KP,S. Waziristan,,Crops,Apple,5535
-KP,S. Waziristan,,Crops,Maize,5461
-KP,S. Waziristan,,Crops,Plum,2500
-KP,S. Waziristan,,Crops,Peach,1352
-KP,S. Waziristan,,Crops,Apricot,841
-KP,S. Waziristan,,Crops,Pomegranate,222
-KP,S. Waziristan,,Crops,Pear,186
-KP,S. Waziristan,,Crops,Grape,124
-KP,S. Waziristan,,Crops,Groundnut,115
-KP,S. Waziristan,,Crops,Barley,82
-KP,S. Waziristan,,Crops,Rice,78
-KP,S. Waziristan,,Crops,Gram,60
-KP,S. Waziristan,,Crops,Bajra,40
-KP,S. Waziristan,,Livestock,Poultry,496924
-KP,S. Waziristan,,Livestock,Goats,399137
-KP,S. Waziristan,,Livestock,Sheeps,313639
-KP,S. Waziristan,,Livestock,Cattle,134611
-KP,S. Waziristan,,Livestock,Assess,23022
-KP,S. Waziristan,,Livestock,Buffaloes,14677
-KP,S. Waziristan,,Livestock,Camel,9356
-KP,S. Waziristan,,Livestock,Mules,1415
-KP,S. Waziristan,,Livestock,Horse,314
-KP,S. Waziristan,,Production, Pine nuts,4000
-KP,S. Waziristan,,Production,Wheat,16678
-KP,S. Waziristan,,Production,Apple,46253
-KP,S. Waziristan,,Production,Maize,2044
-KP,S. Waziristan,,Production,Plum,18000
-KP,S. Waziristan,,Production,Peach,1206
-KP,S. Waziristan,,Production,Apricot,2212
-KP,S. Waziristan,,Production,Pomegranate,990
-KP,S. Waziristan,,Production,Pear,750
-KP,S. Waziristan,,Production,Grape,308
-KP,S. Waziristan,,Production,Groundnut,147
-KP,S. Waziristan,,Production,Barley,68
-KP,S. Waziristan,,Production,Rice,107
-KP,S. Waziristan,,Production,Gram,105
-KP,S. Waziristan,,Production,Bajra,29
-Punjab,Jhang,,Crops,Wheat,276800
-Punjab,Jhang,,Crops,Gram,72800
-Punjab,Jhang,,Crops,Rice,60290
-Punjab,Jhang,,Crops,Sugarcane,55040
-Punjab,Jhang,,Crops,Cotton,21850
-Punjab,Jhang,,Crops,Bajra,13800
-Punjab,Jhang,,Crops,Maize,10000
-Punjab,Jhang,,Crops,Jowar,3400
-Punjab,Jhang,,Crops,Rape seed mustard,2600
-Punjab,Jhang,,Crops,Barley,300
-Punjab,Jhang,,Livestock,Poultry,1425237
-Punjab,Jhang,,Livestock,Bufalloes,556000
-Punjab,Jhang,,Livestock,Cattle,529000
-Punjab,Jhang,,Livestock,Goats,494000
-Punjab,Jhang,,Livestock,Sheeps,165000
-Punjab,Jhang,,Livestock,Assess,113474
-Punjab,Jhang,,Livestock,Horse,12755
-Punjab,Jhang,,Livestock,Camel,3084
-Punjab,Jhang,,Livestock,Mules,1084
-Punjab,Jhang,,Production,Wheat,872900
-Punjab,Jhang,,Production,Gram,17600
-Punjab,Jhang,,Production,Rice,123470
-Punjab,Jhang,,Production,Sugarcane,3263960
-Punjab,Jhang,,Production,Cotton,51.48
-Punjab,Jhang,,Production,Bajra,11800
-Punjab,Jhang,,Production,Maize,53900
-Punjab,Jhang,,Production,Jowar,3200
-Punjab,Jhang,,Production,Rape seed mustard,4700
-Punjab,Jhang,,Production,Barley,300
-Punjab,Muzaffargarh,,Crops,Wheat,287700
-Punjab,Muzaffargarh,,Crops,Cotton ,140020
-Punjab,Muzaffargarh,,Crops,Sugarcane ,61110
-Punjab,Muzaffargarh,,Crops,Rice ,33990
-Punjab,Muzaffargarh,,Crops,Mango,30351
-Punjab,Muzaffargarh,,Crops,Bajra,19300
-Punjab,Muzaffargarh,,Crops,Jowar,9600
-Punjab,Muzaffargarh,,Crops,Rape seed mustard,5000
-Punjab,Muzaffargarh,,Crops,Barley ,4200
-Punjab,Muzaffargarh,,Crops,Maize ,3900
-Punjab,Muzaffargarh,,Crops,Gram ,2500
-Punjab,Muzaffargarh,,Livestock,Poultry,1602519
-Punjab,Muzaffargarh,,Livestock,Goats,1298000
-Punjab,Muzaffargarh,,Livestock,Cattle,1100000
-Punjab,Muzaffargarh,,Livestock,Buffaloes,690000
-Punjab,Muzaffargarh,,Livestock,Sheeps,445000
-Punjab,Muzaffargarh,,Livestock,Assess,20286
-Punjab,Muzaffargarh,,Livestock,Camel,3192
-Punjab,Muzaffargarh,,Livestock,Horse,2475
-Punjab,Muzaffargarh,,Livestock,Mules,1091
-Punjab,Muzaffargarh,,Production,Wheat,905700
-Punjab,Muzaffargarh,,Production,Cotton ,94794
-Punjab,Muzaffargarh,,Production,Sugarcane ,4181920
-Punjab,Muzaffargarh,,Production,Rice ,59770
-Punjab,Muzaffargarh,,Production,Mango,240808
-Punjab,Muzaffargarh,,Production,Bajra,15300
-Punjab,Muzaffargarh,,Production,Jowar,6500
-Punjab,Muzaffargarh,,Production,Rape seed mustard,6100
-Punjab,Muzaffargarh,,Production,Barley ,5000
-Punjab,Muzaffargarh,,Production,Maize ,7000
-Punjab,Muzaffargarh,,Production,Gram ,1300
-Punjab,Rajanpur,,Crops,Wheat,178900
-Punjab,Rajanpur,,Crops,Cotton,134350
-Punjab,Rajanpur,,Crops,Sugarcane,32370
-Punjab,Rajanpur,,Crops,Jowar,7600
-Punjab,Rajanpur,,Crops,Rape seed mustard,5700
-Punjab,Rajanpur,,Crops,Rice,4040
-Punjab,Rajanpur,,Crops,Bajra,1400
-Punjab,Rajanpur,,Crops,Gram,600
-Punjab,Rajanpur,,Crops,Maize,400
-Punjab,Rajanpur,,Livestock,Goats,708000
-Punjab,Rajanpur,,Livestock,Poultry,660628
-Punjab,Rajanpur,,Livestock,Cattle,367000
-Punjab,Rajanpur,,Livestock,Sheep,246000
-Punjab,Rajanpur,,Livestock,Buffaloes,205000
-Punjab,Rajanpur,,Livestock,Assess,26145
-Punjab,Rajanpur,,Livestock,Camel,11637
-Punjab,Rajanpur,,Livestock,Horse,4390
-Punjab,Rajanpur,,Livestock,Mules,330
-Punjab,Rajanpur,,Production,Wheat,541300
-Punjab,Rajanpur,,Production,Cotton,695.71
-Punjab,Rajanpur,,Production,Sugarcane,2657510
-Punjab,Rajanpur,,Production,Jowar,2500
-Punjab,Rajanpur,,Production,Rape seed mustard,5300
-Punjab,Rajanpur,,Production,Rice,7850
-Punjab,Rajanpur,,Production,Bajra,600
-Punjab,Rajanpur,,Production,Gram,300
-Punjab,Rajanpur,,Production,Maize,800
-Sindh,Dadu,,Crops,Wheat,73400
-Sindh,Dadu,,Crops,Rice,49290
-Sindh,Dadu,,Crops,Cotton,8840
-Sindh,Dadu,,Crops,Sugarcane,6010
-Sindh,Dadu,,Crops,Rape seed mustard ,1495
-Sindh,Dadu,,Crops,Gram,493
-Sindh,Dadu,,Crops,Jowar,455
-Sindh,Dadu,,Crops,Barley,235
-Sindh,Dadu,,Crops,Maize,129
-Sindh,Dadu,,Crops,Bajra,49
-Sindh,Dadu,,Livestock,Poultry,800570
-Sindh,Dadu,,Livestock,Goats,800064
-Sindh,Dadu,,Livestock,Cattle,"468,802  "
-Sindh,Dadu,,Livestock,Buffaloes,"385,983  "
-Sindh,Dadu,,Livestock,Sheeps,283729
-Sindh,Dadu,,Livestock,Camel,42027
-Sindh,Dadu,,Livestock,Assess,38983
-Sindh,Dadu,,Livestock,Horse,3475
-Sindh,Dadu,,Livestock,Mules,1907
-Sindh,Dadu,,Production,Wheat,233285
-Sindh,Dadu,,Production,Rice,179868
-Sindh,Dadu,,Production,Cotton,42811
-Sindh,Dadu,,Production,Sugarcane,320788
-Sindh,Dadu,,Production,Rape seed mustard ,1383
-Sindh,Dadu,,Production,Gram,478
-Sindh,Dadu,,Production,Jowar,394
-Sindh,Dadu,,Production,Barley,162
-Sindh,Dadu,,Production,Maize,103
-Sindh,Dadu,,Production,Bajra,29
-Sindh,Ghotki,,Crops,Wheat,102554
-Sindh,Ghotki,,Crops,Cotton,90163
-Sindh,Ghotki,,Crops,Sugarcane,50236
-Sindh,Ghotki,,Crops,Jowar,1971
-Sindh,Ghotki,,Crops,Rape seed mustard,213
-Sindh,Ghotki,,Crops,Gram,179
-Sindh,Ghotki,,Crops,Maize,38
-Sindh,Ghotki,,Crops,Barley,32
-Sindh,Ghotki,,Crops,Bajra,11
-Sindh,Ghotki,,Crops,Rice,47710
-Sindh,Ghotki,,Livestock,Poultry,437248
-Sindh,Ghotki,,Livestock,Goats,374908
-Sindh,Ghotki,,Livestock,Cattle,281697
-Sindh,Ghotki,,Livestock,Bufalloes   ,246801
-Sindh,Ghotki,,Livestock,Sheeps,73503
-Sindh,Ghotki,,Livestock,Asses,26272
-Sindh,Ghotki,,Livestock,Camel,10137
-Sindh,Ghotki,,Livestock,Horse,2045
-Sindh,Ghotki,,Livestock,Mules,522
-Sindh,Ghotki,,Production,Wheat,384658
-Sindh,Ghotki,,Production,Cotton,561900
-Sindh,Ghotki,,Production,Sugarcane,2929661
-Sindh,Ghotki,,Production,Jowar,2079
-Sindh,Ghotki,,Production,Rape seed mustard,232
-Sindh,Ghotki,,Production,Gram,174
-Sindh,Ghotki,,Production,Maize,40
-Sindh,Ghotki,,Production,Barley,19
-Sindh,Ghotki,,Production,Bajra,7
-Sindh,Ghotki,,Production,Rice,164953
-Sindh,Kashmore,,Crops,Rice,78832
-Sindh,Kashmore,,Crops,Wheat,35470
-Sindh,Kashmore,,Crops,Gram,5145
-Sindh,Kashmore,,Crops,Barley,370
-Sindh,Kashmore,,Crops,Rape seed mustard,209
-Sindh,Kashmore,,Crops,Jowar,20
-Sindh,Kashmore,,Crops,Maize,9
-Sindh,Kashmore,,Crops,Bajra,7
-Sindh,Kashmore,,Livestock,Poultry,519589
-Sindh,Kashmore,,Livestock,Buffaloes,195704
-Sindh,Kashmore,,Livestock,Cattle,"      190,872  "
-Sindh,Kashmore,,Livestock,Goats,148022
-Sindh,Kashmore,,Livestock,Sheep,138344
-Sindh,Kashmore,,Livestock,Assess,31908
-Sindh,Kashmore,,Livestock,Mules,4089
-Sindh,Kashmore,,Livestock,Horse,2587
-Sindh,Kashmore,,Livestock,Camel,1411
-Sindh,Kashmore,,Production,Rice,269736
-Sindh,Kashmore,,Production,Wheat,89471
-Sindh,Kashmore,,Production,Gram,5147
-Sindh,Kashmore,,Production,Barley,251
-Sindh,Kashmore,,Production,Rape seed mustard,208
-Sindh,Kashmore,,Production,Jowar,23
-Sindh,Kashmore,,Production,Maize,8
-Sindh,Kashmore,,Production,Bajra,4
-Sindh,Tharparkar,,Crops,Bajra,41005
-Sindh,Tharparkar,,Crops,Wheat,2389
-Sindh,Tharparkar,,Crops,Cotton,1064
-Sindh,Tharparkar,,Crops,Rape seed mustard,820
-Sindh,Tharparkar,,Crops,Sugarcane,770
-Sindh,Tharparkar,,Livestock,Goats,2217876
-Sindh,Tharparkar,,Livestock,Sheeps,1185122
-Sindh,Tharparkar,,Livestock,Cattle,752265
-Sindh,Tharparkar,,Livestock,Poultry,263431
-Sindh,Tharparkar,,Livestock,Assess,246657
-Sindh,Tharparkar,,Livestock,Camel,135356
-Sindh,Tharparkar,,Livestock,Buffaloes,46328
-Sindh,Tharparkar,,Livestock,Horses,8519
-Sindh,Tharparkar,,Livestock,Mules,1475
-Sindh,Tharparkar,,Production,Bajra,21036
-Sindh,Tharparkar,,Production,Wheat,6626
-Sindh,Tharparkar,,Production,Cotton,5565
-Sindh,Tharparkar,,Production,Rape seed mustard,851
-Sindh,Tharparkar,,Production,Sugarcane,45666
+Province,District,Village,Sector,Crop_livestock,Value,Source & Year
+KP,Chitral,,Crops,Potato,1387,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Apricot,51,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Wheat,8141,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Maize,5518,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Rice,1831,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Barley,1725,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Bajra,67,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Walnut,95,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Apple,250,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Pear,80,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Crops,Onion,372,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Livestock,Poultry,423749,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Chitral,,Livestock,Goats,586692,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Chitral,,Livestock,Sheep,231363,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Chitral,,Livestock,Cattle,294050,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Chitral,,Livestock,Assess,3256,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Chitral,,Livestock,Buffaloes,481,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Chitral,,Livestock,Horse,295,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Chitral,,Livestock,Yak,4090,Livestock census 2006
+KP,Chitral,,Production,Potato,42303,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Apricot,265,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Wheat,17618,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Maize,13903,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Rice,4566,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Barley,2535,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Bajra,70,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Walnut,1140,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Apple,1659,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Pear,473,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Chitral,,Production,Onion,4576,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Wheat,51935,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Sugarcane,26690,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Rice,10279,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Gram,6567,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Maize,2369,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Jowar,1445,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Cotton,158,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Rape seed mustard,1644,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Bajra,657,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Crops,Barley,780,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Livestock,Poultry,1346518,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,D.I. Khan,,Livestock,Goats,1320174,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,D.I. Khan,,Livestock,Cattle,867710,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,D.I. Khan,,Livestock,Sheep,531742,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,D.I. Khan,,Livestock,Buffaloes,334540,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,D.I. Khan,,Livestock,Assess,47752,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,D.I. Khan,,Livestock,Camel,15016,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,D.I. Khan,,Production,Wheat,94042,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Production,Sugarcane,1601400,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Production,Rice,27963,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Production,Gram,4906,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Production,Maize,5969,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Production,Jowar,1007,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Production,Cotton,482,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Production,Rape seed mustard,759,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Production,Bajra,345,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,D.I. Khan,,Production,Barley,652,KP Crop statistics 2018-19 http://kp.gov.pk/uploads/2020/08/CROP_STATISTICS_2018-19.pdf
+KP,Kurram,,Crops,Wheat,10624,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Kurram,,Crops,Rice,5800,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Kurram,,Crops,Maize,2300,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Kurram,,Crops,Barley,100,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Kurram,,Livestock,Poultry,1039351,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Kurram,,Livestock,Goats,536552,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Kurram,,Livestock,Cattle,379729,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Kurram,,Livestock,Sheep,274701,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Kurram,,Livestock,Assess,18526,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Kurram,,Livestock,Buffaloes,7423,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Kurram,,Livestock,Mules,2311,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Kurram,,Livestock,Horse,963,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Kurram,,Livestock,Camel,367,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Kurram,,Production,Wheat,16535,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Kurram,,Production,Rice,8500,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Kurram,,Production,Maize,2848,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Kurram,,Production,Barley,200,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Crops,Wheat,5830,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Crops,Maize,4357,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Crops,Gram,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Crops,Rice,100,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Crops,Sugarcane,45,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Crops,Barley,100,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Livestock,Poultry,505521,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,N. Waziristan,,Livestock,Goats,445071,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,N. Waziristan,,Livestock,Sheeps,298308,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,N. Waziristan,,Livestock,Cattle,353986,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,N. Waziristan,,Livestock,Buffaloes,30393,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,N. Waziristan,,Livestock,Assess,16826,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,N. Waziristan,,Livestock,Camel,2746,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,N. Waziristan,,Livestock,Horse,1080,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,N. Waziristan,,Livestock,Mules,436,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,N. Waziristan,,Production,Wheat,7150,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Production,Maize,5190,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Production,Gram,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Production,Rice,100,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Production,Sugarcane,1890,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,N. Waziristan,,Production,Barley,100,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Crops,Wheat,4009,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Crops,Maize,4320,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Crops,Rice,200,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Crops,Rape seed mustard,225,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Crops,Jowar,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Crops,Sugarcane,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Crops,Barley,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Livestock,Poultry,350735,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Orakzai,,Livestock,Goats,181974,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Orakzai,,Livestock,Cattle,108200,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Orakzai,,Livestock,Sheeps,61564,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Orakzai,,Livestock,Assess,13390,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Orakzai,,Livestock,Buffaloes,21077,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Orakzai,,Livestock,Mules,2774,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Orakzai,,Livestock,Camel,250,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Orakzai,,Livestock,Horses,190,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,Orakzai,,Production,Wheat,5430,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Production,Maize,5520,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Production,Rice,300,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Production,Rape seed mustard,83,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Production,Jowar,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Production,Sugarcane,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,Orakzai,,Production,Barley,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Wheat,7236,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Apple,2240,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Maize,2825,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Plum,220,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Peach,547,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Apricot,340,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Pomegranate,90,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Pear,75,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Grape,50,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Groundnut,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Barley,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Rice,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Gram,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Crops,Bajra,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Livestock,Poultry,496924,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,S. Waziristan,,Livestock,Goats,672948,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,S. Waziristan,,Livestock,Sheeps,400585,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,S. Waziristan,,Livestock,Cattle,226389,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,S. Waziristan,,Livestock,Assess,23022,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,S. Waziristan,,Livestock,Buffaloes,23834,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,S. Waziristan,,Livestock,Camel,9356,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,S. Waziristan,,Livestock,Mules,1416,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,S. Waziristan,,Livestock,Horse,314,Khyber Pakhtunkhwa Livestock and Dairy Development Department (Livestock Projected population 2019)
+KP,S. Waziristan,,Production,Pine nuts,4000,https://kpbos.gov.pk/ (2018-19)
+KP,S. Waziristan,,Production,Wheat,7487,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Apple,46203,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Maize,1297,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Plum,427,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Peach,1206,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Apricot,752,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Pomegranate,990,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Pear,750,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Grape,308,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Groundnut,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Barley,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Rice,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Gram,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+KP,S. Waziristan,,Production,Bajra,0,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+Punjab,Jhang,,Crops,Wheat,276400,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Crops,Gram,72000,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Crops,Rice,69600,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Crops,Sugarcane,40870,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Crops,Cotton,17000,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Crops,Bajra,15900,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Crops,Maize,11100,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Crops,Jowar,4200,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Crops,Rape seed mustard,2500,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Crops,Barley,400,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Livestock,Poultry,1425237,Livestock census Punjab 2006
+Punjab,Jhang,,Livestock,Bufalloes,556000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Jhang,,Livestock,Cattle,529000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Jhang,,Livestock,Goats,494000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Jhang,,Livestock,Sheeps,165000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Jhang,,Livestock,Assess,172397,Livestock census Punjab 2006
+Punjab,Jhang,,Livestock,Horse,15123,Livestock census Punjab 2006
+Punjab,Jhang,,Livestock,Camel,8289,Livestock census Punjab 2006
+Punjab,Jhang,,Livestock,Mules,1310,Livestock census Punjab 2006
+Punjab,Jhang,,Production,Wheat,866800,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Production,Gram,20400,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Production,Rice,158310,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Production,Sugarcane,2472980,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Production,Cotton,39220,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Production,Bajra,13600,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Production,Maize,57300,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Production,Jowar,3800,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Production,Rape seed mustard,4700,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Jhang,,Production,Barley,400,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Wheat,295800,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Cotton,142040,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Sugarcane,43710,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Rice,34410,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Mango,19040,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+Punjab,Muzaffargarh,,Crops,Bajra,20900,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Jowar,10300,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Rape seed mustard,6500,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Barley,3600,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Maize,4300,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Crops,Gram,4600,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Livestock,Poultry,1602519,Livestock census Punjab 2006
+Punjab,Muzaffargarh,,Livestock,Goats,1298000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Muzaffargarh,,Livestock,Cattle,1100000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Muzaffargarh,,Livestock,Buffaloes,690000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Muzaffargarh,,Livestock,Sheeps,445000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Muzaffargarh,,Livestock,Assess,37567,Livestock census Punjab 2006
+Punjab,Muzaffargarh,,Livestock,Camel,8217,Livestock census Punjab 2006
+Punjab,Muzaffargarh,,Livestock,Horse,2970,Livestock census Punjab 2006
+Punjab,Muzaffargarh,,Livestock,Mules,1182,Livestock census Punjab 2006
+Punjab,Muzaffargarh,,Production,Wheat,908900,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Production,Cotton,430630,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Production,Sugarcane,3136160,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Production,Rice,70420,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Production,Mango,232703.6,Crops Area and Production - 2013-14 (By Districts) http://www.mnfsr.gov.pk/pubDetails.aspx
+Punjab,Muzaffargarh,,Production,Bajra,16800,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Production,Jowar,7100,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Production,Rape seed mustard,9900,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Production,Barley,4200,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Production,Maize,9600,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Muzaffargarh,,Production,Gram,1300,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Crops,Wheat,184500,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Crops,Cotton,143260,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Crops,Sugarcane,30350,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Crops,Jowar,6300,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Crops,Rape seed mustard,11500,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Crops,Rice,10110,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Crops,Bajra,1200,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Crops,Gram,200,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Crops,Maize,600,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Livestock,Goats,708000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Rajanpur,,Livestock,Poultry,660628,Livestock census Punjab 2006
+Punjab,Rajanpur,,Livestock,Cattle,367000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Rajanpur,,Livestock,Sheep,246000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Rajanpur,,Livestock,Buffaloes,205000,PDS 2017 http://bos.gop.pk/system/files/PDS%202017_0.pdf
+Punjab,Rajanpur,,Livestock,Assess,40855,Livestock census Punjab 2006
+Punjab,Rajanpur,,Livestock,Camel,18338,Livestock census Punjab 2006
+Punjab,Rajanpur,,Livestock,Horse,5638,Livestock census Punjab 2006
+Punjab,Rajanpur,,Livestock,Mules,634,Livestock census Punjab 2006
+Punjab,Rajanpur,,Production,Wheat,559900,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Production,Cotton,625240,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Production,Sugarcane,2012730,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Production,Jowar,2200,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Production,Rape seed mustard,19500,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Production,Rice,20540,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Production,Bajra,700,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Production,Gram,100,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Punjab,Rajanpur,,Production,Maize,1100,PDS 2018-19 http://www.bos.gop.pk/publicationreports#Major/Minor%20Crops
+Sindh,Dadu,,Crops,Wheat,75900,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Crops,Rice,49180,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Crops,Cotton,12181,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Crops,Sugarcane,5289,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Crops,Rape seed mustard,1150,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Crops,Gram,498,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Crops,Jowar,462,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Crops,Barley,267,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Crops,Maize,146,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Crops,Bajra,125,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Livestock,Poultry,800570,Livestock census Punjab 2006
+Sindh,Dadu,,Livestock,Goats,800064,Livestock census Punjab 2006
+Sindh,Dadu,,Livestock,Cattle,468802,Livestock census Punjab 2006
+Sindh,Dadu,,Livestock,Buffaloes,385983,Livestock census Punjab 2006
+Sindh,Dadu,,Livestock,Sheeps,283729,Livestock census Punjab 2006
+Sindh,Dadu,,Livestock,Camel,42027,Livestock census Punjab 2006
+Sindh,Dadu,,Livestock,Assess,38983,Livestock census Punjab 2006
+Sindh,Dadu,,Livestock,Horse,3475,Livestock census Punjab 2006
+Sindh,Dadu,,Livestock,Mules,1907,Livestock census Punjab 2006
+Sindh,Dadu,,Production,Wheat,257719,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Production,Rice,189268,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Production,Cotton,64189,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Production,Sugarcane,282304,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Production,Rape seed mustard,1064,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Production,Gram,486,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Production,Jowar,400,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Production,Barley,172,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Production,Maize,152,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Dadu,,Production,Bajra,125,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Wheat,108041,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Cotton,97434,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Sugarcane,50421,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Jowar,1987,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Rape seed mustard,220,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Gram,187,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Maize,40,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Barley,30,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Bajra,15,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Crops,Rice,47710,Sindh Development Statistics 2015 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Livestock,Poultry,437248,Livestock census Punjab 2006
+Sindh,Ghotki,,Livestock,Goats,374908,Livestock census Punjab 2006
+Sindh,Ghotki,,Livestock,Cattle,281697,Livestock census Punjab 2006
+Sindh,Ghotki,,Livestock,BufalloesÂ Â Â ,246801,Livestock census Punjab 2006
+Sindh,Ghotki,,Livestock,Sheeps,73503,Livestock census Punjab 2006
+Sindh,Ghotki,,Livestock,Asses,26272,Livestock census Punjab 2006
+Sindh,Ghotki,,Livestock,Camel,10137,Livestock census Punjab 2006
+Sindh,Ghotki,,Livestock,Horse,2045,Livestock census Punjab 2006
+Sindh,Ghotki,,Livestock,Mules,522,Livestock census Punjab 2006
+Sindh,Ghotki,,Production,Wheat,376970,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Production,Cotton,566189,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Production,Sugarcane,3538507,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Production,Jowar,2096,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Production,Rape seed mustard,239,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Production,Gram,177,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Production,Maize,40,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Production,Barley,18,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Production,Bajra,12,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Ghotki,,Production,Rice,164953,Sindh Development Statistics 2015 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Crops,Rice,77124,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Crops,Wheat,35734,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Crops,Gram,9955,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Crops,Barley,488,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Crops,Rape seed mustard,3010,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Crops,Jowar,15,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Crops,Maize,6,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Crops,Bajra,10,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Livestock,Poultry,519589,Livestock census Punjab 2006
+Sindh,Kashmore,,Livestock,Buffaloes,195704,Livestock census Punjab 2006
+Sindh,Kashmore,,Livestock,Cattle,190872,Livestock census Punjab 2006
+Sindh,Kashmore,,Livestock,Goats,148022,Livestock census Punjab 2006
+Sindh,Kashmore,,Livestock,Sheep,138344,Livestock census Punjab 2006
+Sindh,Kashmore,,Livestock,Assess,31908,Livestock census Punjab 2006
+Sindh,Kashmore,,Livestock,Mules,4089,Livestock census Punjab 2006
+Sindh,Kashmore,,Livestock,Horse,2587,Livestock census Punjab 2006
+Sindh,Kashmore,,Livestock,Camel,1411,Livestock census Punjab 2006
+Sindh,Kashmore,,Production,Rice,249013,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Production,Wheat,86657,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Production,Gram,9151,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Production,Barley,316,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Production,Rape seed mustard,2993,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Production,Jowar,17,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Production,Maize,5,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Kashmore,,Production,Bajra,6,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Crops,Bajra,41150,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Crops,Wheat,2195,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Crops,Cotton,910,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Crops,Rape seed mustard,795,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Crops,Sugarcane,275,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Livestock,Goats,2217876,Livestock census Punjab 2006
+Sindh,Tharparkar,,Livestock,Sheeps,1185122,Livestock census Punjab 2006
+Sindh,Tharparkar,,Livestock,Cattle,752265,Livestock census Punjab 2006
+Sindh,Tharparkar,,Livestock,Poultry,263431,Livestock census Punjab 2006
+Sindh,Tharparkar,,Livestock,Assess,246657,Livestock census Punjab 2006
+Sindh,Tharparkar,,Livestock,Camel,135356,Livestock census Punjab 2006
+Sindh,Tharparkar,,Livestock,Buffaloes,46328,Livestock census Punjab 2006
+Sindh,Tharparkar,,Livestock,Horses,8519,Livestock census Punjab 2006
+Sindh,Tharparkar,,Livestock,Mules,1475,Livestock census Punjab 2006
+Sindh,Tharparkar,,Production,Bajra,20744,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Production,Wheat,6524,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Production,Cotton,4406,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Production,Rape seed mustard,825,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
+Sindh,Tharparkar,,Production,Sugarcane,16309,Sindh Development Statistics 2018 http://sindhbos.gov.pk/wp-content/uploads/2019/09/Development-Statistics-of-Sindh-2018.pdf
