@@ -29,33 +29,33 @@ KP,Chitral,,Production,Walnut,1140
 KP,Chitral,,Production,Apple,1660.7
 KP,Chitral,,Production,Pear,478.6
 KP,Chitral,,Production,Onion,4581
-KP,D.I. Khan,,Crops,Wheat,43210
-KP,D.I. Khan,,Crops,Sugarcane ,26762
-KP,D.I. Khan,,Crops,Rice,12733
-KP,D.I. Khan,,Crops,Gram  ,6078
-KP,D.I. Khan,,Crops,Maize ,1564
-KP,D.I. Khan,,Crops,Jowar ,1268
-KP,D.I. Khan,,Crops,Cotton ,966
-KP,D.I. Khan,,Crops,Rape seed mustard ,845
-KP,D.I. Khan,,Crops,Bajra,464
-KP,D.I. Khan,,Crops,Barley ,267
-KP,D.I. Khan,,Livestock,Poultry,1280079
-KP,D.I. Khan,,Livestock,Goats,583923
-KP,D.I. Khan,,Livestock,Cattle,411432
-KP,D.I. Khan,,Livestock,Sheep,248491
-KP,D.I. Khan,,Livestock,Buffaloes,205634
-KP,D.I. Khan,,Livestock,Assess,43254
-KP,D.I. Khan,,Livestock,Camel,12930
-KP,D.I. Khan,,Production,Wheat,82797
-KP,D.I. Khan,,Production,Sugarcane ,1236136
-KP,D.I. Khan,,Production,Rice,29943
-KP,D.I. Khan,,Production,Gram  ,4482
-KP,D.I. Khan,,Production,Maize ,3888
-KP,D.I. Khan,,Production,Jowar ,721
-KP,D.I. Khan,,Production,Cotton ,501
-KP,D.I. Khan,,Production,Rape seed mustard ,376
-KP,D.I. Khan,,Production,Bajra,297
-KP,D.I. Khan,,Production,Barley ,180
+KP,D.I Khan,,Crops,Wheat,43210
+KP,D.I Khan,,Crops,Sugarcane ,26762
+KP,D.I Khan,,Crops,Rice,12733
+KP,D.I Khan,,Crops,Gram  ,6078
+KP,D.I Khan,,Crops,Maize ,1564
+KP,D.I Khan,,Crops,Jowar ,1268
+KP,D.I Khan,,Crops,Cotton ,966
+KP,D.I Khan,,Crops,Rape seed mustard ,845
+KP,D.I Khan,,Crops,Bajra,464
+KP,D.I Khan,,Crops,Barley ,267
+KP,D.I Khan,,Livestock,Poultry,1280079
+KP,D.I Khan,,Livestock,Goats,583923
+KP,D.I Khan,,Livestock,Cattle,411432
+KP,D.I Khan,,Livestock,Sheep,248491
+KP,D.I Khan,,Livestock,Buffaloes,205634
+KP,D.I Khan,,Livestock,Assess,43254
+KP,D.I Khan,,Livestock,Camel,12930
+KP,D.I Khan,,Production,Wheat,82797
+KP,D.I Khan,,Production,Sugarcane ,1236136
+KP,D.I Khan,,Production,Rice,29943
+KP,D.I Khan,,Production,Gram  ,4482
+KP,D.I Khan,,Production,Maize ,3888
+KP,D.I Khan,,Production,Jowar ,721
+KP,D.I Khan,,Production,Cotton ,501
+KP,D.I Khan,,Production,Rape seed mustard ,376
+KP,D.I Khan,,Production,Bajra,297
+KP,D.I Khan,,Production,Barley ,180
 KP,Kurram,,Crops,Wheat,35916
 KP,Kurram,,Crops,Rice,5835
 KP,Kurram,,Crops,Maize,2310
@@ -328,22 +328,22 @@ Sindh,Kashmore,,Production,Rape seed mustard,208
 Sindh,Kashmore,,Production,Jowar,23
 Sindh,Kashmore,,Production,Maize,8
 Sindh,Kashmore,,Production,Bajra,4
-Sindh,Tharparkar,,Crops,Bajra,41005
-Sindh,Tharparkar,,Crops,Wheat,2389
-Sindh,Tharparkar,,Crops,Cotton,1064
-Sindh,Tharparkar,,Crops,Rape seed mustard,820
-Sindh,Tharparkar,,Crops,Sugarcane,770
-Sindh,Tharparkar,,Livestock,Goats,2217876
-Sindh,Tharparkar,,Livestock,Sheeps,1185122
-Sindh,Tharparkar,,Livestock,Cattle,752265
-Sindh,Tharparkar,,Livestock,Poultry,263431
-Sindh,Tharparkar,,Livestock,Assess,246657
-Sindh,Tharparkar,,Livestock,Camel,135356
-Sindh,Tharparkar,,Livestock,Buffaloes,46328
-Sindh,Tharparkar,,Livestock,Horses,8519
-Sindh,Tharparkar,,Livestock,Mules,1475
-Sindh,Tharparkar,,Production,Bajra,21036
-Sindh,Tharparkar,,Production,Wheat,6626
-Sindh,Tharparkar,,Production,Cotton,5565
-Sindh,Tharparkar,,Production,Rape seed mustard,851
-Sindh,Tharparkar,,Production,Sugarcane,45666
+Sindh,Tharparker,,Crops,Bajra,41005
+Sindh,Tharparker,,Crops,Wheat,2389
+Sindh,Tharparker,,Crops,Cotton,1064
+Sindh,Tharparker,,Crops,Rape seed mustard,820
+Sindh,Tharparker,,Crops,Sugarcane,770
+Sindh,Tharparker,,Livestock,Goats,2217876
+Sindh,Tharparker,,Livestock,Sheeps,1185122
+Sindh,Tharparker,,Livestock,Cattle,752265
+Sindh,Tharparker,,Livestock,Poultry,263431
+Sindh,Tharparker,,Livestock,Assess,246657
+Sindh,Tharparker,,Livestock,Camel,135356
+Sindh,Tharparker,,Livestock,Buffaloes,46328
+Sindh,Tharparker,,Livestock,Horses,8519
+Sindh,Tharparker,,Livestock,Mules,1475
+Sindh,Tharparker,,Production,Bajra,21036
+Sindh,Tharparker,,Production,Wheat,6626
+Sindh,Tharparker,,Production,Cotton,5565
+Sindh,Tharparker,,Production,Rape seed mustard,851
+Sindh,Tharparker,,Production,Sugarcane,45666
