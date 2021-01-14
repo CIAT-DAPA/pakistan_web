@@ -73,27 +73,27 @@ KP,Kurram,,Production,Wheat,53352
 KP,Kurram,,Production,Rice,21077
 KP,Kurram,,Production,Maize,4344
 KP,Kurram,,Production,Barley,850
-KP,North Waziristan,,Crops,Wheat,8637
-KP,North Waziristan,,Crops,Maize,3567
-KP,North Waziristan,,Crops,Gram,2913
-KP,North Waziristan,,Crops,Rice,63
-KP,North Waziristan,,Crops,Sugarcane,43
-KP,North Waziristan,,Crops,Barley,20
-KP,North Waziristan,,Livestock,Poultry,505521
-KP,North Waziristan,,Livestock,Goats,263979
-KP,North Waziristan,,Livestock,Sheeps,233561
-KP,North Waziristan,,Livestock,Cattle,210480
-KP,North Waziristan,,Livestock,Buffaloes,18716
-KP,North Waziristan,,Livestock,Assess,16826
-KP,North Waziristan,,Livestock,Camel,2746
-KP,North Waziristan,,Livestock,Horse,1080
-KP,North Waziristan,,Livestock,Mules,436
-KP,North Waziristan,,Production,Wheat,11859
-KP,North Waziristan,,Production,Maize,1894
-KP,North Waziristan,,Production,Gram,1370
-KP,North Waziristan,,Production,Rice,93
-KP,North Waziristan,,Production,Sugarcane,170
-KP,North Waziristan,,Production,Barley,15
+KP,N. Waziristan,,Crops,Wheat,8637
+KP,N. Waziristan,,Crops,Maize,3567
+KP,N. Waziristan,,Crops,Gram,2913
+KP,N. Waziristan,,Crops,Rice,63
+KP,N. Waziristan,,Crops,Sugarcane,43
+KP,N. Waziristan,,Crops,Barley,20
+KP,N. Waziristan,,Livestock,Poultry,505521
+KP,N. Waziristan,,Livestock,Goats,263979
+KP,N. Waziristan,,Livestock,Sheeps,233561
+KP,N. Waziristan,,Livestock,Cattle,210480
+KP,N. Waziristan,,Livestock,Buffaloes,18716
+KP,N. Waziristan,,Livestock,Assess,16826
+KP,N. Waziristan,,Livestock,Camel,2746
+KP,N. Waziristan,,Livestock,Horse,1080
+KP,N. Waziristan,,Livestock,Mules,436
+KP,N. Waziristan,,Production,Wheat,11859
+KP,N. Waziristan,,Production,Maize,1894
+KP,N. Waziristan,,Production,Gram,1370
+KP,N. Waziristan,,Production,Rice,93
+KP,N. Waziristan,,Production,Sugarcane,170
+KP,N. Waziristan,,Production,Barley,15
 KP,Orakzai,,Crops,Wheat,4212
 KP,Orakzai,,Crops,Maize,4241
 KP,Orakzai,,Crops,Red Beans,300
@@ -119,45 +119,45 @@ KP,Orakzai,,Production,Rape seed mustard,69
 KP,Orakzai,,Production,Jowar,36
 KP,Orakzai,,Production,Sugarcane,1050
 KP,Orakzai,,Production,Barley,17
-KP,South Waziristan,,Crops, Pine nuts,126315
-KP,South Waziristan,,Crops,Wheat,12044
-KP,South Waziristan,,Crops,Apple,5535
-KP,South Waziristan,,Crops,Maize,5461
-KP,South Waziristan,,Crops,Plum,2500
-KP,South Waziristan,,Crops,Peach,1352
-KP,South Waziristan,,Crops,Apricot,841
-KP,South Waziristan,,Crops,Pomegranate,222
-KP,South Waziristan,,Crops,Pear,186
-KP,South Waziristan,,Crops,Grape,124
-KP,South Waziristan,,Crops,Groundnut,115
-KP,South Waziristan,,Crops,Barley,82
-KP,South Waziristan,,Crops,Rice,78
-KP,South Waziristan,,Crops,Gram,60
-KP,South Waziristan,,Crops,Bajra,40
-KP,South Waziristan,,Livestock,Poultry,496924
-KP,South Waziristan,,Livestock,Goats,399137
-KP,South Waziristan,,Livestock,Sheeps,313639
-KP,South Waziristan,,Livestock,Cattle,134611
-KP,South Waziristan,,Livestock,Assess,23022
-KP,South Waziristan,,Livestock,Buffaloes,14677
-KP,South Waziristan,,Livestock,Camel,9356
-KP,South Waziristan,,Livestock,Mules,1415
-KP,South Waziristan,,Livestock,Horse,314
-KP,South Waziristan,,Production, Pine nuts,4000
-KP,South Waziristan,,Production,Wheat,16678
-KP,South Waziristan,,Production,Apple,46253
-KP,South Waziristan,,Production,Maize,2044
-KP,South Waziristan,,Production,Plum,18000
-KP,South Waziristan,,Production,Peach,1206
-KP,South Waziristan,,Production,Apricot,2212
-KP,South Waziristan,,Production,Pomegranate,990
-KP,South Waziristan,,Production,Pear,750
-KP,South Waziristan,,Production,Grape,308
-KP,South Waziristan,,Production,Groundnut,147
-KP,South Waziristan,,Production,Barley,68
-KP,South Waziristan,,Production,Rice,107
-KP,South Waziristan,,Production,Gram,105
-KP,South Waziristan,,Production,Bajra,29
+KP,S. Waziristan,,Crops, Pine nuts,126315
+KP,S. Waziristan,,Crops,Wheat,12044
+KP,S. Waziristan,,Crops,Apple,5535
+KP,S. Waziristan,,Crops,Maize,5461
+KP,S. Waziristan,,Crops,Plum,2500
+KP,S. Waziristan,,Crops,Peach,1352
+KP,S. Waziristan,,Crops,Apricot,841
+KP,S. Waziristan,,Crops,Pomegranate,222
+KP,S. Waziristan,,Crops,Pear,186
+KP,S. Waziristan,,Crops,Grape,124
+KP,S. Waziristan,,Crops,Groundnut,115
+KP,S. Waziristan,,Crops,Barley,82
+KP,S. Waziristan,,Crops,Rice,78
+KP,S. Waziristan,,Crops,Gram,60
+KP,S. Waziristan,,Crops,Bajra,40
+KP,S. Waziristan,,Livestock,Poultry,496924
+KP,S. Waziristan,,Livestock,Goats,399137
+KP,S. Waziristan,,Livestock,Sheeps,313639
+KP,S. Waziristan,,Livestock,Cattle,134611
+KP,S. Waziristan,,Livestock,Assess,23022
+KP,S. Waziristan,,Livestock,Buffaloes,14677
+KP,S. Waziristan,,Livestock,Camel,9356
+KP,S. Waziristan,,Livestock,Mules,1415
+KP,S. Waziristan,,Livestock,Horse,314
+KP,S. Waziristan,,Production, Pine nuts,4000
+KP,S. Waziristan,,Production,Wheat,16678
+KP,S. Waziristan,,Production,Apple,46253
+KP,S. Waziristan,,Production,Maize,2044
+KP,S. Waziristan,,Production,Plum,18000
+KP,S. Waziristan,,Production,Peach,1206
+KP,S. Waziristan,,Production,Apricot,2212
+KP,S. Waziristan,,Production,Pomegranate,990
+KP,S. Waziristan,,Production,Pear,750
+KP,S. Waziristan,,Production,Grape,308
+KP,S. Waziristan,,Production,Groundnut,147
+KP,S. Waziristan,,Production,Barley,68
+KP,S. Waziristan,,Production,Rice,107
+KP,S. Waziristan,,Production,Gram,105
+KP,S. Waziristan,,Production,Bajra,29
 Punjab,Jhang,,Crops,Wheat,276800
 Punjab,Jhang,,Crops,Gram,72800
 Punjab,Jhang,,Crops,Rice,60290
