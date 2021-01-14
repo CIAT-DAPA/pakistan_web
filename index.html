@@ -541,6 +541,8 @@
         var climate_indicator_district = '';
         var climate_indicator_var = '';
         var climate_indicator_coords = [];
+        var crop_c_full = [];
+        var hazard_c_full = [];
         var tab = '';
         // Controls
         var map_i;
@@ -1160,14 +1162,13 @@
                     d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
                         var c_production = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                         d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data2) {
-                            var crop_c = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
+                            crop_c_full = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                             d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/hazard.csv", function (error, data3) {
-                                var hazard_c = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-                                console.log(c_production);
+                                hazard_c_full = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
                                 cropping_fill(c_production);
 
                                 // Filling the cbo controls village
-                                var village = d3.map(crop_c, function (d) { return d.village; }).keys();
+                                var village = d3.map(crop_c_full, function (d) { return d.village; }).keys();
                                 var cbo_village = $("#cbo_village");
                                 cbo_village.empty();
                                 $.each(village, function () {
@@ -1175,14 +1176,14 @@
                                 });
 
                                 // Set the event change for both controls
-                                cbo_village.on('change', function (e) {
-                                    var crop_c_f = crop_c.filter(function (item) { item.village === cbo_village.val() });
-                                    var hazard_c_f = hazard_c.filter(function (item) { item.village === cbo_village.val() });
+                                cbo_village.on('change', function (e) {                                    
+                                    var crop_c_f = crop_c_full.filter(function (item) { return item.village == cbo_village.val() });                                    
+                                    var hazard_c_f = hazard_c_full.filter(function (item) { return item.village == cbo_village.val() });
                                     cropping_calendar_hazard(crop_c_f, hazard_c_f);
                                 });
 
-                                var crop_c_f = crop_c.filter(function (item) { item.village === cbo_village.val() });
-                                var hazard_c_f = hazard_c.filter(function (item) { item.village === cbo_village.val() });
+                                var crop_c_f = crop_c_full.filter(function (item) { return item.village == cbo_village.val() });
+                                var hazard_c_f = hazard_c_full.filter(function (item) { return item.village == cbo_village.val() });
                                 cropping_calendar_hazard(crop_c_f, hazard_c_f);
                             });
                         });
