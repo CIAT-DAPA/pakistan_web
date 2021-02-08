@@ -283,10 +283,7 @@
             <!-- End General -->
 
             <!-- Start Site -->
-            <div id="site" class="tab_layout">
-                <p class="text-justify">
-                    Select a district into the map
-                </p>
+            <div id="site" class="tab_layout">                
                 <div id="map" style="height: 500px; width: 100%;"></div>
             </div>
             <!-- End Site -->
@@ -611,6 +608,9 @@
         var tab = 'intro';
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         var color_indicator;
+        var province = "";
+        var district = "";
+        var coords;
         // Datasets
         var hazard_d = [];
         var practices_d = [];
@@ -652,32 +652,182 @@
             }
             else if (tab === 'cropping') {
                 $("#title").html("Cropping system");
-                $("#description").html("");
+                $("#description").html("In this tab you will find cropping and livestock data for each of the districts included in the study, based on the most recent provincial crop reporting data. Then for each of the villages in the province for which a CSV plan was prepared, you will find the cropping and hazard calendar constructed through village level consultations.");
                 $("#cropping").removeClass("d-none");
+                // Processing data
+                $("#cropping_title").html(province + ' - ' + district);
+                d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
+                        var c_production = data.filter(function (item) { return item.district == district; });
+                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data2) {
+                            crop_c_full = data2.filter(function (item) { return item.district == district; });
+                            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/hazard.csv", function (error, data3) {
+                                hazard_c_full = data3.filter(function (item) { return item.district == district; });
+                                cropping_fill(c_production);
+
+                                // Filling the cbo controls village
+                                var village = d3.map(crop_c_full, function (d) { return d.village; }).keys();
+                                var cbo_village = $("#cbo_village");
+                                cbo_village.empty();
+                                $.each(village, function () {
+                                    cbo_village.append($("<option />").val(this).text(this));
+                                });
+
+                                // Set the event change for both controls
+                                cbo_village.on('change', function (e) {                                    
+                                    var crop_c_f = crop_c_full.filter(function (item) { return item.village == cbo_village.val() });                                    
+                                    var hazard_c_f = hazard_c_full.filter(function (item) { return item.village == cbo_village.val() });
+                                    cropping_calendar_hazard(crop_c_f, hazard_c_f);
+                                });
+
+                                var crop_c_f = crop_c_full.filter(function (item) { return item.village == cbo_village.val() });
+                                var hazard_c_f = hazard_c_full.filter(function (item) { return item.village == cbo_village.val() });
+                                cropping_calendar_hazard(crop_c_f, hazard_c_f);
+                            });
+                        });
+                    });
             }
             else if (tab === 'climate') {
                 $("#title").html("Climate");
-                $("#description").html("");
-                $("#climate").removeClass("d-none");                
+                $("#description").html('This tab presents the results of a number of modelling exercises conducted by the Alliance of Bioversity International and CIATs modelling team. This includes climatology data on monthly mean precipitation, minimum and maximum temperatures, modelling of future annual mean temperatures and precipitation using an ensemble of Global Circulation Models (GCMs), and the historic and future time series of a number of climatic indicators that impact agricultural production. For a breakdown of the modelling process please see modelling support doc through <a href="https://drive.google.com/file/d/1fXpeykS-ipEzR9NCBw1GeIXGORNMopZo/view" target="_blank">this link</a>.');
+                $("#climate").removeClass("d-none"); 
+                // Processing data
+                $("#climate_climatology_title").html(province + ' - ' + district);
+                d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/climatology.csv", function (error, data) {
+                        var climatology = data.filter(function (item) { return item.district == district; });
+                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/gcm.csv", function (error, data2) {
+                            var gcm = data2.filter(function (item) { return item.district == district; });
+
+                            climate_fill(climatology, gcm);
+
+                            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/indicators.csv", function (error, data3) {
+                                climate_indicator_d = data3.filter(function (item) { return item.district == district; });
+
+                                climate_indicator_province = province;
+                                climate_indicator_district = district;
+                                climate_indicator_coords = coords;
+
+                                // Filling the cbo controls with hazard and crops
+                                var indicators = d3.map(climate_indicator_d, function (d) { return d.vars; }).keys();
+                                var cbo_climate_indicator = $("#cbo_climate_indicator");
+                                cbo_climate_indicator.empty();
+                                $.each(indicators, function () {
+                                    cbo_climate_indicator.append($("<option />").val(this).text(this));
+                                });
+
+                                var season = d3.map(climate_indicator_d, function (d) { return d.season; }).keys();
+                                var cbo_climate_season = $("#cbo_climate_season");
+                                cbo_climate_season.empty();
+                                $.each(season, function () {
+                                    cbo_climate_season.append($("<option />").val(this).text(this));
+                                });
+
+                                // Set the event change for both controls
+                                cbo_climate_indicator.on('change', function (e) {
+                                    climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
+                                });
+                                cbo_climate_season.on('change', function (e) {
+                                    climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
+                                });
+
+                                // Default fill
+                                climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
+                            });
+                        });
+                    });               
             }
             else if (tab === 'impacts') {
                 $("#title").html("Climate impacts");
-                $("#description").html("");
+                $("#description").html("This tab presents the results of the climate impact analysis where value chain experts in each of the districts identified the impacts of certain hazards on key commodity value chains for the district. The impacts are ordered with those that were selected the most frequently at the top. It is possible to further filter the impacts looking at specific hazards of commodity value chains.");
                 $("#impacts").removeClass("d-none");
+                // Processing data
+                $("#impacts_title").html(province + ' - ' + district);
+                d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
+                        hazard_d = data.filter(function (item) { return item.district == district; });                        
+                        // Filling the cbo controls with hazard and crops
+                        var crops_livestock = d3.map(hazard_d, function (d) { return d.crop_livestock; }).keys();
+                        var cbo_impact_crop = $("#cbo_impact_crop");
+                        cbo_impact_crop.empty();
+                        $.each(crops_livestock, function () {
+                            cbo_impact_crop.append($("<option />").val(this).text(this));
+                        });
+                        cbo_impact_crop.append($("<option />").val("All").text("All"));
+                        cbo_impact_crop.val("All");
+
+                        var hazard = d3.map(hazard_d, function (d) { return d.hazard; }).keys();
+                        var cbo_impact_hazard = $("#cbo_impact_hazard");
+                        cbo_impact_hazard.empty();
+                        $.each(hazard, function () {
+                            cbo_impact_hazard.append($("<option />").val(this).text(this));
+                        });
+                        cbo_impact_hazard.append($("<option />").val("All").text("All"));
+                        cbo_impact_hazard.val("All");
+
+                        // Set the event change for both controls
+                        cbo_impact_crop.on('change', function (e) {
+                            impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
+                        });
+                        cbo_impact_hazard.on('change', function (e) {
+                            impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
+                        });
+
+                        // Default fill
+                        impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
+                    });
             }
             else if (tab === 'risk') {
                 $("#title").html("Climate risk");
-                $("#description").html("");
+                $("#description").html("This tab presents a risk matrix generated through responses from agricultural experts in the districts on the frequency and severity of major hazards.");
                 $("#risk").removeClass("d-none");
+                // Processing data
+                $("#risk_title").html(province + ' - ' + district);
+                d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/risk/risk.csv", function (error, data) {
+                        var risk_d = data.filter(function (item) { return item.district == district; });
+                        risk_fill(risk_d);
+                    });
             }
             else if (tab === 'practices') {
                 $("#title").html("Practices");
-                $("#description").html("");
+                $("#description").html("This tab presents the types of CSA practices prioritised by experts in the district, along with the areas were they have an impact, the hazards they address, and the barriers to adoption. the practices can be filtered by the commodity they look at, the areas where they have an impact or the types of hazards they address, allowing decision makers to identify practices that address certain priority issues.");
                 $("#practices").removeClass("d-none");
+                // Processing data
+                $("#practices_title").html(province + ' - ' + district);
+                d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/practices/practices.csv", function (error, data) {
+                        practices_d = data.filter(function (item) { return item.district == district; });
+
+                        // Filling the cbo controls with hazard and crops  
+                        var crop = Array.from(new Set(d3.map(practices_d, function (d) { return d.crop; }).keys()));
+                        var cbo_practices_crop = $("#cbo_practices_crop");
+                        cbo_practices_crop.empty();
+                        crop.forEach(function (i, v) {
+                            cbo_practices_crop.append($("<option />").val(i).text(i));
+                        });
+                        cbo_practices_crop.append($("<option />").val("All").text("All"));
+                        cbo_practices_crop.val("All");
+
+                        var hazard = Array.from(new Set(d3.map(practices_d, function (d) { return d.hazard; }).keys()));
+                        var cbo_practices_hazard = $("#cbo_practices_hazard");
+                        cbo_practices_hazard.empty();
+                        hazard.forEach(function (i, v) {
+                            cbo_practices_hazard.append($("<option />").val(i).text(i));
+                        });
+                        cbo_practices_hazard.append($("<option />").val("All").text("All"));
+                        cbo_practices_hazard.val("All");
+
+                        // Set the event change for both controls
+                        cbo_practices_crop.on('change', function (e) {
+                            practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
+                        });
+                        cbo_practices_hazard.on('change', function (e) {
+                            practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
+                        });
+
+                        // Default fill
+                        practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
+                    });
             }
             else if (tab === 'enablers') {
                 $("#title").html("Enablers");
-                $("#description").html("");
+                $("#description").html("CSA enablers provide essential services and build core capacities, empowering individuals and agrarian communities to better manage their response to climate related pressures. This section looks at which types of enabler are prioritised in each of the districts.");
                 $("#enablers").removeClass("d-none");
             }
 
@@ -1248,165 +1398,9 @@
             });
 
             layer.on('click', function (e) {
-                if (tab === 'cropping') {
-                    $("#cropping_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
-                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
-                        var c_production = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data2) {
-                            crop_c_full = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-                            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/hazard.csv", function (error, data3) {
-                                hazard_c_full = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-                                cropping_fill(c_production);
-
-                                // Filling the cbo controls village
-                                var village = d3.map(crop_c_full, function (d) { return d.village; }).keys();
-                                var cbo_village = $("#cbo_village");
-                                cbo_village.empty();
-                                $.each(village, function () {
-                                    cbo_village.append($("<option />").val(this).text(this));
-                                });
-
-                                // Set the event change for both controls
-                                cbo_village.on('change', function (e) {                                    
-                                    var crop_c_f = crop_c_full.filter(function (item) { return item.village == cbo_village.val() });                                    
-                                    var hazard_c_f = hazard_c_full.filter(function (item) { return item.village == cbo_village.val() });
-                                    cropping_calendar_hazard(crop_c_f, hazard_c_f);
-                                });
-
-                                var crop_c_f = crop_c_full.filter(function (item) { return item.village == cbo_village.val() });
-                                var hazard_c_f = hazard_c_full.filter(function (item) { return item.village == cbo_village.val() });
-                                cropping_calendar_hazard(crop_c_f, hazard_c_f);
-                            });
-                        });
-                    });
-                }
-                else if (tab === 'climate') {
-                    $("#climate_climatology_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
-                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/climatology.csv", function (error, data) {
-                        var climatology = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/gcm.csv", function (error, data2) {
-                            var gcm = data2.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-
-                            climate_fill(climatology, gcm);
-
-                            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/indicators.csv", function (error, data3) {
-                                climate_indicator_d = data3.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-
-                                climate_indicator_province = layer.feature.properties.NAME_1;
-                                climate_indicator_district = layer.feature.properties.NAME_3;
-                                climate_indicator_coords = layer.feature.geometry.coordinates[0][0];
-
-                                // Filling the cbo controls with hazard and crops
-                                var indicators = d3.map(climate_indicator_d, function (d) { return d.vars; }).keys();
-                                var cbo_climate_indicator = $("#cbo_climate_indicator");
-                                cbo_climate_indicator.empty();
-                                $.each(indicators, function () {
-                                    cbo_climate_indicator.append($("<option />").val(this).text(this));
-                                });
-
-                                var season = d3.map(climate_indicator_d, function (d) { return d.season; }).keys();
-                                var cbo_climate_season = $("#cbo_climate_season");
-                                cbo_climate_season.empty();
-                                $.each(season, function () {
-                                    cbo_climate_season.append($("<option />").val(this).text(this));
-                                });
-
-                                // Set the event change for both controls
-                                cbo_climate_indicator.on('change', function (e) {
-                                    climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
-                                });
-                                cbo_climate_season.on('change', function (e) {
-                                    climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
-                                });
-
-                                // Default fill
-                                climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
-                            });
-                        });
-                    });
-                }
-                else if (tab === 'impacts') {
-                    $("#impacts_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
-                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
-                        hazard_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });                        
-                        // Filling the cbo controls with hazard and crops
-                        var crops_livestock = d3.map(hazard_d, function (d) { return d.crop_livestock; }).keys();
-                        var cbo_impact_crop = $("#cbo_impact_crop");
-                        cbo_impact_crop.empty();
-                        $.each(crops_livestock, function () {
-                            cbo_impact_crop.append($("<option />").val(this).text(this));
-                        });
-                        cbo_impact_crop.append($("<option />").val("All").text("All"));
-                        cbo_impact_crop.val("All");
-
-                        var hazard = d3.map(hazard_d, function (d) { return d.hazard; }).keys();
-                        var cbo_impact_hazard = $("#cbo_impact_hazard");
-                        cbo_impact_hazard.empty();
-                        $.each(hazard, function () {
-                            cbo_impact_hazard.append($("<option />").val(this).text(this));
-                        });
-                        cbo_impact_hazard.append($("<option />").val("All").text("All"));
-                        cbo_impact_hazard.val("All");
-
-                        // Set the event change for both controls
-                        cbo_impact_crop.on('change', function (e) {
-                            impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
-                        });
-                        cbo_impact_hazard.on('change', function (e) {
-                            impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
-                        });
-
-                        // Default fill
-                        impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
-                    });
-                }
-                else if (tab === 'risk') {
-                    $("#risk_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
-                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/risk/risk.csv", function (error, data) {
-                        var risk_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-                        risk_fill(risk_d);
-                    });
-                }
-                else if (tab === 'practices') {
-                    $("#practices_title").html(layer.feature.properties.NAME_1 + ' - ' + layer.feature.properties.NAME_3);
-                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/practices/practices.csv", function (error, data) {
-                        practices_d = data.filter(function (item) { return item.district == layer.feature.properties.NAME_3; });
-
-                        // Filling the cbo controls with hazard and crops  
-                        var crop = Array.from(new Set(d3.map(practices_d, function (d) { return d.crop; }).keys()));
-                        var cbo_practices_crop = $("#cbo_practices_crop");
-                        cbo_practices_crop.empty();
-                        crop.forEach(function (i, v) {
-                            cbo_practices_crop.append($("<option />").val(i).text(i));
-                        });
-                        cbo_practices_crop.append($("<option />").val("All").text("All"));
-                        cbo_practices_crop.val("All");
-
-                        var hazard = Array.from(new Set(d3.map(practices_d, function (d) { return d.hazard; }).keys()));
-                        var cbo_practices_hazard = $("#cbo_practices_hazard");
-                        cbo_practices_hazard.empty();
-                        hazard.forEach(function (i, v) {
-                            cbo_practices_hazard.append($("<option />").val(i).text(i));
-                        });
-                        cbo_practices_hazard.append($("<option />").val("All").text("All"));
-                        cbo_practices_hazard.val("All");
-
-                        // Set the event change for both controls
-                        cbo_practices_crop.on('change', function (e) {
-                            practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
-                        });
-                        cbo_practices_hazard.on('change', function (e) {
-                            practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
-                        });
-
-                        // Default fill
-                        practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
-                    });
-                }
-                else if (tab === 'enablers') {
-
-                }
-
+                province = layer.feature.properties.NAME_1;
+                district = layer.feature.properties.NAME_3;
+                coords = layer.feature.geometry.coordinates[0][0];
             });
         }
 
