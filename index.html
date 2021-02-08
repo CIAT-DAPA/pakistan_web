@@ -11,16 +11,19 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-        crossorigin="" />       
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.css" />    
+        crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">    
     <style>
-        .nvtooltip { margin-top: -50px; }
+        .nvtooltip {
+            margin-top: -50px;
+        }
 
         #title {
             padding-top: 20px;
         }
+
         .cropping_pie svg {
             height: 300px;
             width: 100%;
@@ -51,7 +54,7 @@
             width: 100%;
         }
 
-        .indicator_plot{
+        .indicator_plot {
             height: 500px;
             width: 100%;
         }
@@ -61,7 +64,7 @@
             width: 100%;
         }
 
-        #map_scale{
+        #map_scale {
             width: 100px;
             height: 50px;
         }
@@ -73,12 +76,13 @@
 
         .info {
             padding: 6px 8px;
-            
+
             background: white;
-            background: rgba(255,255,255,0.8);
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
         }
+
         .info h4 {
             margin: 0 0 5px;
             color: #777;
@@ -104,7 +108,7 @@
             height: 60px;
             width: 60px;
         }
-	
+
         .practices_item {
             background-color: #cccccc;
             padding: 12px 12px 12px;
@@ -116,26 +120,29 @@
             border-color: #ffffff;
         }
 
-        .practices_table{
+        .practices_table {
             border: 1px solid #ffffff;
         }
 
-        .borderless td, .borderless th {
+        .borderless td,
+        .borderless th {
             border: none;
         }
 
-        table.table-bordered{
-                border:1px solid #ffffff;
-                margin-top:20px;
-        }
-        table.table-bordered > thead > tr > th{
-                border:1px solid #ffffff;
-        }
-        table.table-bordered > tbody > tr > td{
-            border:1px solid #ffffff;
+        table.table-bordered {
+            border: 1px solid #ffffff;
+            margin-top: 20px;
         }
 
-        .practices_id{
+        table.table-bordered>thead>tr>th {
+            border: 1px solid #ffffff;
+        }
+
+        table.table-bordered>tbody>tr>td {
+            border: 1px solid #ffffff;
+        }
+
+        .practices_id {
             font-size: 70px;
             color: #e8e8e8;
             font-weight: 900;
@@ -178,7 +185,7 @@
                             <i class="fas fa-cloud-sun-rain"></i>
                             Climate
                         </a>
-                    </li>                    
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" onclick="click_tab('risk')">
                             <i class="fas fa-biohazard"></i>
@@ -211,68 +218,93 @@
 
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <!-- Start Intro -->            
+            <!-- Start Intro -->
             <div id="intro" class="tab_layout">
                 <h2 style="margin-top: 70px;">About the project</h2>
                 <p class="text-justify">
-                    The data presented in this dashboard is the output of a series of workshops and online consultations 
-                    conducted as part of a Food and Agriculture Organisation of the United Nations (FAO) led, and 
-                    Alliance of Bioversity International & CIAT designed project on Climate-Smart Agriculture in Pakistan. 
-                    The project developed a series of District Climate Risk Profiles (DCRP's) and Climate Smart Village (CSV) plans, 
-                    covering 13 districts and 43 villages from across Punjab, Sindh, and Khyber Pakhtunkhwa. The implementation 
-                    of the project was supported by national partners in each of the three provinces, namely the Pir Mehar Ali Shah (PMAS) 
-                    Arid Agriculture University Rawalpindi; the University of Agriculture Peshawar; and the Directorate Training and 
+                    The data presented in this dashboard is the output of a series of workshops and online consultations
+                    conducted as part of a Food and Agriculture Organisation of the United Nations (FAO) led, and
+                    Alliance of Bioversity International & CIAT designed project on Climate-Smart Agriculture in
+                    Pakistan.
+                    The project developed a series of District Climate Risk Profiles (DCRP's) and Climate Smart Village
+                    (CSV) plans,
+                    covering 13 districts and 43 villages from across Punjab, Sindh, and Khyber Pakhtunkhwa. The
+                    implementation
+                    of the project was supported by national partners in each of the three provinces, namely the Pir
+                    Mehar Ali Shah (PMAS)
+                    Arid Agriculture University Rawalpindi; the University of Agriculture Peshawar; and the Directorate
+                    Training and
                     Research for Agriculture Engineering and Water management Sindh.
                 </p>
                 <p class="text-justify">
-                    This dashboard acts as a centralised data store and visualisation tool for decision makers, researchers 
-                    and agricultural practitioners to quickly access and review information gathered through this study, 
-                    based on consultations with over 1,000 agricultural experts and farmers from across the three provinces. 
-                    We see this as an important tool in helping decision makers get a quick snap shot of the major hazards, 
-                    their impacts, and recommended response strategies, supporting future policy and programming around CSA 
+                    This dashboard acts as a centralised data store and visualisation tool for decision makers,
+                    researchers
+                    and agricultural practitioners to quickly access and review information gathered through this study,
+                    based on consultations with over 1,000 agricultural experts and farmers from across the three
+                    provinces.
+                    We see this as an important tool in helping decision makers get a quick snap shot of the major
+                    hazards,
+                    their impacts, and recommended response strategies, supporting future policy and programming around
+                    CSA
                     in Pakistan.
                 </p>
                 <p class="text-justify">
-                    The authors of this study are extremely grateful for the contribution of all of those who took part in the 
+                    The authors of this study are extremely grateful for the contribution of all of those who took part
+                    in the
                     study and helped to shed light on the importance of CSA in supporting Pakistan's agriculture sector.
                 </p>
                 <h3>How to use the dashboard</h3>
                 <p class="text-justify">
-                    <b>Site selection</b> - The first step in navigating through the dashboard is to select the region you would like to look at. 
-                    This will allow you to either look at Pakistan as a whole, each of the three provinces or a single district. 
-                    It is worth noting that depending on the type of information you are looking for some will be available 
-                    aggregated at national or provincial levels, others will be available only at district or village level.
+                    <b>Site selection</b> - The first step in navigating through the dashboard is to select the region
+                    you would like to look at.
+                    This will allow you to either look at Pakistan as a whole, each of the three provinces or a single
+                    district.
+                    It is worth noting that depending on the type of information you are looking for some will be
+                    available
+                    aggregated at national or provincial levels, others will be available only at district or village
+                    level.
                 </p>
                 <p class="text-justify">
-                    <b>Cropping systems</b> - This tab displays district level data on production area and volume for the major crops, 
-                    along with the livestock headcount.  It also shows the cropping calendar and hazard calendar for the villages 
+                    <b>Cropping systems</b> - This tab displays district level data on production area and volume for
+                    the major crops,
+                    along with the livestock headcount. It also shows the cropping calendar and hazard calendar for the
+                    villages
                     from that district covered in the study.
                 </p>
                 <p class="text-justify">
-                    <b>Climate</b> - The climate tab presents the results of a number of modelling exercises conducted by the 
-                    Alliance of Bioversity International and CIAT's modelling team. This includes climatology data on monthly mean 
-                    precipitation, minimum and maximum temperatures, modelling of future annual mean temperatures and precipitation 
-                    using an ensemble of Global Circulation Models (GCM's), and the historic and future time series of a number of 
+                    <b>Climate</b> - The climate tab presents the results of a number of modelling exercises conducted
+                    by the
+                    Alliance of Bioversity International and CIAT's modelling team. This includes climatology data on
+                    monthly mean
+                    precipitation, minimum and maximum temperatures, modelling of future annual mean temperatures and
+                    precipitation
+                    using an ensemble of Global Circulation Models (GCM's), and the historic and future time series of a
+                    number of
                     climatic indicators that impact agricultural production.
                 </p>
                 <p class="text-justify">
-                    <b>Climate risk</b> - This tab presents a risk matrix generated through responses from agricultural experts 
+                    <b>Climate risk</b> - This tab presents a risk matrix generated through responses from agricultural
+                    experts
                     in the districts on the frequency and severity of major hazards.
                 </p>
                 <p class="text-justify">
-                    <b>Climate Impacts</b> - This tab presents the results of the climate impact analysis where value chain experts 
-                    in each of the districts identified the impacts of certain hazards on key commodity value chains for the district.
+                    <b>Climate Impacts</b> - This tab presents the results of the climate impact analysis where value
+                    chain experts
+                    in each of the districts identified the impacts of certain hazards on key commodity value chains for
+                    the district.
                 </p>
                 <p class="text-justify">
-                    <b>Practices</b> - Presents the types of CSA practices prioritised by experts in the district, along with the 
+                    <b>Practices</b> - Presents the types of CSA practices prioritised by experts in the district, along
+                    with the
                     areas were they have an impact, the hazards they address, and the barriers to adoption.
                 </p>
                 <p class="text-justify">
-                    <b>Enablers</b> -  CSA enablers provide essential services and build core capacities, empowering individuals 
-                    and agrarian communities to better manage their response to climate related pressures. This section 
+                    <b>Enablers</b> - CSA enablers provide essential services and build core capacities, empowering
+                    individuals
+                    and agrarian communities to better manage their response to climate related pressures. This section
                     looks at which types of enabler are prioritised in each of the districts.
                 </p>
-            </div>            
+            </div>
             <!-- End Intro-->
 
             <!-- Start General -->
@@ -283,7 +315,7 @@
             <!-- End General -->
 
             <!-- Start Site -->
-            <div id="site" class="tab_layout">                
+            <div id="site" class="tab_layout">
                 <div id="map" style="height: 500px; width: 100%;"></div>
             </div>
             <!-- End Site -->
@@ -323,7 +355,8 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                        <div
+                            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                             <h3>Village</h3>
                             <div class="btn-toolbar mb-2 mb-md-0">
                                 <div class="btn-group mr-2">
@@ -405,7 +438,7 @@
 
             <!-- Start Climate -->
             <div id="climate" class="tab_layout">
-            
+
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h2 id="climate_climatology_title"></h2>
@@ -458,7 +491,7 @@
                         </div>
                     </div>
                 </div>
-            
+
             </div>
             <!-- End Climate -->
 
@@ -587,12 +620,12 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
         integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
@@ -628,6 +661,7 @@
         // Global function
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
+            //$( document ).tooltip();
         })
 
         /**
@@ -644,7 +678,7 @@
                 $(".tab_layout").addClass("d-none");
                 $("#general").addClass("d-none");
                 $("#intro").removeClass("d-none");
-            } 
+            }
             else if (tab === 'site') {
                 $("#title").html("Site selection");
                 $("#description").html("Please use the below map to select the region (National, Province, District) you would like to focus on. You can also see in the project site tab a list of all districts and villages included in the study.");
@@ -657,83 +691,83 @@
                 // Processing data
                 $("#cropping_title").html(province + ' - ' + district);
                 d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/production.csv", function (error, data) {
-                        var c_production = data.filter(function (item) { return item.district == district; });
-                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data2) {
-                            crop_c_full = data2.filter(function (item) { return item.district == district; });
-                            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/hazard.csv", function (error, data3) {
-                                hazard_c_full = data3.filter(function (item) { return item.district == district; });
-                                cropping_fill(c_production);
+                    var c_production = data.filter(function (item) { return item.district == district; });
+                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/cropping_calendar.csv", function (error, data2) {
+                        crop_c_full = data2.filter(function (item) { return item.district == district; });
+                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/cropping/hazard.csv", function (error, data3) {
+                            hazard_c_full = data3.filter(function (item) { return item.district == district; });
+                            cropping_fill(c_production);
 
-                                // Filling the cbo controls village
-                                var village = d3.map(crop_c_full, function (d) { return d.village; }).keys();
-                                var cbo_village = $("#cbo_village");
-                                cbo_village.empty();
-                                $.each(village, function () {
-                                    cbo_village.append($("<option />").val(this).text(this));
-                                });
+                            // Filling the cbo controls village
+                            var village = d3.map(crop_c_full, function (d) { return d.village; }).keys();
+                            var cbo_village = $("#cbo_village");
+                            cbo_village.empty();
+                            $.each(village, function () {
+                                cbo_village.append($("<option />").val(this).text(this));
+                            });
 
-                                // Set the event change for both controls
-                                cbo_village.on('change', function (e) {                                    
-                                    var crop_c_f = crop_c_full.filter(function (item) { return item.village == cbo_village.val() });                                    
-                                    var hazard_c_f = hazard_c_full.filter(function (item) { return item.village == cbo_village.val() });
-                                    cropping_calendar_hazard(crop_c_f, hazard_c_f);
-                                });
-
+                            // Set the event change for both controls
+                            cbo_village.on('change', function (e) {
                                 var crop_c_f = crop_c_full.filter(function (item) { return item.village == cbo_village.val() });
                                 var hazard_c_f = hazard_c_full.filter(function (item) { return item.village == cbo_village.val() });
                                 cropping_calendar_hazard(crop_c_f, hazard_c_f);
                             });
+
+                            var crop_c_f = crop_c_full.filter(function (item) { return item.village == cbo_village.val() });
+                            var hazard_c_f = hazard_c_full.filter(function (item) { return item.village == cbo_village.val() });
+                            cropping_calendar_hazard(crop_c_f, hazard_c_f);
                         });
                     });
+                });
             }
             else if (tab === 'climate') {
                 $("#title").html("Climate");
                 $("#description").html('This tab presents the results of a number of modelling exercises conducted by the Alliance of Bioversity International and CIATs modelling team. This includes climatology data on monthly mean precipitation, minimum and maximum temperatures, modelling of future annual mean temperatures and precipitation using an ensemble of Global Circulation Models (GCMs), and the historic and future time series of a number of climatic indicators that impact agricultural production. For a breakdown of the modelling process please see modelling support doc through <a href="https://drive.google.com/file/d/1fXpeykS-ipEzR9NCBw1GeIXGORNMopZo/view" target="_blank">this link</a>.');
-                $("#climate").removeClass("d-none"); 
+                $("#climate").removeClass("d-none");
                 // Processing data
                 $("#climate_climatology_title").html(province + ' - ' + district);
                 d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/climatology.csv", function (error, data) {
-                        var climatology = data.filter(function (item) { return item.district == district; });
-                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/gcm.csv", function (error, data2) {
-                            var gcm = data2.filter(function (item) { return item.district == district; });
+                    var climatology = data.filter(function (item) { return item.district == district; });
+                    d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/gcm.csv", function (error, data2) {
+                        var gcm = data2.filter(function (item) { return item.district == district; });
 
-                            climate_fill(climatology, gcm);
+                        climate_fill(climatology, gcm);
 
-                            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/indicators.csv", function (error, data3) {
-                                climate_indicator_d = data3.filter(function (item) { return item.district == district; });
+                        d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/indicators.csv", function (error, data3) {
+                            climate_indicator_d = data3.filter(function (item) { return item.district == district; });
 
-                                climate_indicator_province = province;
-                                climate_indicator_district = district;
-                                climate_indicator_coords = coords;
+                            climate_indicator_province = province;
+                            climate_indicator_district = district;
+                            climate_indicator_coords = coords;
 
-                                // Filling the cbo controls with hazard and crops
-                                var indicators = d3.map(climate_indicator_d, function (d) { return d.vars; }).keys();
-                                var cbo_climate_indicator = $("#cbo_climate_indicator");
-                                cbo_climate_indicator.empty();
-                                $.each(indicators, function () {
-                                    cbo_climate_indicator.append($("<option />").val(this).text(this));
-                                });
+                            // Filling the cbo controls with hazard and crops
+                            var indicators = d3.map(climate_indicator_d, function (d) { return d.vars; }).keys();
+                            var cbo_climate_indicator = $("#cbo_climate_indicator");
+                            cbo_climate_indicator.empty();
+                            $.each(indicators, function () {
+                                cbo_climate_indicator.append($("<option />").val(this).text(this));
+                            });
 
-                                var season = d3.map(climate_indicator_d, function (d) { return d.season; }).keys();
-                                var cbo_climate_season = $("#cbo_climate_season");
-                                cbo_climate_season.empty();
-                                $.each(season, function () {
-                                    cbo_climate_season.append($("<option />").val(this).text(this));
-                                });
+                            var season = d3.map(climate_indicator_d, function (d) { return d.season; }).keys();
+                            var cbo_climate_season = $("#cbo_climate_season");
+                            cbo_climate_season.empty();
+                            $.each(season, function () {
+                                cbo_climate_season.append($("<option />").val(this).text(this));
+                            });
 
-                                // Set the event change for both controls
-                                cbo_climate_indicator.on('change', function (e) {
-                                    climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
-                                });
-                                cbo_climate_season.on('change', function (e) {
-                                    climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
-                                });
-
-                                // Default fill
+                            // Set the event change for both controls
+                            cbo_climate_indicator.on('change', function (e) {
                                 climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
                             });
+                            cbo_climate_season.on('change', function (e) {
+                                climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
+                            });
+
+                            // Default fill
+                            climate_indicator_fill(cbo_climate_indicator.val(), cbo_climate_season.val());
                         });
-                    });               
+                    });
+                });
             }
             else if (tab === 'impacts') {
                 $("#title").html("Climate impacts");
@@ -742,37 +776,37 @@
                 // Processing data
                 $("#impacts_title").html(province + ' - ' + district);
                 d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
-                        hazard_d = data.filter(function (item) { return item.district == district; });                        
-                        // Filling the cbo controls with hazard and crops
-                        var crops_livestock = d3.map(hazard_d, function (d) { return d.crop_livestock; }).keys();
-                        var cbo_impact_crop = $("#cbo_impact_crop");
-                        cbo_impact_crop.empty();
-                        $.each(crops_livestock, function () {
-                            cbo_impact_crop.append($("<option />").val(this).text(this));
-                        });
-                        cbo_impact_crop.append($("<option />").val("All").text("All"));
-                        cbo_impact_crop.val("All");
+                    hazard_d = data.filter(function (item) { return item.district == district; });
+                    // Filling the cbo controls with hazard and crops
+                    var crops_livestock = d3.map(hazard_d, function (d) { return d.crop_livestock; }).keys();
+                    var cbo_impact_crop = $("#cbo_impact_crop");
+                    cbo_impact_crop.empty();
+                    $.each(crops_livestock, function () {
+                        cbo_impact_crop.append($("<option />").val(this).text(this));
+                    });
+                    cbo_impact_crop.append($("<option />").val("All").text("All"));
+                    cbo_impact_crop.val("All");
 
-                        var hazard = d3.map(hazard_d, function (d) { return d.hazard; }).keys();
-                        var cbo_impact_hazard = $("#cbo_impact_hazard");
-                        cbo_impact_hazard.empty();
-                        $.each(hazard, function () {
-                            cbo_impact_hazard.append($("<option />").val(this).text(this));
-                        });
-                        cbo_impact_hazard.append($("<option />").val("All").text("All"));
-                        cbo_impact_hazard.val("All");
+                    var hazard = d3.map(hazard_d, function (d) { return d.hazard; }).keys();
+                    var cbo_impact_hazard = $("#cbo_impact_hazard");
+                    cbo_impact_hazard.empty();
+                    $.each(hazard, function () {
+                        cbo_impact_hazard.append($("<option />").val(this).text(this));
+                    });
+                    cbo_impact_hazard.append($("<option />").val("All").text("All"));
+                    cbo_impact_hazard.val("All");
 
-                        // Set the event change for both controls
-                        cbo_impact_crop.on('change', function (e) {
-                            impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
-                        });
-                        cbo_impact_hazard.on('change', function (e) {
-                            impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
-                        });
-
-                        // Default fill
+                    // Set the event change for both controls
+                    cbo_impact_crop.on('change', function (e) {
                         impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
                     });
+                    cbo_impact_hazard.on('change', function (e) {
+                        impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
+                    });
+
+                    // Default fill
+                    impact_fill_table(cbo_impact_crop.val(), cbo_impact_hazard.val());
+                });
             }
             else if (tab === 'risk') {
                 $("#title").html("Climate risk");
@@ -781,9 +815,9 @@
                 // Processing data
                 $("#risk_title").html(province + ' - ' + district);
                 d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/risk/risk.csv", function (error, data) {
-                        var risk_d = data.filter(function (item) { return item.district == district; });
-                        risk_fill(risk_d);
-                    });
+                    var risk_d = data.filter(function (item) { return item.district == district; });
+                    risk_fill(risk_d);
+                });
             }
             else if (tab === 'practices') {
                 $("#title").html("Practices");
@@ -792,38 +826,38 @@
                 // Processing data
                 $("#practices_title").html(province + ' - ' + district);
                 d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/practices/practices.csv", function (error, data) {
-                        practices_d = data.filter(function (item) { return item.district == district; });
+                    practices_d = data.filter(function (item) { return item.district == district; });
 
-                        // Filling the cbo controls with hazard and crops  
-                        var crop = Array.from(new Set(d3.map(practices_d, function (d) { return d.crop; }).keys()));
-                        var cbo_practices_crop = $("#cbo_practices_crop");
-                        cbo_practices_crop.empty();
-                        crop.forEach(function (i, v) {
-                            cbo_practices_crop.append($("<option />").val(i).text(i));
-                        });
-                        cbo_practices_crop.append($("<option />").val("All").text("All"));
-                        cbo_practices_crop.val("All");
+                    // Filling the cbo controls with hazard and crops  
+                    var crop = Array.from(new Set(d3.map(practices_d, function (d) { return d.crop; }).keys()));
+                    var cbo_practices_crop = $("#cbo_practices_crop");
+                    cbo_practices_crop.empty();
+                    crop.forEach(function (i, v) {
+                        cbo_practices_crop.append($("<option />").val(i).text(i));
+                    });
+                    cbo_practices_crop.append($("<option />").val("All").text("All"));
+                    cbo_practices_crop.val("All");
 
-                        var hazard = Array.from(new Set(d3.map(practices_d, function (d) { return d.hazard; }).keys()));
-                        var cbo_practices_hazard = $("#cbo_practices_hazard");
-                        cbo_practices_hazard.empty();
-                        hazard.forEach(function (i, v) {
-                            cbo_practices_hazard.append($("<option />").val(i).text(i));
-                        });
-                        cbo_practices_hazard.append($("<option />").val("All").text("All"));
-                        cbo_practices_hazard.val("All");
+                    var hazard = Array.from(new Set(d3.map(practices_d, function (d) { return d.hazard; }).keys()));
+                    var cbo_practices_hazard = $("#cbo_practices_hazard");
+                    cbo_practices_hazard.empty();
+                    hazard.forEach(function (i, v) {
+                        cbo_practices_hazard.append($("<option />").val(i).text(i));
+                    });
+                    cbo_practices_hazard.append($("<option />").val("All").text("All"));
+                    cbo_practices_hazard.val("All");
 
-                        // Set the event change for both controls
-                        cbo_practices_crop.on('change', function (e) {
-                            practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
-                        });
-                        cbo_practices_hazard.on('change', function (e) {
-                            practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
-                        });
-
-                        // Default fill
+                    // Set the event change for both controls
+                    cbo_practices_crop.on('change', function (e) {
                         practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
                     });
+                    cbo_practices_hazard.on('change', function (e) {
+                        practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
+                    });
+
+                    // Default fill
+                    practices_fill(cbo_practices_crop.val(), cbo_practices_hazard.val());
+                });
             }
             else if (tab === 'enablers') {
                 $("#title").html("Enablers");
@@ -860,8 +894,8 @@
             var d_pl = production.filter(function (d) { return d.sector == 'Crops'; }).map(function (d) { return { "label": d.crop_livestock, "value": parseFloat(d.value) } });
             var d_pr = production.filter(function (d) { return d.sector == 'Production'; }).map(function (d) { return { "label": d.crop_livestock, "value": parseFloat(d.value) } });
             var d_li = production.filter(function (d) { return d.sector == 'Livestock'; }).map(function (d) { return { "label": d.crop_livestock, "value": parseFloat(d.value) } });
-            
-            var colors_pie = ["#6e4c1f","#9d9fa2","#0088c6","#8ebf3f","#cad32b","#f5d226","#f68b33","#993399","#009933","#cc3333","#414042","#2f8927","#003580","#19191a"];
+
+            var colors_pie = ["#6e4c1f", "#9d9fa2", "#0088c6", "#8ebf3f", "#cad32b", "#f5d226", "#f68b33", "#993399", "#009933", "#cc3333", "#414042", "#2f8927", "#003580", "#19191a"];
             // Production plots
             nv.addGraph(function () {
                 var d_pl_chart = nv.models.pieChart()
@@ -910,7 +944,7 @@
         /**
         * Function which fill cropping data about calendar and hazard
         */
-        function cropping_calendar_hazard(crop_c, hazard_c){
+        function cropping_calendar_hazard(crop_c, hazard_c) {
             // Cropping calendar
             var crops = Array.from(new Set(crop_c.map(function (d) { return d.crop_livestock; })));
             var table = '';
@@ -919,8 +953,9 @@
                 table = table + '<td>' + value + '</td>';
                 $.each(months, function (i, v) {
                     var cell = crop_c.filter(function (d) { return d.crop_livestock == value && d.month == v })[0];
-                    table = table + '<td class="crop_c_' + cell.value + 
-                                    '" data-toggle="tooltip" data-placement="bottom" data-html="true" title="'+ cell.practices +'"' + '></td>';
+                    table = table + '<td class="crop_c_' + cell.value + '" ' + 
+                        'data-toggle="tooltip" data-placement="left" data-html="true" '  + 
+                        'title="' + cell.practices + '"></td>';
                 });
                 table = table + '</tr>';
             });
@@ -994,8 +1029,8 @@
 
                 chart_pre.xAxis     //Chart x-axis settings
                     .axisLabel('Months')
-                    .tickFormat(function (d,i) {                        
-                        return months[d-1];
+                    .tickFormat(function (d, i) {
+                        return months[d - 1];
                     });
 
                 chart_pre.yAxis     //Chart y-axis settings
@@ -1008,7 +1043,7 @@
                     .call(chart_pre);          //Finally, render the chart!
 
                 //Update the chart when window resizes.
-                
+
                 nv.utils.windowResize(function () { chart_pre.update() });
                 return chart_pre;
             });
@@ -1021,14 +1056,14 @@
 
                 chart_tem.xAxis     //Chart x-axis settings
                     .axisLabel('Months')
-                    .tickFormat(function (d,i) {                        
-                        return months[d-1];
+                    .tickFormat(function (d, i) {
+                        return months[d - 1];
                     });
 
                 chart_tem.yAxis     //Chart y-axis settings
                     .axisLabel('Temperature (°C)')
                     .tickFormat(d3.format('.0f'));
-                
+
                 d3.select('#climate_temp_plot svg')    //Select the <svg> element you want to render the chart in.   
                     .datum(c_t)         //Populate the <svg> element with chart data...
                     .transition().duration(500)
@@ -1201,47 +1236,47 @@
             }).addTo(map_i);
 
             var min = d3.min(i_i, function (d) { return parseFloat(d.value); });
-            var max = d3.max(i_i, function (d) { return parseFloat(d.value); });            
+            var max = d3.max(i_i, function (d) { return parseFloat(d.value); });
             color_indicator = d3.scale.linear()
                 .domain([min, max])
                 .range([0, 1]);
-            
+
             var indicator_url = "https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/" + season + "_new_version.json";
             $.getJSON(indicator_url, function (data) {
                 L.geoJSON(data, { filter: filter_map, onEachFeature: onEachFeature2, weight: 0.5 }).addTo(map_i);
             });
-            
-            var legend = L.control({position: 'topright'});
+
+            var legend = L.control({ position: 'topright' });
             legend.onAdd = function (map) {
                 var div = L.DomUtil.create('div', 'info legend');
-                div.innerHTML += '<h4>Scale (' + climate_indicator_var + ')</h4>' + 
-                                '<div id="map_scale"><svg></svg></div>';
+                div.innerHTML += '<h4>Scale (' + climate_indicator_var + ')</h4>' +
+                    '<div id="map_scale"><svg></svg></div>';
                 return div;
             };
             legend.addTo(map_i);
-            
-            var range = d3.range(min,max,(max-min)/100);
-            var svg = d3.select("#map_scale svg");                        
+
+            var range = d3.range(min, max, (max - min) / 100);
+            var svg = d3.select("#map_scale svg");
             var rects = svg.selectAll(".rects")
                 .data(range)
                 .enter()
                 .append("rect")
                 .attr("y", 10)
                 .attr("height", 25)
-                .attr("x", (d,i)=>10 + i)
+                .attr("x", (d, i) => 10 + i)
                 .attr("width", 6)
-                .attr("fill", function(d){ return "" + d3.interpolateOranges(color_indicator(d));});
-            
+                .attr("fill", function (d) { return "" + d3.interpolateOranges(color_indicator(d)); });
+
             svg.append("text")
                 //.attr("x", function(d) { return x(d) - 3; })
                 .attr("y", 7)
                 .attr("dy", ".35em")
-                .text(function(d) { return min; });
+                .text(function (d) { return min; });
             svg.append("text")
                 .attr("x", 110)
                 .attr("y", 7)
                 .attr("dy", ".35em")
-                .text(function(d) { return max; });
+                .text(function (d) { return max; });
         }
 
         function filter_map(feature) {
@@ -1266,7 +1301,7 @@
         * Function which filter dataset for impacts and show data into the table
         */
         function impact_fill_table(crop, hazard) {
-            var filter_level = crop != 'All' && hazard != 'All';            
+            var filter_level = crop != 'All' && hazard != 'All';
             // Filtering data and order by frequency
             var inputs = hazard_d.filter(function (item) { return item.vc_stage == '1. Input' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(parseFloat(a.freq), parseFloat(b.freq)));
             var on_farm = hazard_d.filter(function (item) { return item.vc_stage == '2. On-farm' && (crop == 'All' ? true : item.crop_livestock == crop) && (hazard == 'All' ? true : item.hazard == hazard) }).sort((a, b) => d3.descending(parseFloat(a.freq), parseFloat(b.freq)));
@@ -1276,25 +1311,25 @@
             severity = d3.map(severity, function (d) { return d.severity; }).keys();
             var count = hazard_d.filter(function (item) { return item.crop_livestock == crop && item.hazard == hazard });
             count = d3.map(count, function (d) { return d.count; }).keys();
-            
+
             // Fixing groups and Removing duplicates
             //console.log(inputs);
             inputs = d3.nest()
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
-                .entries(inputs).filter(function(d){ return d.values > 20});
+                .entries(inputs).filter(function (d) { return d.values > 20 });
             on_farm = d3.nest()
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
-                .entries(on_farm).filter(function(d){ return d.values > 20});
+                .entries(on_farm).filter(function (d) { return d.values > 20 });
             harvesting = d3.nest()
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
-                .entries(harvesting).filter(function(d){ return d.values > 20});
+                .entries(harvesting).filter(function (d) { return d.values > 20 });
             marketing = d3.nest()
                 .key(function (d) { return d.impact; })
                 .rollup(function (v) { return d3.mean(v, function (k) { return parseFloat(k.percentage); }) })
-                .entries(marketing).filter(function(d){ return d.values > 20});
+                .entries(marketing).filter(function (d) { return d.values > 20 });
             //console.log(inputs);
             // Fixing data in the table
             var max = d3.max([d3.max([d3.max([inputs.length, on_farm.length]), harvesting.length]), marketing.length]);
@@ -1329,37 +1364,37 @@
         */
         function practices_fill(crop, hazard) {
             // Filtering data
-            var records = practices_d.filter(function (item) { return (crop == 'All' ? true : item.crop == crop) && (hazard == 'All' ? true : item.hazard == hazard || item.hazard_1 == hazard || item.hazard_2 == hazard || item.hazard_3 == hazard ) });
+            var records = practices_d.filter(function (item) { return (crop == 'All' ? true : item.crop == crop) && (hazard == 'All' ? true : item.hazard == hazard || item.hazard_1 == hazard || item.hazard_2 == hazard || item.hazard_3 == hazard) });
 
             //var table = '';
-	    var table = '<table class="table table-bordered table-sm">';
+            var table = '<table class="table table-bordered table-sm">';
             for (var i = 0; i < records.length; i++) {
-        table = table + '<tr class="table-secondary d-flex">';
-        table = table + '<td class="col-1 text-center"><span class="practices_id">' + records[i].Order + '</span></td>';
-		table = table + '<td class="col-2"><h4>' + records[i].crop + '</h4><p class="text-justify">' + records[i].csa + '</p><p class="text-warning"><b>' + records[i].adoption + '</b></p></td>';
-		table = table + '<td class="col-5"><table class="table borderless"><tr><td>' + 
-				(records[i].ind_1 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_1 + '" />') +
-                        (records[i].ind_2 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_2 + '" />') +
-	                    (records[i].ind_3 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_3 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_3 + '" />') +
-        	            (records[i].ind_4 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_4 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_4 + '" />') +
-                	    (records[i].ind_5 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_5 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_5 + '" />') +
-                        (records[i].ind_6 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_6 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_6 + '" />') +
-			'</td></tr>';
-        table = table + '<tr><td>' + 
-                        (records[i].hazard == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard + '" />') +
-	                    (records[i].hazard_1 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_1 + '" />') +
-        	            (records[i].hazard_2 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_2 + '" />') +
-                	    (records[i].hazard_3 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_3 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_3 + '" />') +
-			'</td></tr></table></td>';
-		table = table + '<td class="col-4"><table class="table borderless">';
-		if(records[i].barrier_1 != '')
+                table = table + '<tr class="table-secondary d-flex">';
+                table = table + '<td class="col-1 text-center"><span class="practices_id">' + records[i].Order + '</span></td>';
+                table = table + '<td class="col-2"><h4>' + records[i].crop + '</h4><p class="text-justify">' + records[i].csa + '</p><p class="text-warning"><b>' + records[i].adoption + '</b></p></td>';
+                table = table + '<td class="col-5"><table class="table borderless"><tr><td>' +
+                    (records[i].ind_1 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_1 + '" />') +
+                    (records[i].ind_2 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_2 + '" />') +
+                    (records[i].ind_3 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_3 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_3 + '" />') +
+                    (records[i].ind_4 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_4 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_4 + '" />') +
+                    (records[i].ind_5 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_5 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_5 + '" />') +
+                    (records[i].ind_6 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/indicators/' + records[i].ind_6 + '.png" class="rounded practices_img_icons" alt="' + records[i].ind_6 + '" />') +
+                    '</td></tr>';
+                table = table + '<tr><td>' +
+                    (records[i].hazard == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard + '" />') +
+                    (records[i].hazard_1 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_1 + '" />') +
+                    (records[i].hazard_2 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_2 + '" />') +
+                    (records[i].hazard_3 == '' ? '' : '<img src="https://ciat-dapa.github.io/pakistan_web/img/hazards/' + records[i].hazard_3 + '.png" class="rounded practices_img_icons" alt="' + records[i].hazard_3 + '" />') +
+                    '</td></tr></table></td>';
+                table = table + '<td class="col-4"><table class="table borderless">';
+                if (records[i].barrier_1 != '')
                     table = table + '<tr><td><img src="https://ciat-dapa.github.io/pakistan_web/img/barriers/' + records[i].barrier_1 + '.png" class="rounded practices_img_icons" alt="' + records[i].barrier_1 + '" /></td>' +
-                                    '<td>'+ records[i].b1_exp + '</td></tr>';
-                if(records[i].barrier_2 != '')
-                    table = table + '<tr><td><img src="https://ciat-dapa.github.io/pakistan_web/img/barriers/' + records[i].barrier_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].barrier_2 + '" /></td>' + 
-                                    '<td>'+ records[i].b2_exp + '</td></tr>';
-		table = table + '</table></td>';
-		table = table + '</tr>';
+                        '<td>' + records[i].b1_exp + '</td></tr>';
+                if (records[i].barrier_2 != '')
+                    table = table + '<tr><td><img src="https://ciat-dapa.github.io/pakistan_web/img/barriers/' + records[i].barrier_2 + '.png" class="rounded practices_img_icons" alt="' + records[i].barrier_2 + '" /></td>' +
+                        '<td>' + records[i].b2_exp + '</td></tr>';
+                table = table + '</table></td>';
+                table = table + '</tr>';
 
             }
             //table = table + '</div>';
