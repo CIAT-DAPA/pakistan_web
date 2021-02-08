@@ -156,6 +156,18 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="click_tab('intro')">
+                            <i class="fas fa-book"></i>
+                            Intro
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="click_tab('site')">
+                            <i class="fas fa-globe-asia"></i>
+                            Site selection
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#" onclick="click_tab('cropping')">
                             <i class="fab fa-envira"></i>
                             Cropping system
@@ -199,19 +211,85 @@
 
     <main role="main" class="flex-shrink-0">
         <div class="container">
+            <!-- Start Intro -->            
+            <div id="intro" class="tab_layout">
+                <h2 style="margin-top: 70px;">About the project</h2>
+                <p class="text-justify">
+                    The data presented in this dashboard is the output of a series of workshops and online consultations 
+                    conducted as part of a Food and Agriculture Organisation of the United Nations (FAO) led, and 
+                    Alliance of Bioversity International & CIAT designed project on Climate-Smart Agriculture in Pakistan. 
+                    The project developed a series of District Climate Risk Profiles (DCRP's) and Climate Smart Village (CSV) plans, 
+                    covering 13 districts and 43 villages from across Punjab, Sindh, and Khyber Pakhtunkhwa. The implementation 
+                    of the project was supported by national partners in each of the three provinces, namely the Pir Mehar Ali Shah (PMAS) 
+                    Arid Agriculture University Rawalpindi; the University of Agriculture Peshawar; and the Directorate Training and 
+                    Research for Agriculture Engineering and Water management Sindh.
+                </p>
+                <p class="text-justify">
+                    This dashboard acts as a centralised data store and visualisation tool for decision makers, researchers 
+                    and agricultural practitioners to quickly access and review information gathered through this study, 
+                    based on consultations with over 1,000 agricultural experts and farmers from across the three provinces. 
+                    We see this as an important tool in helping decision makers get a quick snap shot of the major hazards, 
+                    their impacts, and recommended response strategies, supporting future policy and programming around CSA 
+                    in Pakistan.
+                </p>
+                <p class="text-justify">
+                    The authors of this study are extremely grateful for the contribution of all of those who took part in the 
+                    study and helped to shed light on the importance of CSA in supporting Pakistan's agriculture sector.
+                </p>
+                <h3>How to use the dashboard</h3>
+                <p class="text-justify">
+                    <b>Site selection</b> - The first step in navigating through the dashboard is to select the region you would like to look at. 
+                    This will allow you to either look at Pakistan as a whole, each of the three provinces or a single district. 
+                    It is worth noting that depending on the type of information you are looking for some will be available 
+                    aggregated at national or provincial levels, others will be available only at district or village level.
+                </p>
+                <p class="text-justify">
+                    <b>Cropping systems</b> - This tab displays district level data on production area and volume for the major crops, 
+                    along with the livestock headcount.  It also shows the cropping calendar and hazard calendar for the villages 
+                    from that district covered in the study.
+                </p>
+                <p class="text-justify">
+                    <b>Climate</b> - The climate tab presents the results of a number of modelling exercises conducted by the 
+                    Alliance of Bioversity International and CIAT's modelling team. This includes climatology data on monthly mean 
+                    precipitation, minimum and maximum temperatures, modelling of future annual mean temperatures and precipitation 
+                    using an ensemble of Global Circulation Models (GCM's), and the historic and future time series of a number of 
+                    climatic indicators that impact agricultural production.
+                </p>
+                <p class="text-justify">
+                    <b>Climate risk</b> - This tab presents a risk matrix generated through responses from agricultural experts 
+                    in the districts on the frequency and severity of major hazards.
+                </p>
+                <p class="text-justify">
+                    <b>Climate Impacts</b> - This tab presents the results of the climate impact analysis where value chain experts 
+                    in each of the districts identified the impacts of certain hazards on key commodity value chains for the district.
+                </p>
+                <p class="text-justify">
+                    <b>Practices</b> - Presents the types of CSA practices prioritised by experts in the district, along with the 
+                    areas were they have an impact, the hazards they address, and the barriers to adoption.
+                </p>
+                <p class="text-justify">
+                    <b>Enablers</b> -  CSA enablers provide essential services and build core capacities, empowering individuals 
+                    and agrarian communities to better manage their response to climate related pressures. This section 
+                    looks at which types of enabler are prioritised in each of the districts.
+                </p>
+            </div>            
+            <!-- End Intro-->
 
-            <h1 id="title" class="mt-5 text-center"></h1>
-            <p id="description" class="text-justify"></p>
-            <!--
-            <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h2>Map</h2>
+            <!-- Start General -->
+            <div id="general">
+                <h1 id="title" class="mt-5 text-center"></h1>
+                <p id="description" class="text-justify"></p>
             </div>
-            -->
-            <p class="text-justify">
-                Select a district into the map
-            </p>
-            <div id="map" style="height: 500px; width: 100%;"></div>
+            <!-- End General -->
+
+            <!-- Start Site -->
+            <div id="site" class="tab_layout">
+                <p class="text-justify">
+                    Select a district into the map
+                </p>
+                <div id="map" style="height: 500px; width: 100%;"></div>
+            </div>
+            <!-- End Site -->
 
             <!-- Start Cropping -->
             <div id="cropping" class="tab_layout">
@@ -530,7 +608,7 @@
 
     <script type="text/javascript">
         // Parameters
-        var tab = 'impacts';
+        var tab = 'intro';
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         var color_indicator;
         // Datasets
@@ -558,8 +636,21 @@
         function click_tab(tab_selected) {
             tab = tab_selected;
             $(".tab_layout").addClass("d-none");
+            $("#general").removeClass("d-none");
 
-            if (tab === 'cropping') {
+            if (tab === 'intro') {
+                $("#title").html("Intro");
+                $("#description").html("");
+                $(".tab_layout").addClass("d-none");
+                $("#general").addClass("d-none");
+                $("#intro").removeClass("d-none");
+            } 
+            else if (tab === 'site') {
+                $("#title").html("Site selection");
+                $("#description").html("Please use the below map to select the region (National, Province, District) you would like to focus on. You can also see in the project site tab a list of all districts and villages included in the study.");
+                $("#site").removeClass("d-none");
+            }
+            else if (tab === 'cropping') {
                 $("#title").html("Cropping system");
                 $("#description").html("");
                 $("#cropping").removeClass("d-none");
@@ -1320,7 +1411,7 @@
         }
 
         // Default tab
-        click_tab('cropping');
+        click_tab('intro');
 
     </script>
 </body>
