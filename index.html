@@ -607,8 +607,7 @@
             <!-- Start CC Impacts -->
             <div id="impacts" class="tab_layout">
                 <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h2 id="impacts_title"></h2>
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">                    
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
                             <select id="cbo_impact_crop" class="form-control form-control-lg">
@@ -645,11 +644,6 @@
 
             <!-- Start Risk -->
             <div id="risk" class="tab_layout">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h2 id="risk_title"></h2>
-                </div>
-                <h3>Climate risk</h3>
                 <div class="table-responsive">
                     <table id="risk_table" class="table  table-sm">
                         <tr>
@@ -695,8 +689,7 @@
             <!-- Start Practices -->
             <div id="practices" class="tab_layout">
                 <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h2 id="practices_title"></h2>
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">                    
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
                             <select id="cbo_practices_crop" class="form-control form-control-lg">
@@ -716,6 +709,14 @@
                 </div>
             </div>
             <!-- End Practices -->
+
+            <!-- Start Enablers -->
+            <div id="enablers" class="tab_layout">
+                <div class="table-responsive">
+                    
+                </div>
+            </div>
+            <!-- End Enablers -->
         </div>
     </main>
 
@@ -846,8 +847,6 @@
                 $("#title").html("Climate impacts");
                 $("#description").html("This tab presents the results of the climate impact analysis where value chain experts in each of the districts identified the impacts of certain hazards on key commodity value chains for the district. The impacts are ordered with those that were selected the most frequently at the top. It is possible to further filter the impacts looking at specific hazards of commodity value chains.");
                 $("#impacts").removeClass("d-none");
-                // Processing data
-                $("#impacts_title").html(province + ' - ' + district);
                 d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/impacts/impacts.csv", function (error, data) {
                     hazard_d = data.filter(function (item) { return item.district == district; });
                     // Filling the cbo controls with hazard and crops
@@ -884,9 +883,7 @@
             else if (tab === 'risk') {
                 $("#title").html("Climate risk");
                 $("#description").html("This tab presents a risk matrix generated through responses from agricultural experts in the districts on the frequency and severity of major hazards.");
-                $("#risk").removeClass("d-none");
-                // Processing data
-                $("#risk_title").html(province + ' - ' + district);
+                $("#risk").removeClass("d-none");                
                 d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/risk/risk.csv", function (error, data) {
                     var risk_d = data.filter(function (item) { return item.district == district; });
                     risk_fill(risk_d);
@@ -895,9 +892,7 @@
             else if (tab === 'practices') {
                 $("#title").html("Practices");
                 $("#description").html("This tab presents the types of CSA practices prioritised by experts in the district, along with the areas were they have an impact, the hazards they address, and the barriers to adoption. the practices can be filtered by the commodity they look at, the areas where they have an impact or the types of hazards they address, allowing decision makers to identify practices that address certain priority issues.");
-                $("#practices").removeClass("d-none");
-                // Processing data
-                $("#practices_title").html(province + ' - ' + district);
+                $("#practices").removeClass("d-none");                
                 d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/practices/practices.csv", function (error, data) {
                     practices_d = data.filter(function (item) { return item.district == district; });
 
@@ -936,6 +931,13 @@
                 $("#title").html("Enablers");
                 $("#description").html("CSA enablers provide essential services and build core capacities, empowering individuals and agrarian communities to better manage their response to climate related pressures. This section looks at which types of enabler are prioritised in each of the districts.");
                 $("#enablers").removeClass("d-none");
+                d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/enablers/enablers.csv", function (error, data) {
+                    //enablers = data.filter(function (item) { return item.district == district; });
+                    enablers = data;
+
+                    // Default fill
+                    practices_fill(enablers);
+                });
             }
 
             if (map != null) {
@@ -1052,6 +1054,9 @@
             $("#cropping_hazard_table  > tbody").html(table);
         }
         
+        /**
+         * Function which loads and draws all plots for climate section
+        */
         function climate_load(){
             d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/climate/climatology.csv", function (error, data) {
                     var climatology = data.filter(function (item) { return item.district == district; });
@@ -1096,6 +1101,7 @@
                     });
                 });
         }
+        
         /**
         * Function which fill climate data
         */
@@ -1538,6 +1544,19 @@
             });
         }
 
+        /**
+        * Function which fill table of enablers
+        */
+        function enablers_fill(data){
+            $.each(data, function (index, value) {
+                console.log(value);
+                table = table + '<tr>';
+                table = table + '<td>' + value + '</td>';
+                table = table + '</tr>';
+            });
+            //table = table + '</table>';
+            $("#cropping_calendar_table  > tbody").html(table);
+        }
         /**
         * Function for each feature into the map
         */
