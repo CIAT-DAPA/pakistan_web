@@ -713,7 +713,9 @@
             <!-- Start Enablers -->
             <div id="enablers" class="tab_layout">
                 <div class="table-responsive">
-                    
+                    <table id="enablers_table" class="table  table-sm">                        
+                        <tbody></tbody>
+                    </table>
                 </div>
             </div>
             <!-- End Enablers -->
@@ -933,10 +935,9 @@
                 $("#enablers").removeClass("d-none");
                 d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/enablers/enablers.csv", function (error, data) {
                     //enablers = data.filter(function (item) { return item.district == district; });
-                    enablers = data;
-
+                    enablers = data;                    
                     // Default fill
-                    practices_fill(enablers);
+                    enablers_fill(enablers);
                 });
             }
 
@@ -1548,14 +1549,16 @@
         * Function which fill table of enablers
         */
         function enablers_fill(data){
-            $.each(data, function (index, value) {
-                console.log(value);
+            table = "";
+            for(var item in data) {
+                console.log(item);
                 table = table + '<tr>';
-                table = table + '<td>' + value + '</td>';
+                table = table + '<th>' + data[item].name + '</th>';
+                table = table + '<td>' + data[item].description + '</td>';
                 table = table + '</tr>';
-            });
+            }
             //table = table + '</table>';
-            $("#cropping_calendar_table  > tbody").html(table);
+            $("#enablers_table  > tbody").html(table);
         }
         /**
         * Function for each feature into the map
