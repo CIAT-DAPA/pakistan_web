@@ -14,7 +14,8 @@
         crossorigin="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">    
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">        
+
     <style>
         .nvtooltip {
             margin-top: -50px;
@@ -304,6 +305,9 @@
                     and agrarian communities to better manage their response to climate related pressures. This section
                     looks at which types of enabler are prioritised in each of the districts.
                 </p>
+                <img src="https://ciat-dapa.github.io/pakistan_web/img/logos/alliance.png" class="img-fluid" alt="Alliance Bioversity International - CIAT" />
+                <img src="https://ciat-dapa.github.io/pakistan_web/img/logos/fao.png" class="img-fluid" alt="FAO" />
+
             </div>
             <!-- End Intro-->
 
@@ -438,11 +442,15 @@
 
             <!-- Start Climate -->
             <div id="climate" class="tab_layout">
-
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h2 id="climate_climatology_title"></h2>
                 </div>
+                <nav class="nav nav-pills nav-justified">
+                    <a class="nav-item nav-link" href="#">Climatology</a>
+                    <a class="nav-item nav-link" href="#">GCM</a>
+                    <a class="nav-item nav-link" href="#">Indicators</a>
+                </nav>
                 <h3>Climatology</h3>
                 <div class="row">
                     <div class="col-lg-6">
@@ -634,9 +642,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.6/nv.d3.min.js"></script>
     <script src="https://d3js.org/d3-color.v2.min.js"></script>
     <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>    
+            
 
     <script type="text/javascript">
+        // Global function
+        jQuery(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
         // Parameters
         var tab = 'intro';
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -657,12 +670,7 @@
         var tab = '';
         // Controls
         var map_i;
-        var map;
-        // Global function
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-            //$( document ).tooltip();
-        })
+        var map;        
 
         /**
         * This function change the type of information and functionalities of the web page depending of the value
@@ -954,8 +962,10 @@
                 $.each(months, function (i, v) {
                     var cell = crop_c.filter(function (d) { return d.crop_livestock == value && d.month == v })[0];
                     table = table + '<td class="crop_c_' + cell.value + '" ' + 
-                        'data-toggle="tooltip" data-placement="left" data-html="true" '  + 
+                        'data-toggle="tooltip" '  + 
+                        //'data-position="bottom" '  + 
                         'title="' + cell.practices + '"></td>';
+                        //'data-tooltip="' + cell.practices + '"></td>';
                 });
                 table = table + '</tr>';
             });
