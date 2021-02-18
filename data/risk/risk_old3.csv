@@ -5,7 +5,7 @@ KP,Chitral,"Pest outbreak (Locust, Army worm, Hopper burn)",2,3
 KP,Chitral,Heat stress,1,3
 KP,Chitral,Disease outbreak (Plant & Livestock),3,3
 KP,Chitral,Heavy rain/Flash flooding,3,4
-KP,Chitral,Lightning storm,3,3
+KP,Chitral,Thunders (Lightening & Fire),3,3
 KP,Chitral,Drought  - Low irrigation water supply,2,2
 KP,D.I. Khan,Drought - Low rainfall,3,4
 KP,D.I. Khan,Riverine flooding,1,2
@@ -13,7 +13,7 @@ KP,D.I. Khan,"Pest outbreak (Locust, Army worm, Hopper burn)",2,3
 KP,D.I. Khan,Heat stress,3,3
 KP,D.I. Khan,Disease outbreak (Plant & Livestock),2,3
 KP,D.I. Khan,Heavy rain/Flash flooding,2,2
-KP,D.I. Khan,Lightning storm,#N/A,1
+KP,D.I. Khan,Thunders (Lightening & Fire),#N/A,1
 KP,D.I. Khan,Drought  - Low irrigation water supply,2,4
 KP,N. Waziristan,Drought - Low rainfall,2,3
 KP,N. Waziristan,Riverine flooding,2,3
@@ -21,7 +21,7 @@ KP,N. Waziristan,"Pest outbreak (Locust, Army worm, Hopper burn)",3,4
 KP,N. Waziristan,Heat stress,1,1
 KP,N. Waziristan,Disease outbreak (Plant & Livestock),3,4
 KP,N. Waziristan,Heavy rain/Flash flooding,2,3
-KP,N. Waziristan,Lightning storm,1,2
+KP,N. Waziristan,Thunders (Lightening & Fire),1,2
 KP,N. Waziristan,Drought  - Low irrigation water supply,2,2
 KP,S. Waziristan,Drought - Low rainfall,2,4
 KP,S. Waziristan,Riverine flooding,1,2
@@ -29,7 +29,7 @@ KP,S. Waziristan,"Pest outbreak (Locust, Army worm, Hopper burn)",3,4
 KP,S. Waziristan,Heat stress,2,2
 KP,S. Waziristan,Disease outbreak (Plant & Livestock),2,4
 KP,S. Waziristan,Heavy rain/Flash flooding,1,2
-KP,S. Waziristan,Lightning storm,1,2
+KP,S. Waziristan,Thunders (Lightening & Fire),1,2
 KP,S. Waziristan,Drought  - Low irrigation water supply,3,4
 KP,Kurram,Drought - Low rainfall,1,3
 KP,Kurram,Riverine flooding,2,3
@@ -37,7 +37,7 @@ KP,Kurram,"Pest outbreak (Locust, Army worm, Hopper burn)",3,4
 KP,Kurram,Heat stress,1,1
 KP,Kurram,Disease outbreak (Plant & Livestock),2,4
 KP,Kurram,Heavy rain/Flash flooding,2,3
-KP,Kurram,Lightning storm,1,3
+KP,Kurram,Thunders (Lightening & Fire),1,3
 KP,Kurram,Drought  - Low irrigation water supply,2,2
 KP,Orakzai,Drought - Low rainfall,1,1
 KP,Orakzai,Riverine flooding,1,2
@@ -45,7 +45,7 @@ KP,Orakzai,"Pest outbreak (Locust, Army worm, Hopper burn)",3,3
 KP,Orakzai,Heat stress,1,1
 KP,Orakzai,Disease outbreak (Plant & Livestock),3,4
 KP,Orakzai,Heavy rain/Flash flooding,1,2
-KP,Orakzai,Lightning storm,1,2
+KP,Orakzai,Thunders (Lightening & Fire),1,2
 KP,Orakzai,Drought  - Low irrigation water supply,1,1
 KP,Ghotki,Drought - Low rainfall,2,3
 KP,Ghotki,Riverine flooding,2,2
@@ -53,7 +53,7 @@ KP,Ghotki,"Pest outbreak (Locust, Army worm, Hopper burn)",2,3
 KP,Ghotki,Heat stress,2,4
 KP,Ghotki,Disease outbreak (Plant & Livestock),2,3
 KP,Ghotki,Heavy rain/Flash flooding,2,2
-KP,Ghotki,Lightning storm,#N/A,#N/A
+KP,Ghotki,Thunders (Lightening & Fire),#N/A,#N/A
 KP,Ghotki,Drought  - Low irrigation water supply,2,4
 Sindh,Dadu,Drought - Low rainfall,2,4
 Sindh,Dadu,Riverine flooding,2,3
@@ -61,7 +61,7 @@ Sindh,Dadu,"Pest outbreak (Locust, Army worm, Hopper burn)",3,3
 Sindh,Dadu,Heat stress,3,4
 Sindh,Dadu,Disease outbreak (Plant & Livestock),2,3
 Sindh,Dadu,Heavy rain/Flash flooding,2,2
-Sindh,Dadu,Lightning storm,1,1
+Sindh,Dadu,Thunders (Lightening & Fire),1,1
 Sindh,Dadu,Drought  - Low irrigation water supply,3,3
 Sindh,Tharparkar,Drought - Low rainfall,3,3
 Sindh,Tharparkar,Riverine flooding,#N/A,#N/A
@@ -69,7 +69,7 @@ Sindh,Tharparkar,"Pest outbreak (Locust, Army worm, Hopper burn)",2,2
 Sindh,Tharparkar,Heat stress,2,4
 Sindh,Tharparkar,Disease outbreak (Plant & Livestock),2,3
 Sindh,Tharparkar,Heavy rain/Flash flooding,1,1
-Sindh,Tharparkar,Lightning storm,2,3
+Sindh,Tharparkar,Thunders (Lightening & Fire),2,3
 Sindh,Tharparkar,Drought  - Low irrigation water supply,2,3
 Sindh,Kashmore,Drought - Low rainfall,2,2
 Sindh,Kashmore,Riverine flooding,2,3
@@ -77,7 +77,7 @@ Sindh,Kashmore,"Pest outbreak (Locust, Army worm, Hopper burn)",2,2
 Sindh,Kashmore,Heat stress,2,4
 Sindh,Kashmore,Disease outbreak (Plant & Livestock),2,3
 Sindh,Kashmore,Heavy rain/Flash flooding,2,3
-Sindh,Kashmore,Lightning storm,#N/A,1
+Sindh,Kashmore,Thunders (Lightening & Fire),#N/A,1
 Sindh,Kashmore,Drought  - Low irrigation water supply,1,2
 Punjab,Jhang,Drought - Low rainfall,2,2
 Punjab,Jhang,Riverine flooding,3,4
@@ -85,7 +85,7 @@ Punjab,Jhang,"Pest outbreak (Locust, Army worm, Hopper burn)",2,3
 Punjab,Jhang,Heat stress,2,3
 Punjab,Jhang,Disease outbreak (Plant & Livestock),2,3
 Punjab,Jhang,Heavy rain/Flash flooding,1,3
-Punjab,Jhang,Lightning storm,#N/A,#N/A
+Punjab,Jhang,Thunders (Lightening & Fire),#N/A,#N/A
 Punjab,Jhang,Drought  - Low irrigation water supply,1,2
 Punjab,Rajanpur,Drought - Low rainfall,2,3
 Punjab,Rajanpur,Riverine flooding,3,3
@@ -93,7 +93,7 @@ Punjab,Rajanpur,"Pest outbreak (Locust, Army worm, Hopper burn)",2,3
 Punjab,Rajanpur,Heat stress,2,4
 Punjab,Rajanpur,Disease outbreak (Plant & Livestock),2,3
 Punjab,Rajanpur,Heavy rain/Flash flooding,2,4
-Punjab,Rajanpur,Lightning storm,#N/A,1
+Punjab,Rajanpur,Thunders (Lightening & Fire),#N/A,1
 Punjab,Rajanpur,Drought  - Low irrigation water supply,2,3
 Punjab,Muzaffargarh,Drought - Low rainfall,#N/A,4
 Punjab,Muzaffargarh,Riverine flooding,2,3
@@ -101,5 +101,5 @@ Punjab,Muzaffargarh,"Pest outbreak (Locust, Army worm, Hopper burn)",3,4
 Punjab,Muzaffargarh,Heat stress,3,4
 Punjab,Muzaffargarh,Disease outbreak (Plant & Livestock),2,4
 Punjab,Muzaffargarh,Heavy rain/Flash flooding,1,3
-Punjab,Muzaffargarh,Lightning storm,#N/A,#N/A
+Punjab,Muzaffargarh,Thunders (Lightening & Fire),#N/A,#N/A
 Punjab,Muzaffargarh,Drought  - Low irrigation water supply,1,4
