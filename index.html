@@ -1538,7 +1538,7 @@
                 }
             }
             data.forEach(element => {
-                var key = "#r" + element.severity + '-' + element.frequency;
+                var key = "#r" + element.frequency + '-' + element.severity;
                 if (element.severity != '#N/A' && element.frequency != '#N/A') {
                     $(key).html($(key).html() + '- ' + element.hazard + '<br />')
                 }
