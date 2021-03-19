@@ -706,7 +706,7 @@
                         <div class="btn-group mr-2">
                             <label class="form-inline">
                                 Select level of aggregation: 
-                                <select id="cbo_enablers_agg" class="form-control form-control-lg" onchange="">
+                                <select id="cbo_enablers_agg" class="form-control form-control-lg" onchange="enablers_load()">
                                     <option value="dist">Districts</option>
                                     <option value="prov">Province</option>
                                     <option value="nati">National</option>
@@ -937,6 +937,7 @@
                 $("#title").html("Enablers");
                 $("#description").html("CSA enablers provide essential services and build core capacities, empowering individuals and agrarian communities to better manage their response to climate related pressures. This section looks at which types of enabler are prioritised in each of the districts.");
                 $("#enablers").removeClass("d-none");
+                enablers_load();
             }
 
             if (map != null) {
@@ -1543,9 +1544,9 @@
             });
         }
 
-        function enablers_load(){
-            type_agg = $("#cbo_enablers_agg").val();
-            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/enablers/enablers_" + type_agg +".csv", function (error, data) {
+        function enablers_load(){            
+            type_agg = $("#cbo_enablers_agg").val();            
+            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/enablers/enablers_" + type_agg +".csv", function (error, data) {                
                 var enablers = null;
                 if(type_agg === 'dist')
                     enablers = data.filter(function (item) { return item.district == district; });
@@ -1553,6 +1554,7 @@
                     enablers = data.filter(function (item) { return item.province == province; });
                 else
                     enablers = data;
+                console.log(enablers);
                 enablers = enablers.sort((a, b) => d3.descending(parseFloat(a.rank), parseFloat(b.rank)));
                 //enablers = data;                    
                 // Default fill
@@ -1564,6 +1566,7 @@
         */
         function enablers_fill(data){
             table = "";
+            $("#enablers_table  > tbody").html(table);
             for(var item in data) {                
                 table = table + '<tr>';
                 table = table + '<th>' + data[item].type + '</th>';
