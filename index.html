@@ -700,6 +700,21 @@
 
             <!-- Start Enablers -->
             <div id="enablers" class="tab_layout">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">                    
+                    <div class="btn-toolbar mb-12 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <label class="form-inline">
+                                Select level of aggregation: 
+                                <select id="cbo_enablers_agg" class="form-control form-control-lg" onchange="">
+                                    <option value="dist">Districts</option>
+                                    <option value="prov">Province</option>
+                                    <option value="nati">National</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table id="enablers_table" class="table  table-sm">                        
                         <tbody></tbody>
@@ -758,6 +773,7 @@
         var province = "";
         var district = "";
         var coords;
+        var type_agg="";
         // Datasets
         var hazard_d = [];
         var practices_d = [];
@@ -921,12 +937,6 @@
                 $("#title").html("Enablers");
                 $("#description").html("CSA enablers provide essential services and build core capacities, empowering individuals and agrarian communities to better manage their response to climate related pressures. This section looks at which types of enabler are prioritised in each of the districts.");
                 $("#enablers").removeClass("d-none");
-                d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/enablers/enablers.csv", function (error, data) {
-                    //enablers = data.filter(function (item) { return item.district == district; });
-                    enablers = data;                    
-                    // Default fill
-                    enablers_fill(enablers);
-                });
             }
 
             if (map != null) {
@@ -1533,15 +1543,31 @@
             });
         }
 
+        function enablers_load(){
+            type_agg = $("#cbo_enablers_agg").val();
+            d3.csv("https://raw.githubusercontent.com/CIAT-DAPA/pakistan_web/master/data/enablers/enablers_" + type_agg +".csv", function (error, data) {
+                var enablers = null;
+                if(type_agg === 'dist')
+                    enablers = data.filter(function (item) { return item.district == district; });
+                else if(type_agg === 'prov')
+                    enablers = data.filter(function (item) { return item.province == province; });
+                else
+                    enablers = data;
+                enablers = enablers.sort((a, b) => d3.descending(parseFloat(a.rank), parseFloat(b.rank)));
+                //enablers = data;                    
+                // Default fill
+                enablers_fill(enablers);
+            });
+        }
         /**
         * Function which fill table of enablers
         */
         function enablers_fill(data){
             table = "";
-            for(var item in data) {
-                console.log(item);
+            for(var item in data) {                
                 table = table + '<tr>';
-                table = table + '<th>' + data[item].name + '</th>';
+                table = table + '<th>' + data[item].type + '</th>';
+                table = table + '<td>' + data[item].name + '</td>';
                 table = table + '<td>' + data[item].description + '</td>';
                 table = table + '</tr>';
             }
